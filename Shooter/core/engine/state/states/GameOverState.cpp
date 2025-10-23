@@ -23,8 +23,6 @@ void GameOverState::iEnter()
 	std::cout << "ENTER GAMEOVER" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("gameover_level.json");
-
-	level->GetEntity()->GetComponent<TextBlock>(1)->label = GameManager::GetInstance().GetResultGame();
 }
 
 void GameOverState::iUpdateLogic()
@@ -32,7 +30,7 @@ void GameOverState::iUpdateLogic()
 	int id = level->GetButtonID();
 
 	if (id == 2)
-		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eGameplayPlayerOne);
+		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eGameplay);
 
 	if (id == 3)
 		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eMainMenu);

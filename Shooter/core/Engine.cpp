@@ -27,7 +27,7 @@ void Engine::INIT()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    game_manager->CreateMainWindow(1080, 1080);
+    game_manager->CreateMainWindow(1200, 900);
 
     if (!game_manager->GetWindow())
     {

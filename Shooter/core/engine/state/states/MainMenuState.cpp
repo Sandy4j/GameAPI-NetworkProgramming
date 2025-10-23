@@ -36,7 +36,7 @@ void MainMenuState::iUpdateLogic()
 	int id = level->GetButtonID();
 
 	if (id == 1)
-		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eGameplayPlayerOne);
+		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eGameplay);
 
 	if (id == 2)
 	{

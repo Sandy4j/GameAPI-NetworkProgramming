@@ -161,6 +161,7 @@
     <ClCompile Include="core\engine\state\GameState.cpp" />
     <ClCompile Include="core\engine\state\states\GameOverState.cpp" />
     <ClCompile Include="core\engine\state\states\GameplayState.cpp" />
+    <ClCompile Include="core\engine\state\states\LobyState.cpp" />
     <ClCompile Include="core\engine\state\states\MainMenuState.cpp" />
     <ClCompile Include="core\engine\state\states\PauseState.cpp" />
     <ClCompile Include="core\graphics_pipeline\EBO.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="core\engine\state\GameState.h" />
     <ClInclude Include="core\engine\state\states\GameOverState.h" />
     <ClInclude Include="core\engine\state\states\GameplayState.h" />
+    <ClInclude Include="core\engine\state\states\LobyState.h" />
     <ClInclude Include="core\engine\state\states\MainMenuState.h" />
     <ClInclude Include="core\engine\state\states\PauseState.h" />
     <ClInclude Include="core\graphics_pipeline\EBO.h" />
@@ -213,6 +215,7 @@
     <ClInclude Include="game\entity\components\Button.h" />
     <ClInclude Include="game\entity\components\Sprite.h" />
     <ClInclude Include="game\entity\components\TextBlock.h" />
+    <ClInclude Include="game\entity\components\TextBox.h" />
     <ClInclude Include="game\entity\components\Transform.h" />
     <ClInclude Include="game\entity\Entity.h" />
     <ClInclude Include="game\entity\systems\SpriteSystem.h" />
@@ -571,8 +574,10 @@
   <ItemGroup>
     <None Include="assets\data_levels\gameover_level.json" />
     <None Include="assets\data_levels\gameplay_level.json" />
+    <None Include="assets\data_levels\loby_level.json" />
     <None Include="assets\data_levels\mainmenu_level.json" />
     <None Include="assets\data_levels\pause_level.json" />
+    <None Include="imgui.ini" />
     <None Include="libraries\include\glm\detail\func_common.inl" />
     <None Include="libraries\include\glm\detail\func_common_simd.inl" />
     <None Include="libraries\include\glm\detail\func_exponential.inl" />

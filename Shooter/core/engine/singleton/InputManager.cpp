@@ -23,11 +23,8 @@ void InputManager::UpdateKeyBindings(EGameState turn)
     case EGameState::eMainMenu:
         mKeyBindings = mMainMenuKeyBindings;
         break;
-    case EGameState::eGameplayPlayerOne:
-        mKeyBindings = mPlayerOneKeyBindings;
-        break;
-    case EGameState::eGameplayPlayerTwo:
-        mKeyBindings = mPlayerTwoKeyBindings;
+    case EGameState::eGameplay:
+        mKeyBindings = mGameplayKeyBindings;
         break;
     case EGameState::ePauseMenu:
         mKeyBindings = mPauseMenuKeyBindings;
@@ -64,11 +61,8 @@ void InputManager::UpdateMouseBindings(EGameState turn)
     case EGameState::eMainMenu:
         mMouseBindings.clear();
         break;
-    case EGameState::eGameplayPlayerOne:
-        mMouseBindings = mPlayerOneMouseBindings;
-        break;
-    case EGameState::eGameplayPlayerTwo:
-        mMouseBindings = mPlayerTwoMouseBindings;
+    case EGameState::eGameplay:
+        mMouseBindings = mGameplayMouseBindings;
         break;
     case EGameState::ePauseMenu:
         mMouseBindings.clear();

@@ -81,6 +81,16 @@ void Level::UpdateRenderUI()
         ptr->Draw();
     }
 
+    auto& ui_textbox = entity->GetComponentMap<TextBox>();
+
+    for (auto& var : ui_textbox)
+    {
+        int currentId = var.first;
+        void* raw = var.second;
+        TextBox* ptr = static_cast<TextBox*>(raw);
+        ptr->Draw();
+    }
+
     auto& ui_button = entity->GetComponentMap<Button>();
 
     for (auto& var : ui_button)

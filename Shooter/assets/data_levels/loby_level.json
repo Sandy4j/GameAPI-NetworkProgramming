@@ -1,0 +1,64 @@
+{
+    "Object": {
+
+    },
+
+    "UI": {
+        "title": {
+            "id": 0,
+
+            "components": {
+                "transform": {
+                    "position": [ 500, 0 ],
+                    "scale": [ 5, 5 ]
+                },
+
+                "textblock": {
+                    "label": "loby"
+                }
+            }
+        },
+        "login": {
+            "id": 1,
+
+            "components": {
+                "transform": {
+                    "position": [ 550, 800 ],
+                    "scale": [ 100, 50 ]
+                },
+
+                "button": {
+                    "label": "login"
+                }
+            }
+        },
+        "username": {
+            "id": 2,
+
+            "components": {
+                "transform": {
+                    "position": [ 550, 500 ],
+                    "scale": [ 1, 1 ]
+                },
+
+                "textbox": {
+                    "label": "username"
+                }
+            }
+        },
+        "password": {
+            "id": 3,
+
+            "components": {
+                "transform": {
+                    "position": [ 550, 550 ],
+                    "scale": [ 1, 1 ]
+                },
+
+                "textbox": {
+                    "label": "password"
+                }
+            }
+        }
+    }
+}

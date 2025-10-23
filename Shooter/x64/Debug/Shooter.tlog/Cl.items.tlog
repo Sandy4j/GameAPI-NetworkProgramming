@@ -8,6 +8,7 @@ C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\singleton\UIMana
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\GameState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\GameState.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameOverState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\GameOverState.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\GameplayState.obj
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\LobyState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\LobyState.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\MainMenuState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\MainMenuState.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\PauseState.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\PauseState.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\graphics_pipeline\EBO.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\EBO.obj

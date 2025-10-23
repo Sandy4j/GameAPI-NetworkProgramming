@@ -5,6 +5,7 @@
 using json = nlohmann::json;
 
 #include "TextBlock.h"
+#include "TextBox.h"
 #include "Button.h"
 
 class ShaderProgram;

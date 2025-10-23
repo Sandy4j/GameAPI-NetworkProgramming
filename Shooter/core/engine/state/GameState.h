@@ -7,9 +7,9 @@
 
 enum class EGameState
 {
+	eLoby,
 	eMainMenu,
-	eGameplayPlayerOne,
-	eGameplayPlayerTwo,
+	eGameplay,
 	ePauseMenu,
 	eGameOver,
 	eNone

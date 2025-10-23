@@ -9,6 +9,7 @@ using json = nlohmann::json;
 #include "Sprite.h"
 #include "BoundingBox.h"
 #include "TextBlock.h"
+#include "TextBox.h"
 #include "Button.h"
 
 class FactoryComponents
@@ -77,6 +78,16 @@ public:
             temp.position = position;
             temp.size = scale.x;
             entity->AddComponent<TextBlock>(id, temp);
+        }
+
+        if (components.contains("textbox"))
+        {
+            auto& val = components["textbox"];
+            TextBox temp;
+            temp.label = val["label"].get<std::string>();
+            temp.position = position;
+            temp.size = scale.x;
+            entity->AddComponent<TextBox>(id, temp);
         }
 
         if (components.contains("button"))

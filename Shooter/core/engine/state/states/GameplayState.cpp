@@ -17,12 +17,15 @@
 GameplayState::GameplayState()
 {
 	level = new Level();
+	player_controller = new PlayerController(*level->GetEntity());
 }
 
 void GameplayState::iEnter()
 {
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
+
+	level->LoadLevel("gameplay_level.json");
 }
 
 void GameplayState::iUpdateLogic()

@@ -114,6 +114,9 @@
     <ClCompile Include="libraries\include\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="core\engine\state\states\LobyState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Engine.h">
@@ -1259,6 +1262,12 @@
     <ClInclude Include="libraries\include\stb\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="core\engine\state\states\LobyState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\entity\components\TextBox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="libraries\include\glm\detail\func_common.inl">
@@ -1679,5 +1688,7 @@
     <None Include="assets\data_levels\gameplay_level.json" />
     <None Include="assets\data_levels\mainmenu_level.json" />
     <None Include="assets\data_levels\pause_level.json" />
+    <None Include="imgui.ini" />
+    <None Include="assets\data_levels\loby_level.json" />
   </ItemGroup>
 </Project>

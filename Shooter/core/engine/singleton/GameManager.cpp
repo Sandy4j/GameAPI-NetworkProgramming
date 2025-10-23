@@ -8,7 +8,7 @@ void GameManager::CreateMainWindow(float x, float y)
 	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 	GLFWmonitor* primaryMonitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(primaryMonitor);
-	window = glfwCreateWindow(size_window->x, size_window->y, "TripleShift", NULL, NULL);
+	window = glfwCreateWindow(size_window->x, size_window->y, "GameAPI", NULL, NULL);
 	int xPos = (mode->width - size_window->x) / 2;
 	int yPos = (mode->height - size_window->y) / 2;
 	glfwSetWindowPos(window, xPos, yPos);
@@ -49,14 +49,34 @@ GameState& GameManager::GetGameState()
 	return *game_state.get();
 }
 
-void GameManager::UpdateResultGame(std::string temp)
+void GameManager::SetUsername(std::string temp)
 {
-	result_game = temp;
+	username = temp;
 }
 
-std::string GameManager::GetResultGame()
+void GameManager::SetPassword(std::string temp)
 {
-	return result_game;
+	password = temp;
+}
+
+std::string GameManager::GetUsername()
+{
+	return username;
+}
+
+std::string GameManager::GetPassword()
+{
+	return password;
+}
+
+void GameManager::SetScore(int temp)
+{
+	score = temp;
+}
+
+int GameManager::GetScore()
+{
+	return score;
 }
 
 void GameManager::iInit()

@@ -14,6 +14,9 @@ public:
 	GameplayState();
 	~GameplayState() = default;
 
+private:
+	PlayerController* player_controller;
+
 public:
 	virtual void iEnter() override;
 	virtual void iUpdateLogic() override;

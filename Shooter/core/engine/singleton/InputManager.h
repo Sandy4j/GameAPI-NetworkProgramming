@@ -39,13 +39,9 @@ public:
 			mMainMenuKeyBindings[key].actionCommand[(int)type] = std::make_shared<TCommand>();
 			mMainMenuKeyBindings[key].functionCommand_f[(int)type];
 			break;
-		case EGameState::eGameplayPlayerOne:
-			mPlayerOneKeyBindings[key].actionCommand[(int)type] = std::make_shared<TCommand>();
-			mPlayerOneKeyBindings[key].functionCommand_f[(int)type];
-			break;
-		case EGameState::eGameplayPlayerTwo:
-			mPlayerTwoKeyBindings[key].actionCommand[(int)type] = std::make_shared<TCommand>();
-			mPlayerTwoKeyBindings[key].functionCommand_f[(int)type];
+		case EGameState::eGameplay:
+			mGameplayKeyBindings[key].actionCommand[(int)type] = std::make_shared<TCommand>();
+			mGameplayKeyBindings[key].functionCommand_f[(int)type];
 			break;
 		case EGameState::ePauseMenu:
 			mPauseMenuKeyBindings[key].actionCommand[(int)type] = std::make_shared<TCommand>();
@@ -66,13 +62,9 @@ public:
 			mMainMenuKeyBindings[key].actionCommand[(int)type];
 			mMainMenuKeyBindings[key].functionCommand_f[(int)type] = function;
 			break;
-		case EGameState::eGameplayPlayerOne:
-			mPlayerOneKeyBindings[key].actionCommand[(int)type];
-			mPlayerOneKeyBindings[key].functionCommand_f[(int)type] = function;
-			break;
-		case EGameState::eGameplayPlayerTwo:
-			mPlayerTwoKeyBindings[key].actionCommand[(int)type];
-			mPlayerTwoKeyBindings[key].functionCommand_f[(int)type] = function;
+		case EGameState::eGameplay:
+			mGameplayKeyBindings[key].actionCommand[(int)type];
+			mGameplayKeyBindings[key].functionCommand_f[(int)type] = function;
 			break;
 		case EGameState::ePauseMenu:
 			mPauseMenuKeyBindings[key].actionCommand[(int)type];
@@ -89,13 +81,9 @@ public:
 	{
 		switch (turn)
 		{
-		case EGameState::eGameplayPlayerOne:
-			mPlayerOneMouseBindings[key].actionCommand[(int)type];
-			mPlayerOneMouseBindings[key].functionCommand_f[(int)type] = function;
-			break;
-		case EGameState::eGameplayPlayerTwo:
-			mPlayerTwoMouseBindings[key].actionCommand[(int)type];
-			mPlayerTwoMouseBindings[key].functionCommand_f[(int)type] = function;
+		case EGameState::eGameplay:
+			mGameplayMouseBindings[key].actionCommand[(int)type];
+			mGameplayMouseBindings[key].functionCommand_f[(int)type] = function;
 			break;
 		}
 	}
@@ -117,14 +105,12 @@ private:
 	std::unordered_map<int, CommandBinding> mMainMenuKeyBindings;
 	std::unordered_map<int, CommandBinding> mGameOverKeyBindings;
 	std::unordered_map<int, CommandBinding> mPauseMenuKeyBindings;
-	std::unordered_map<int, CommandBinding> mPlayerOneKeyBindings;
-	std::unordered_map<int, CommandBinding> mPlayerTwoKeyBindings;
+	std::unordered_map<int, CommandBinding> mGameplayKeyBindings;
 	std::unordered_map<int, CommandBinding> mKeyBindings;
 	std::unordered_map<int, bool> mCurrentKeys;
 	std::unordered_map<int, bool> mPreviousKeys;
 
-	std::unordered_map<int, CommandBinding> mPlayerOneMouseBindings;
-	std::unordered_map<int, CommandBinding> mPlayerTwoMouseBindings;
+	std::unordered_map<int, CommandBinding> mGameplayMouseBindings;
 	std::unordered_map<int, CommandBinding> mMouseBindings;
 	std::unordered_map<int, bool> mCurrentMouses;
 	std::unordered_map<int, bool> mPreviousMouses;

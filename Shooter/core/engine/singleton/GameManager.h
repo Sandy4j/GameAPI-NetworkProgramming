@@ -26,8 +26,13 @@ public:
 
 	GameState& GetGameState();
 
-	void UpdateResultGame(std::string temp);
-	std::string GetResultGame();
+	void SetUsername(std::string temp);
+	void SetPassword(std::string temp);
+	std::string GetUsername();
+	std::string GetPassword();
+
+	void SetScore(int temp);
+	int GetScore();
 
 private:
 	GLFWwindow* window;
@@ -37,7 +42,8 @@ private:
 
 	std::unique_ptr<GameState> game_state;
 
-	std::string result_game;
+	std::string username, password;
+	int score;
 
 public:
 	virtual void iInit() override;

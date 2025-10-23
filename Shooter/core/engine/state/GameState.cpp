@@ -1,5 +1,6 @@
 #include "InputManager.h"
 
+#include "LobyState.h"
 #include "MainMenuState.h"
 #include "GameplayState.h"
 #include "PauseState.h"
@@ -10,13 +11,13 @@
 
 void GameState::Init()
 {
+	states[EGameState::eLoby] = std::make_shared<LobyState>();
 	states[EGameState::eMainMenu] = std::make_shared<MainMenuState>();
-	states[EGameState::eGameplayPlayerOne] = std::make_shared<GameplayState>();
-	states[EGameState::eGameplayPlayerTwo] = states[EGameState::eGameplayPlayerOne];
+	states[EGameState::eGameplay] = std::make_shared<GameplayState>();
 	states[EGameState::ePauseMenu] = std::make_unique<PauseState>();
 	states[EGameState::eGameOver] = std::make_unique<GameOverState>();
 
-	current_state = states[EGameState::eMainMenu].get();
+	current_state = states[EGameState::eLoby].get();
 	current_state->iEnter();
 	//ChangeState(EGameState::eGameOver);
 }
