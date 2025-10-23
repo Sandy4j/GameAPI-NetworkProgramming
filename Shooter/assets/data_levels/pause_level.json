@@ -1,0 +1,50 @@
+{
+    "Object": {
+
+    },
+
+    "UI": {
+        "title": {
+            "id": 0,
+
+            "components": {
+                "transform": {
+                    "position": [ 350, 0 ],
+                    "scale": [ 5, 5 ]
+                },
+
+                "textblock": {
+                    "label": "pause"
+                }
+            }
+        },
+        "resume": {
+            "id": 1,
+
+            "components": {
+                "transform": {
+                    "position": [ 425, 200 ],
+                    "scale": [ 100, 40 ]
+                },
+
+                "button": {
+                    "label": "resume"
+                }
+            }
+        },
+        "main menu": {
+            "id": 2,
+
+            "components": {
+                "transform": {
+                    "position": [ 425, 250 ],
+                    "scale": [ 100, 40 ]
+                },
+
+                "button": {
+                    "label": "main menu"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿  Scanning sources for module dependencies...
+  GameplayState.cpp
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\entity\components\Sprite.h(115,44): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  (compiling source file 'core/engine/state/states/GameplayState.cpp')
+  
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.h(6,7): warning C4099: 'GLFWcursor': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'core/engine/state/states/GameplayState.cpp')
+      C:\NativeProject\GameAPI-NetworkProgramming\Shooter\libraries\include\GLFW\glfw3.h(1415,16):
+      see declaration of 'GLFWcursor'
+  
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.cpp(20,16): warning C4101: 'height': unreferenced local variable
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.cpp(20,9): warning C4101: 'width': unreferenced local variable
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.cpp(20,24): warning C4101: 'channels': unreferenced local variable
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.cpp(21,15): warning C4101: 'image': unreferenced local variable
+glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(window.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(input.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(input.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(context.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(monitor.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(monitor.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_window.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_window.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_time.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_time.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_thread.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_thread.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(platform.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(platform.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(vulkan.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(vulkan.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_init.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_init.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_monitor.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_monitor.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(wgl_context.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(wgl_context.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(egl_context.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(egl_context.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(osmesa_context.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(osmesa_context.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(null_init.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(null_init.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_module.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_module.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(win32_joystick.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(win32_joystick.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(null_monitor.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(null_monitor.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(null_window.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(null_window.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+glfw3.lib(null_joystick.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(null_joystick.obj)' or at 'C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
+     Creating library C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.lib and object C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exp
+  Shooter.vcxproj -> C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe

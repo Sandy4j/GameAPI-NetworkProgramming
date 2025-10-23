@@ -1,5 +1,17 @@
 bin/
 obj/
 /packages/
+/.vs/
+/[Dd]ebug/
+/[Rr]elease/
+/x64/
+/Win32/
+/build/
+*.obj
+*.pdb
+*.exe
+*.ilk
+*.lib
+*.dll
 riderModule.iml
 /_ReSharper.Caches/

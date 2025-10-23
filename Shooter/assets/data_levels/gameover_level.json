@@ -1,0 +1,64 @@
+{
+    "Object": {
+
+    },
+
+    "UI": {
+        "title": {
+            "id": 0,
+
+            "components": {
+                "transform": {
+                    "position": [ 300, 0 ],
+                    "scale": [ 5, 5 ]
+                },
+
+                "textblock": {
+                    "label": "Game Over"
+                }
+            }
+        },
+        "result": {
+            "id": 1,
+
+            "components": {
+                "transform": {
+                    "position": [ 400, 200 ],
+                    "scale": [ 2, 2 ]
+                },
+
+                "textblock": {
+                    "label": "none"
+                }
+            }
+        },
+        "retry": {
+            "id": 2,
+
+            "components": {
+                "transform": {
+                    "position": [ 460, 300 ],
+                    "scale": [ 100, 40 ]
+                },
+
+                "button": {
+                    "label": "retry"
+                }
+            }
+        },
+        "main menu": {
+            "id": 3,
+
+            "components": {
+                "transform": {
+                    "position": [ 460, 350 ],
+                    "scale": [ 100, 40 ]
+                },
+
+                "button": {
+                    "label": "main menu"
+                }
+            }
+        }
+    }
+}

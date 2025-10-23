@@ -1,0 +1,698 @@
+{
+    "Object": {
+
+        "score": {
+            "id": 201,
+            "layer": 100,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 1.05, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.6, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Scoreboard.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "timer": {
+            "id": 200,
+            "layer": 100,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0.75, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.5, 0.2, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Stopwatch.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "window_board": {
+            "id": 100,
+            "layer": 100,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 1.2, 1.2, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Window_Base.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "window_gaco_player1": {
+            "id": 101,
+            "layer": 100,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.9, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.55, 0.55, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Window_Base.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "window_gaco_player2": {
+            "id": 102,
+            "layer": 100,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.9, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.55, 0.55, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Window_Base.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player1_1": {
+            "id": 103,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.93, 0.04, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player1_2": {
+            "id": 104,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.76, -0.03, -1.4 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player1_3": {
+            "id": 105,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.98, -0.11, -1.4 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player2_1": {
+            "id": 106,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.93, 0.04, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player2_2": {
+            "id": 107,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.76, -0.03, -1.4 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "wadah_gaco_player2_3": {
+            "id": 108,
+            "layer": 99,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.98, -0.11, -1.4 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.25, 0.175, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/UI/Kardus_Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        },
+
+        "board1": {
+            "id": -1,
+            "layer": 2,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, -0.17, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger":  false
+                }
+            }
+        },
+
+        "board2": {
+            "id": -2,
+            "layer": 4,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.15, -0.085, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board3": {
+            "id": -3,
+            "layer": 6,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.15, -0.085, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board4": {
+            "id": -4,
+            "layer": 8,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.3, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board5": {
+            "id": -5,
+            "layer": 10,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board6": {
+            "id": -6,
+            "layer": 12,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.3, 0, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board7": {
+            "id": -7,
+            "layer": 14,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.15, 0.085, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board8": {
+            "id": -8,
+            "layer": 16,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.15, 0.085, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "board9": {
+            "id": -9,
+            "layer": 18,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0.17, -1.5 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.3, 0.3, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/board/Box.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p1_1": {
+            "id": 1,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0.235, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p1_2": {
+            "id": 2,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.15, 0.15, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p1_3": {
+            "id": 3,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, -0.1, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_X.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p2_1": {
+            "id": 4,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0.07, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p2_2": {
+            "id": 5,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0.3, 0.065, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        },
+
+        "gaco_p3_3": {
+            "id": 6,
+            "layer": 0,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ -0.15, -0.0175, -1.45 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0, 0, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/player/Gaco_O.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        }
+
+    },
+
+    "UI": {
+
+        "timer": {
+            "id": 11101,
+
+            "components": {
+                "transform": {
+                    "position": [ 500, 170 ],
+                    "scale": [ 2, 0 ]
+                },
+
+                "textblock": {
+                    "label": "KONTOL"
+                }
+            }
+        },
+
+        "score": {
+            "id": 11102,
+
+            "components": {
+                "transform": {
+                    "position": [ 455, 30 ],
+                    "scale": [ 3, 0 ]
+                },
+
+                "textblock": {
+                    "label": "0    -    0"
+                }
+            }
+        }
+
+    }
+
+}

@@ -1,6 +1,13 @@
-#include <iostream>
+#include "Engine.h"
+
+extern "C" {
+    __declspec(dllexport) unsigned long NvOptimusEnablement = 0x00000000;
+    __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 0;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Engine::INIT();
+    Engine::UPDATE();
+    Engine::SHUTDOWN();
 }
