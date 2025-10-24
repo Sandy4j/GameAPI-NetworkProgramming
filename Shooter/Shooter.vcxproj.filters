@@ -117,6 +117,9 @@
     <ClCompile Include="core\engine\state\states\LobyState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game\logic\GunSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Engine.h">
@@ -1268,6 +1271,9 @@
     <ClInclude Include="game\entity\components\TextBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\logic\GunSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="libraries\include\glm\detail\func_common.inl">
@@ -1690,5 +1696,10 @@
     <None Include="assets\data_levels\pause_level.json" />
     <None Include="imgui.ini" />
     <None Include="assets\data_levels\loby_level.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\ai\white.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

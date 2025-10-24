@@ -172,6 +172,7 @@
     <ClCompile Include="core\graphics_pipeline\VBO.cpp" />
     <ClCompile Include="game\entity\systems\SpriteSystem.cpp" />
     <ClCompile Include="game\level\Level.cpp" />
+    <ClCompile Include="game\logic\GunSystem.cpp" />
     <ClCompile Include="game\logic\PlayerController.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
@@ -220,6 +221,7 @@
     <ClInclude Include="game\entity\Entity.h" />
     <ClInclude Include="game\entity\systems\SpriteSystem.h" />
     <ClInclude Include="game\level\Level.h" />
+    <ClInclude Include="game\logic\GunSystem.h" />
     <ClInclude Include="game\logic\PlayerController.h" />
     <ClInclude Include="game\ray\RayLine.h" />
     <ClInclude Include="libraries\include\glad\glad.h" />
@@ -716,6 +718,9 @@
     <None Include="libraries\include\glm\gtx\vector_angle.inl" />
     <None Include="libraries\include\glm\gtx\vector_query.inl" />
     <None Include="libraries\include\glm\gtx\wrap.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\ai\white.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -17,7 +17,7 @@
 GameplayState::GameplayState()
 {
 	level = new Level();
-	player_controller = new PlayerController(*level->GetEntity());
+	player_controller = new PlayerController(*level->GetEntity(), *level);
 }
 
 void GameplayState::iEnter()
@@ -33,7 +33,7 @@ void GameplayState::iEnter()
 
 void GameplayState::iUpdateLogic()
 {
-	
+	player_controller->UpdatePlayerController();
 }
 
 void GameplayState::iUpdateRenderObject()

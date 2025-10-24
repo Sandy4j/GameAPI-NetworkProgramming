@@ -42,6 +42,9 @@ void SpriteSystem::ReorderRender()
 	{
 		void* raw = var.second;
 		Sprite* ptr = static_cast<Sprite*>(raw);
+
+		if (ptr->layer < 0) continue;
+
 		sprites.push_back(ptr);
 	}
 
