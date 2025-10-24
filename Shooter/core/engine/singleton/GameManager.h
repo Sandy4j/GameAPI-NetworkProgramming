@@ -43,7 +43,7 @@ private:
 	std::unique_ptr<GameState> game_state;
 
 	std::string username, password;
-	int score;
+	int score = 0;
 
 public:
 	virtual void iInit() override;

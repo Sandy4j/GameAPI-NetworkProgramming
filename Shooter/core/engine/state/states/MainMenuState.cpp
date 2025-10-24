@@ -29,6 +29,9 @@ void MainMenuState::iEnter()
 	std::cout << "UPDATE MAIN MENU" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("mainmenu_level.json");
+
+	level->GetEntity()->GetComponent<TextBlock>(3)->label = "username: " + GameManager::GetInstance().GetUsername();
+	level->GetEntity()->GetComponent<TextBlock>(4)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 }
 
 void MainMenuState::iUpdateLogic()

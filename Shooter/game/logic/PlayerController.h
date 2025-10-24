@@ -17,7 +17,6 @@ public:
 	~PlayerController() = default;
 
 private:
-	static void CursorPositionCallback(GLFWwindow* window, double xpos, double ypos);
 	void Shoot();
 	void Pause();
 

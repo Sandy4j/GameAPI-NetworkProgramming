@@ -26,6 +26,9 @@ void GameplayState::iEnter()
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
 	level->LoadLevel("gameplay_level.json");
+
+	level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
+	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 }
 
 void GameplayState::iUpdateLogic()

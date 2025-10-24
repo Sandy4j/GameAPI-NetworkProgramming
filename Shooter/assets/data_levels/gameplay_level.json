@@ -17,6 +17,34 @@
                     "label": "gameplay"
                 }
             }
+        },
+        "username": {
+            "id": 1,
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0 ],
+                    "scale": [ 2.5, 2.5 ]
+                },
+
+                "textblock": {
+                    "label": "username: "
+                }
+            }
+        },
+        "score": {
+            "id": 2,
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 50 ],
+                    "scale": [ 2.5, 2.5 ]
+                },
+
+                "textblock": {
+                    "label": "score: "
+                }
+            }
         }
     }
 

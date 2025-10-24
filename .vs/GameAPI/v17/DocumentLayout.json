@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\NativeProject\\GameAPI-NetworkProgramming\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\pause_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\logic\\PlayerController.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\GameplayState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\MainMenuState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\MainMenuState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\singleton\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\singleton\\GameManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\mainmenu_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\mainmenu_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\gameplay_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\gameplay_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\logic\\PlayerController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\pause_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameOverState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -23,18 +47,6 @@
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\LobyState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\singleton\\GameManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\GameplayState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\logic\\PlayerController.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\GameplayState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -43,16 +55,8 @@
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\singleton\\InputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\gameplay_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\gameplay_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\loby_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\loby_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\MainMenuState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\MainMenuState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\InputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -119,10 +123,6 @@
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\state\\states\\GameOverState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\mainmenu_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\assets\\data_levels\\mainmenu_level.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\UIManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\core\\engine\\singleton\\UIManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
@@ -134,11 +134,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Engine.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\Engine.h",
               "RelativeDocumentMoniker": "Shooter\\core\\Engine.h",
@@ -147,12 +147,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-23T07:59:02.169Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Engine.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\Engine.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\Engine.cpp",
@@ -161,12 +160,11 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-23T07:22:57.679Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Shooter.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\Shooter.cpp",
               "RelativeDocumentMoniker": "Shooter\\Shooter.cpp",
@@ -175,21 +173,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-23T03:57:20.017Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "pause_level.json",
-              "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json",
-              "RelativeDocumentMoniker": "Shooter\\assets\\data_levels\\pause_level.json",
-              "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json",
-              "RelativeToolTip": "Shooter\\assets\\data_levels\\pause_level.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T15:49:43.06Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -200,21 +184,28 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "pause_level.json",
+              "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json",
+              "RelativeDocumentMoniker": "Shooter\\assets\\data_levels\\pause_level.json",
+              "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\pause_level.json",
+              "RelativeToolTip": "Shooter\\assets\\data_levels\\pause_level.json",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T15:49:43.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "GameManager.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\singleton\\GameManager.h",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.h",
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\GameManager.h",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAAB4AAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T15:38:16.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T15:38:16.901Z"
             },
             {
               "$type": "Document",
@@ -224,40 +215,38 @@
               "RelativeDocumentMoniker": "Shooter\\game\\logic\\PlayerController.h",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.h",
               "RelativeToolTip": "Shooter\\game\\logic\\PlayerController.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T15:17:54.152Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T15:17:54.152Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PlayerController.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.cpp",
               "RelativeDocumentMoniker": "Shooter\\game\\logic\\PlayerController.cpp",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\logic\\PlayerController.cpp",
               "RelativeToolTip": "Shooter\\game\\logic\\PlayerController.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-23T11:21:09.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 6,
               "Title": "gameplay_level.json",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\gameplay_level.json",
               "RelativeDocumentMoniker": "Shooter\\assets\\data_levels\\gameplay_level.json",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\gameplay_level.json",
               "RelativeToolTip": "Shooter\\assets\\data_levels\\gameplay_level.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAuwCMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T11:18:56.856Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T11:18:56.856Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "InputManager.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\InputManager.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\singleton\\InputManager.cpp",
@@ -265,12 +254,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\InputManager.cpp",
               "ViewState": "AgIAAHgAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T11:15:56.099Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T11:15:56.099Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "InputManager.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\InputManager.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\singleton\\InputManager.h",
@@ -278,12 +266,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\InputManager.h",
               "ViewState": "AgIAABgAAAAAAAAAAAAAAC0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T11:15:54.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T11:15:54.835Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "FactoryComponents.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\factory\\FactoryComponents.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\factory\\FactoryComponents.h",
@@ -291,12 +278,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\factory\\FactoryComponents.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T10:19:40.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T10:19:40.861Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Level.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\level\\Level.h",
               "RelativeDocumentMoniker": "Shooter\\game\\level\\Level.h",
@@ -304,12 +290,11 @@
               "RelativeToolTip": "Shooter\\game\\level\\Level.h",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T10:15:23.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T10:15:23.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Entity.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\entity\\Entity.h",
               "RelativeDocumentMoniker": "Shooter\\game\\entity\\Entity.h",
@@ -317,12 +302,11 @@
               "RelativeToolTip": "Shooter\\game\\entity\\Entity.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T10:15:11.818Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T10:15:11.818Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "TextBlock.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\entity\\components\\TextBlock.h",
               "RelativeDocumentMoniker": "Shooter\\game\\entity\\components\\TextBlock.h",
@@ -330,12 +314,11 @@
               "RelativeToolTip": "Shooter\\game\\entity\\components\\TextBlock.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T10:01:59.801Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T10:01:59.801Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "TextBox.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\entity\\components\\TextBox.h",
               "RelativeDocumentMoniker": "Shooter\\game\\entity\\components\\TextBox.h",
@@ -343,12 +326,11 @@
               "RelativeToolTip": "Shooter\\game\\entity\\components\\TextBox.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T10:01:55.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T10:01:55.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Button.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\entity\\components\\Button.h",
               "RelativeDocumentMoniker": "Shooter\\game\\entity\\components\\Button.h",
@@ -356,12 +338,11 @@
               "RelativeToolTip": "Shooter\\game\\entity\\components\\Button.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T09:56:41.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T09:56:41.611Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "RenderManager.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\RenderManager.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\singleton\\RenderManager.cpp",
@@ -369,12 +350,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\RenderManager.cpp",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T09:28:56.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T09:28:56.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Level.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\level\\Level.cpp",
               "RelativeDocumentMoniker": "Shooter\\game\\level\\Level.cpp",
@@ -382,12 +362,11 @@
               "RelativeToolTip": "Shooter\\game\\level\\Level.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T09:28:41.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T09:28:41.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "GameState.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\GameState.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\GameState.h",
@@ -395,12 +374,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\GameState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T08:11:58.124Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:11:58.124Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "GameState.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\GameState.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\GameState.cpp",
@@ -408,12 +386,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\GameState.cpp",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAA4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T08:11:52.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:11:52.048Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "loby_level.json",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\loby_level.json",
               "RelativeDocumentMoniker": "Shooter\\assets\\data_levels\\loby_level.json",
@@ -421,12 +398,11 @@
               "RelativeToolTip": "Shooter\\assets\\data_levels\\loby_level.json",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T08:11:32.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:11:32.903Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "GameOverState.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameOverState.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\GameOverState.h",
@@ -434,12 +410,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\GameOverState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T08:06:09.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:06:09.516Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "LobyState.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\LobyState.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\LobyState.cpp",
@@ -447,12 +422,11 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\LobyState.cpp",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T08:04:57.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:04:57.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "LobyState.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\LobyState.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\LobyState.h",
@@ -460,38 +434,35 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\LobyState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T08:04:47.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T08:04:47.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "GameManager.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\singleton\\GameManager.cpp",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\singleton\\GameManager.cpp",
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\GameManager.cpp",
-              "ViewState": "AgIAADwAAAAAAAAAAAAgwEcAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAgwEwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T07:23:17.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:23:17.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 5,
               "Title": "mainmenu_level.json",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\mainmenu_level.json",
               "RelativeDocumentMoniker": "Shooter\\assets\\data_levels\\mainmenu_level.json",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\data_levels\\mainmenu_level.json",
               "RelativeToolTip": "Shooter\\assets\\data_levels\\mainmenu_level.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAuwEMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T07:57:16.568Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:57:16.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "GameOverState.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameOverState.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\GameOverState.cpp",
@@ -499,25 +470,23 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\GameOverState.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAIAwwBgAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T05:04:53.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T05:04:53.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "MainMenuState.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\MainMenuState.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\MainMenuState.cpp",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\MainMenuState.cpp",
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\MainMenuState.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T05:04:35.66Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T05:04:35.66Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "GameplayState.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.h",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\GameplayState.h",
@@ -525,8 +494,7 @@
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\GameplayState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-23T05:03:54.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T05:03:54.994Z"
             },
             {
               "$type": "Document",
@@ -538,21 +506,19 @@
               "RelativeToolTip": "Shooter\\core\\engine\\singleton\\UIManager.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T04:39:26.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T04:39:26.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "GameplayState.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.cpp",
               "RelativeDocumentMoniker": "Shooter\\core\\engine\\state\\states\\GameplayState.cpp",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\core\\engine\\state\\states\\GameplayState.cpp",
               "RelativeToolTip": "Shooter\\core\\engine\\state\\states\\GameplayState.cpp",
-              "ViewState": "AgIAAAIAAAAAAAAAAIAwwBUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAIAwwBMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-23T04:29:04.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T04:29:04.983Z"
             }
           ]
         },

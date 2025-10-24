@@ -1,4 +1,13 @@
 ﻿  Scanning sources for module dependencies...
+  GameplayState.cpp
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\entity\components\Sprite.h(115,44): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+  (compiling source file 'core/engine/state/states/GameplayState.cpp')
+  
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\core\engine\state\states\GameplayState.h(6,7): warning C4099: 'GLFWcursor': type name first seen using 'struct' now seen using 'class'
+  (compiling source file 'core/engine/state/states/GameplayState.cpp')
+      C:\NativeProject\GameAPI-NetworkProgramming\Shooter\libraries\include\GLFW\glfw3.h(1415,16):
+      see declaration of 'GLFWcursor'
+  
   PlayerController.cpp
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\entity\components\Sprite.h(115,44): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
   (compiling source file 'game/logic/PlayerController.cpp')
@@ -8,4 +17,5 @@ C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\ray\RayLine.h(7,7): war
       C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\entity\components\Sprite.h(13,8):
       see declaration of 'Sprite'
   
+  Generating Code...
   Shooter.vcxproj -> C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe
