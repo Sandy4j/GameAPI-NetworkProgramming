@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 
+#include "Entity.h"
 #include "Sprite.h"
 #include "TextBlock.h"
 #include "RayLine.h"
@@ -14,10 +15,9 @@
 
 #include "GunSystem.h"
 
-GunSystem::GunSystem(Entity& temp_entity, Level& temp_level) :
-	entity(temp_entity), level(temp_level)
+GunSystem::GunSystem()
 {
-	ray_line = new RayLine(temp_entity);
+	ray_line = new RayLine();
 
 	InputManager* input = &InputManager::GetInstance();
 	input->BindMouseFunction(std::bind(&GunSystem::Fire, this), GLFW_MOUSE_BUTTON_1, EInputEventType::ePress, EGameState::eGameplay);
@@ -26,6 +26,14 @@ GunSystem::GunSystem(Entity& temp_entity, Level& temp_level) :
 	max_ammo = 5;
 	current_ammo = max_ammo;
 	b_is_reload = false;
+}
+
+void GunSystem::Enter()
+{
+	//entity = GameManager::GetInstance().GetLevel()->GetEntity();
+	level = GameManager::GetInstance().GetLevel();
+
+	level->GetEntity()->GetComponent<TextBlock>(3)->label = "ammo: " + std::to_string(current_ammo);
 }
 
 void GunSystem::UpdateGunSystem()
@@ -44,6 +52,7 @@ void GunSystem::Reload()
 {
 	if (current_ammo != max_ammo && !b_is_reload)
 	{
+		level->GetEntity()->GetComponent<TextBlock>(3)->label = "reload..";
 		b_is_reload = true;
 		reload_time = 5;
 	}
@@ -51,6 +60,7 @@ void GunSystem::Reload()
 	if (reload_time > 0) return;
 
 	current_ammo = max_ammo;
+	level->GetEntity()->GetComponent<TextBlock>(3)->label = "ammo: " + std::to_string(current_ammo);
 	b_is_reload = false;
 }
 
@@ -64,14 +74,15 @@ void GunSystem::Fire()
 	if (!IsCanFire()) return;
 
 	current_ammo--;
+	level->GetEntity()->GetComponent<TextBlock>(3)->label = "ammo: " + std::to_string(current_ammo);
 	int temp = ray_line->ShootRayLine();
 
 	if (temp == 0) return;
 
-	entity.GetComponent<Sprite>(temp)->layer = -1;
-	level.GetSpriteSystem()->ReorderRender();
+	level->GetEntity()->GetComponent<Sprite>(temp)->layer = -1;
+	level->GetSpriteSystem()->ReorderRender();
 
 	int score = GameManager::GetInstance().GetScore() + 1;
 	GameManager::GetInstance().SetScore(score);
-	entity.GetComponent<TextBlock>(2)->label = "score: " + std::to_string(score);
+	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(score);
 }

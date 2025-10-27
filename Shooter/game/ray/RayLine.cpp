@@ -8,6 +8,8 @@
 #include "GameManager.h"
 #include "RenderManager.h"
 
+#include "Level.h"
+
 #include "RayLine.h"
 
 int RayLine::ShootRayLine()
@@ -21,7 +23,8 @@ int RayLine::ShootRayLine()
     float closest_distance = FLT_MAX;
     int id_hit_entity = 0;
 
-    auto& component = entity.GetComponentMap<Sprite>();
+    //auto& component = entity.GetComponentMap<Sprite>();
+    auto& component = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponentMap<Sprite>();
     std::vector<std::pair<int, Sprite*>> sprites;
 
     for (auto& pair : component) 
@@ -38,8 +41,10 @@ int RayLine::ShootRayLine()
     for (auto& obj : sprites)
     {
         int entity_id = obj.first;
-        Transform* transform = entity.GetComponent<Transform>(entity_id);
-        BoundingBox* bounding_box = entity.GetComponent<BoundingBox>(entity_id);
+        /*Transform* transform = entity.GetComponent<Transform>(entity_id);
+        BoundingBox* bounding_box = entity.GetComponent<BoundingBox>(entity_id);*/
+        Transform* transform = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponent<Transform>(entity_id);
+        BoundingBox* bounding_box = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponent<BoundingBox>(entity_id);
 
         if (!bounding_box || bounding_box->b_is_trigger) continue;
 

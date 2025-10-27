@@ -8,7 +8,7 @@
 #include "GameState.h"
 #include <string>
 
-class TurnTimer;
+class Level;
 
 class GameManager : public singleton<GameManager>
 {
@@ -26,6 +26,9 @@ public:
 
 	GameState& GetGameState();
 
+	void SetLevel(Level* temp);
+	Level* GetLevel();
+
 	void SetUsername(std::string temp);
 	void SetPassword(std::string temp);
 	std::string GetUsername();
@@ -35,6 +38,8 @@ public:
 	int GetScore();
 
 private:
+	Level* level;
+
 	GLFWwindow* window;
 	glm::vec2* size_window;
 	glm::vec2* mouse_position;

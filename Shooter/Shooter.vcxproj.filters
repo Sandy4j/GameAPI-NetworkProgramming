@@ -120,6 +120,12 @@
     <ClCompile Include="game\logic\GunSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game\entity\systems\PersonalSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\personal\EnemySystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Engine.h">
@@ -1274,6 +1280,15 @@
     <ClInclude Include="game\logic\GunSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\entity\components\Personal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\entity\systems\PersonalSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\personal\EnemySystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="libraries\include\glm\detail\func_common.inl">
@@ -1696,6 +1711,8 @@
     <None Include="assets\data_levels\pause_level.json" />
     <None Include="imgui.ini" />
     <None Include="assets\data_levels\loby_level.json" />
+    <None Include="core\graphics_pipeline\shaders\object.frag" />
+    <None Include="core\graphics_pipeline\shaders\object.vert" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\ai\white.png">

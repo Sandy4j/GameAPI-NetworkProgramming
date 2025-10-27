@@ -1,6 +1,6 @@
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\vc143.pdb
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\vc143.idb
-c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\spritesystem.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\personalsystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\vbo.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\vao.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\texture.obj
@@ -30,9 +30,11 @@ c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\imgui_demo.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\imgui.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\rayline.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\enemysystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\playercontroller.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\gunsystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\level.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\spritesystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.cppm.ifc
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.cppm.ifc.d.json
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.cppm.obj

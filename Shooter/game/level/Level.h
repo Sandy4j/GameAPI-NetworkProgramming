@@ -11,6 +11,7 @@ using json = nlohmann::json;
 class ShaderProgram;
 class Entity;
 class SpriteSystem;
+class PersonalSystem;
 
 class Level
 {
@@ -20,10 +21,12 @@ public:
 
 public:
 	void LoadLevel(std::string level);
+    void UpdatePersonalLogic();
     void UpdateRenderObject();
 	void UpdateRenderUI();
 
     Entity* GetEntity();
+    ShaderProgram* GetShaderProgram();
     SpriteSystem* GetSpriteSystem();
 
     int GetButtonID();
@@ -38,6 +41,7 @@ private:
     ShaderProgram* shader_program;
 
     Entity* entity;
+    PersonalSystem* personal_system;
     SpriteSystem* sprite_system;
 
     int id_button_click;

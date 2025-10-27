@@ -8,7 +8,7 @@ class Entity;
 class SpriteSystem
 {
 public:
-	SpriteSystem() = default;
+	SpriteSystem();
 	~SpriteSystem() = default;
 
 public:

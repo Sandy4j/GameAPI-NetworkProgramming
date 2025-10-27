@@ -26,6 +26,8 @@ void MainMenuState::iEnter()
 	ImGuiIO& io = ImGui::GetIO();
 	io.ClearInputKeys();
 
+	GameManager::GetInstance().SetLevel(level);
+
 	std::cout << "UPDATE MAIN MENU" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("mainmenu_level.json");

@@ -1,3 +1,5 @@
+#include "Level.h"
+
 #include "GameManager.h"
 
 void GameManager::CreateMainWindow(float x, float y)
@@ -47,6 +49,16 @@ bool GameManager::GetIsExit()
 GameState& GameManager::GetGameState()
 {
 	return *game_state.get();
+}
+
+void GameManager::SetLevel(Level* temp)
+{
+	level = temp;
+}
+
+Level* GameManager::GetLevel()
+{
+	return level;
 }
 
 void GameManager::SetUsername(std::string temp)

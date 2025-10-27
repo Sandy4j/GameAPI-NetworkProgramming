@@ -20,6 +20,8 @@ void GameOverState::iEnter()
 	ImGuiIO& io = ImGui::GetIO();
 	io.ClearInputKeys();
 
+	GameManager::GetInstance().SetLevel(level);
+
 	std::cout << "ENTER GAMEOVER" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("gameover_level.json");

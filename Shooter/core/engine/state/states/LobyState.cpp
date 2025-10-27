@@ -17,6 +17,8 @@ void LobyState::iEnter()
 	ImGuiIO& io = ImGui::GetIO();
 	io.ClearInputKeys();
 
+	GameManager::GetInstance().SetLevel(level);
+
 	level->LoadLevel("loby_level.json");
 }
 

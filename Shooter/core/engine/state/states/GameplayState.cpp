@@ -17,7 +17,7 @@
 GameplayState::GameplayState()
 {
 	level = new Level();
-	player_controller = new PlayerController(*level->GetEntity(), *level);
+	player_controller = new PlayerController();
 }
 
 void GameplayState::iEnter()
@@ -25,14 +25,19 @@ void GameplayState::iEnter()
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
+	GameManager::GetInstance().SetLevel(level);
+
 	level->LoadLevel("gameplay_level.json");
 
 	level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
+
+	player_controller->Enter();
 }
 
 void GameplayState::iUpdateLogic()
 {
+	level->UpdatePersonalLogic();
 	player_controller->UpdatePlayerController();
 }
 

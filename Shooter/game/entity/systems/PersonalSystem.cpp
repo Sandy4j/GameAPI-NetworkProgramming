@@ -1,0 +1,38 @@
+#include <iostream>
+
+#include "Entity.h"
+#include "Personal.h"
+#include "Level.h"
+
+#include "GameManager.h"
+
+#include "PersonalSystem.h"
+
+PersonalSystem::PersonalSystem()
+{
+	/*entity = GameManager::GetInstance().GetLevel()->GetEntity();*/
+}
+
+void PersonalSystem::PersonalStart()
+{
+	entity = GameManager::GetInstance().GetLevel()->GetEntity();
+
+	auto& sprite_map = entity->GetComponentMap<Personal>();
+	for (auto& sprite : sprite_map)
+	{
+		void* raw = sprite.second;
+		Personal* ptr = static_cast<Personal*>(raw);
+		ptr->IPersonalStart();
+	}
+}
+
+void PersonalSystem::PersonalUpdate()
+{
+	auto& sprite_map = entity->GetComponentMap<Personal>();
+	for (auto& sprite : sprite_map)
+	{
+		void* raw = sprite.second;
+		Personal* ptr = static_cast<Personal*>(raw);
+		ptr->IPersonalUpdate();
+	}
+}

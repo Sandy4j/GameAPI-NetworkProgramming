@@ -28,6 +28,8 @@ void PauseState::iEnter()
 	ImGuiIO& io = ImGui::GetIO();
 	io.ClearInputKeys();
 
+	GameManager::GetInstance().SetLevel(level);
+
 	std::cout << "Pausee" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("pause_level.json");

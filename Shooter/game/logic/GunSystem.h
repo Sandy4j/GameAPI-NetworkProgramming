@@ -1,17 +1,19 @@
 #ifndef GUNSYSTEM_H
 #define GUNSYSTEM_H
 
-#include "Entity.h"
+//#include "Entity.h"
+//#include "Level.h"
 class Level;
 class RayLine;
 
 class GunSystem
 {
 public:
-	GunSystem(Entity& temp_entity, Level& temp_level);
+	GunSystem();
 	~GunSystem() = default;
 
 public:
+	void Enter();
 	void UpdateGunSystem();
 
 private:
@@ -20,8 +22,8 @@ private:
 	void Fire();
 
 private:
-	Level& level;
-	Entity& entity;
+	Entity* entity;
+	Level* level;
 	RayLine* ray_line;
 
 	int current_ammo, max_ammo;

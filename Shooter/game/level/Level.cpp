@@ -6,6 +6,7 @@
 
 #include "ShaderProgram.h"
 #include "SpriteSystem.h"
+#include "PersonalSystem.h"
 
 #include "FactoryComponents.h"
 
@@ -18,10 +19,11 @@ Level::Level()
     shader_program = new ShaderProgram();
 
     entity = new Entity();
+    personal_system = new PersonalSystem();
     sprite_system = new SpriteSystem();
 
-    sprite_system->entity = entity;
-    sprite_system->shader_program = shader_program;
+    /*sprite_system->entity = entity;
+    sprite_system->shader_program = shader_program;*/
 }
 
 void Level::LoadLevel(std::string level)
@@ -49,6 +51,12 @@ void Level::LoadLevel(std::string level)
     }
 
     sprite_system->SpriteBegin();
+    personal_system->PersonalStart();
+}
+
+void Level::UpdatePersonalLogic()
+{
+    personal_system->PersonalUpdate();
 }
 
 void Level::UpdateRenderObject()
@@ -110,6 +118,11 @@ Entity* Level::GetEntity()
     return entity;
 }
 
+ShaderProgram* Level::GetShaderProgram()
+{
+    return shader_program;
+}
+
 SpriteSystem* Level::GetSpriteSystem()
 {
     return sprite_system;
@@ -128,6 +141,7 @@ void Level::CreateEntity()
 
     for (auto& [name, obj] : object.items())
     {
+        std::cout << "Create Entity" << std::endl;
         FactoryComponents::CreateObjectComponents(obj, entity);
     }
 }

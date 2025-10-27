@@ -2,15 +2,28 @@
 
 #include <iostream>
 #include <algorithm>
-
-#include "RenderManager.h"
+#include <glad/glad.h>
 
 #include "Entity.h"
 
+#include "RenderManager.h"
+#include "GameManager.h"
+
+#include "Level.h"
+
 #include "SpriteSystem.h"
+
+SpriteSystem::SpriteSystem()
+{
+	/*entity = GameManager::GetInstance().GetLevel()->GetEntity();
+	shader_program = GameManager::GetInstance().GetLevel()->GetShaderProgram();*/
+}
 
 void SpriteSystem::SpriteBegin()
 {
+	entity = GameManager::GetInstance().GetLevel()->GetEntity();
+	shader_program = GameManager::GetInstance().GetLevel()->GetShaderProgram();
+
 	auto& sprite_map = entity->GetComponentMap<Sprite>();
 	for (auto& sprite : sprite_map)
 	{

@@ -24,6 +24,10 @@
 
                 "bounding_box": {
                     "is_trigger": false
+                },
+
+                "personal": {
+                    "script_personal":  "enemy_system"
                 }
             }
         }
@@ -69,6 +73,20 @@
 
                 "textblock": {
                     "label": "score: "
+                }
+            }
+        },
+        "ammo": {
+            "id": 3,
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 100 ],
+                    "scale": [ 2.5, 2.5 ]
+                },
+
+                "textblock": {
+                    "label": "ammo: "
                 }
             }
         }
