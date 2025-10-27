@@ -8,11 +8,6 @@
 
 #include "PersonalSystem.h"
 
-PersonalSystem::PersonalSystem()
-{
-	/*entity = GameManager::GetInstance().GetLevel()->GetEntity();*/
-}
-
 void PersonalSystem::PersonalStart()
 {
 	entity = GameManager::GetInstance().GetLevel()->GetEntity();

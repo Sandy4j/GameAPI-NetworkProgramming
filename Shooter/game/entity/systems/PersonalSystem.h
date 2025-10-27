@@ -9,7 +9,7 @@ class Entity;
 class PersonalSystem
 {
 public:
-	PersonalSystem();
+	PersonalSystem() = default;
 	~PersonalSystem() = default;
 
 public:
@@ -18,7 +18,6 @@ public:
 
 private:
 	Entity* entity;
-	//std::vector<Personal*> personals;
 };
 
 #endif

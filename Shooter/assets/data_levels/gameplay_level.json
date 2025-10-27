@@ -1,8 +1,18 @@
 {
     "Object": {
 
-        "score": {
+        "enemy_manager": {
             "id": 1001,
+            "layer": 1,
+
+            "components": {
+                "personal": {
+                    "script_personal": "enemy_manager"
+                }
+            }
+        },
+        "enemy": {
+            "id": 1002,
             "layer": 1,
 
             "shaders": {
@@ -12,7 +22,7 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 0.0, 0.0 ],
+                    "position": [ 0.5, 0.0, 0.0 ],
                     "rotation": [ 0 ],
                     "scale": [ 0.1, 0.1, 0 ]
                 },
@@ -24,10 +34,6 @@
 
                 "bounding_box": {
                     "is_trigger": false
-                },
-
-                "personal": {
-                    "script_personal":  "enemy_system"
                 }
             }
         }

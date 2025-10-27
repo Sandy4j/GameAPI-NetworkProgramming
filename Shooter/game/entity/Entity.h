@@ -9,7 +9,6 @@ class Entity
 {
 public:
     Entity() = default;
-    //~Entity() = default;
     ~Entity()
     {
         for (auto& [type, componentMap] : components)
@@ -25,7 +24,6 @@ public:
     template<typename T>
     void AddComponent(int entity, T* component) 
     {
-        //components[typeid(T)][entity] = new T(component);
         components[typeid(T)][entity] = component;
     }
 

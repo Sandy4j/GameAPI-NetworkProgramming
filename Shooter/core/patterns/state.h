@@ -9,7 +9,7 @@ protected:
 	state() = default;
 
 public:
-	virtual ~state() = default;
+	virtual ~state();
 
 protected:
 	Level* level;

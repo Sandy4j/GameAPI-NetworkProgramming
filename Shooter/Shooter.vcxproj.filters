@@ -126,6 +126,12 @@
     <ClCompile Include="game\personal\EnemySystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="game\personal\Enemy\EnemyManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="core\patterns\state.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Engine.h">
@@ -1289,6 +1295,9 @@
     <ClInclude Include="game\personal\EnemySystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="game\personal\Enemy\EnemyManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="libraries\include\glm\detail\func_common.inl">
@@ -1713,6 +1722,7 @@
     <None Include="assets\data_levels\loby_level.json" />
     <None Include="core\graphics_pipeline\shaders\object.frag" />
     <None Include="core\graphics_pipeline\shaders\object.vert" />
+    <None Include="assets\prefabs\enemy_prefabs.json" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\ai\white.png">

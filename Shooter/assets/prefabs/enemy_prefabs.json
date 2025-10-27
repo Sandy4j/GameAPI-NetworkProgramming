@@ -1,0 +1,30 @@
+{
+    "Object": {
+        "enemy": {
+            "id": 10001,
+            "layer": 1,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "position": [ 0, 0.0, 0.0 ],
+                    "rotation": [ 0 ],
+                    "scale": [ 0.1, 0.1, 0 ]
+                },
+
+                "sprite": {
+                    "image": [ "assets/ai/white.png" ],
+                    "color": [ 1, 1, 1 ]
+                },
+
+                "bounding_box": {
+                    "is_trigger": false
+                }
+            }
+        }
+    }
+}

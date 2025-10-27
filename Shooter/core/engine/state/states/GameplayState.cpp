@@ -33,6 +33,8 @@ void GameplayState::iEnter()
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 
 	player_controller->Enter();
+
+	//level->GetSpriteSystem()->ReorderRender();
 }
 
 void GameplayState::iUpdateLogic()

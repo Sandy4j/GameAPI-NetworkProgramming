@@ -17,7 +17,7 @@ class Level
 {
 public:
     Level();
-	~Level() = default;
+    ~Level();
 
 public:
 	void LoadLevel(std::string level);
@@ -27,6 +27,7 @@ public:
 
     Entity* GetEntity();
     ShaderProgram* GetShaderProgram();
+    PersonalSystem* GetPersonalSystem();
     SpriteSystem* GetSpriteSystem();
 
     int GetButtonID();

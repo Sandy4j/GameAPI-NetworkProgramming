@@ -13,12 +13,6 @@
 
 #include "SpriteSystem.h"
 
-SpriteSystem::SpriteSystem()
-{
-	/*entity = GameManager::GetInstance().GetLevel()->GetEntity();
-	shader_program = GameManager::GetInstance().GetLevel()->GetShaderProgram();*/
-}
-
 void SpriteSystem::SpriteBegin()
 {
 	entity = GameManager::GetInstance().GetLevel()->GetEntity();

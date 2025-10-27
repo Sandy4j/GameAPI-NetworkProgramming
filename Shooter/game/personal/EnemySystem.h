@@ -3,15 +3,11 @@
 
 #include "Personal.h"
 
-class EnemySystem : public Personal
+class EnemySystem
 {
 public:
 	EnemySystem() = default;
 	~EnemySystem() = default;
-
-public:
-	virtual void IPersonalStart() override;
-	virtual void IPersonalUpdate() override;
 };
 
 #endif

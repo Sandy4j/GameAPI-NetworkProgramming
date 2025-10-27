@@ -21,9 +21,14 @@ Level::Level()
     entity = new Entity();
     personal_system = new PersonalSystem();
     sprite_system = new SpriteSystem();
+}
 
-    /*sprite_system->entity = entity;
-    sprite_system->shader_program = shader_program;*/
+Level::~Level()
+{
+    delete shader_program;
+    delete entity;
+    delete personal_system;
+    delete sprite_system;
 }
 
 void Level::LoadLevel(std::string level)
@@ -121,6 +126,11 @@ Entity* Level::GetEntity()
 ShaderProgram* Level::GetShaderProgram()
 {
     return shader_program;
+}
+
+PersonalSystem* Level::GetPersonalSystem()
+{
+    return personal_system;
 }
 
 SpriteSystem* Level::GetSpriteSystem()

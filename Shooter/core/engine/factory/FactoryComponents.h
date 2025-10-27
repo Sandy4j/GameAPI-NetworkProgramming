@@ -8,8 +8,7 @@ using json = nlohmann::json;
 #include "Transform.h"
 #include "Sprite.h"
 #include "BoundingBox.h"
-//#include "Personal.h"
-#include "EnemySystem.h"
+#include "EnemyManager.h"
 #include "TextBlock.h"
 #include "TextBox.h"
 #include "Button.h"
@@ -25,12 +24,6 @@ public:
 
         if (components.contains("transform"))
         {
-            /*auto& val = components["transform"];
-            Transform temp;
-            temp.position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
-            temp.rotation = val["rotation"][0].get<float>();
-            temp.scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
-            entity->AddComponent<Transform>(id, temp);*/
             auto& val = components["transform"];
             Transform* temp = new Transform();
             temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
@@ -42,7 +35,6 @@ public:
         if (components.contains("sprite"))
         {
             auto& val = components["sprite"];
-            //Sprite temp;
             Sprite* temp = new Sprite();
             temp->layer = layer;
             temp->location_vertex = obj["shaders"]["vertex"].get<std::string>();
@@ -54,12 +46,13 @@ public:
             }
             temp->transform = entity->GetComponent<Transform>(id);
             entity->AddComponent<Sprite>(id, temp);
+
+            std::cout << id << std::endl;
         }
 
         if (components.contains("bounding_box"))
         {
             auto& val = components["bounding_box"];
-            //BoundingBox temp;
             BoundingBox* temp = new BoundingBox();
             temp->b_is_trigger = val["is_trigger"];
             entity->AddComponent<BoundingBox>(id, temp);
@@ -69,9 +62,9 @@ public:
         {
             auto& val = components["personal"];
 
-            if (val["script_personal"] == "enemy_system")
+            if (val["script_personal"] == "enemy_manager")
             {
-                Personal* temp = new EnemySystem();
+                Personal* temp = new EnemnyManager();
                 entity->AddComponent<Personal>(id, temp);
             }
         }
@@ -94,7 +87,6 @@ public:
         if (components.contains("textblock"))
         {
             auto& val = components["textblock"];
-            //TextBlock temp;
             TextBlock* temp = new TextBlock();
             temp->label = val["label"].get<std::string>();
             temp->position = position;
@@ -105,7 +97,6 @@ public:
         if (components.contains("textbox"))
         {
             auto& val = components["textbox"];
-            //TextBox temp;
             TextBox* temp = new TextBox();
             temp->label = val["label"].get<std::string>();
             temp->position = position;
@@ -116,7 +107,6 @@ public:
         if (components.contains("button"))
         {
             auto& val = components["button"];
-            //Button temp;
             Button* temp = new Button();
             temp->label = val["label"].get<std::string>();
             temp->position = position;
