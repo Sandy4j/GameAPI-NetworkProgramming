@@ -1,6 +1,169 @@
-@GameAPI_HostAddress = http://localhost:5155
+@baseUrl = https://localhost:7016/api
+@baseUrlHttp = http://localhost:5155/api
 
-GET {{GameAPI_HostAddress}}/weatherforecast/
+### 1. Get All Scores (dengan paginasi)
+GET {{baseUrl}}/scores?page=1&pageSize=10
 Accept: application/json
 
+### 2. Get Score by ID
+GET {{baseUrl}}/scores/1
+Accept: application/json
+
+### 3. Get Top 10 Leaderboard
+GET {{baseUrl}}/scores/top/10
+Accept: application/json
+
+### 4. Get Top 5 Leaderboard
+GET {{baseUrl}}/scores/top/5
+Accept: application/json
+
+### 5. Get Player Rank
+GET {{baseUrl}}/scores/rank/ProGamer
+Accept: application/json
+
+### 6. Get Player History
+GET {{baseUrl}}/scores/player/ProGamer/history
+Accept: application/json
+
+### 7. Get Statistics
+GET {{baseUrl}}/scores/stats
+Accept: application/json
+
+### 8. Create New Score
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "TestPlayer",
+  "score": 750,
+  "kills": 18,
+  "deaths": 6,
+  "shotsFired": 90,
+  "shotsHit": 65
+}
+
+### 9. Create Another Score
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "SuperShooter",
+  "score": 1800,
+  "kills": 40,
+  "deaths": 2,
+  "shotsFired": 180,
+  "shotsHit": 160
+}
+
+### 10. Create Score - Invalid (ShotsHit > ShotsFired)
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "Cheater",
+  "score": 2000,
+  "kills": 50,
+  "deaths": 0,
+  "shotsFired": 100,
+  "shotsHit": 150
+}
+
+### 11. Create Score - Missing Required Field
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "score": 500,
+  "kills": 10,
+  "deaths": 5
+}
+
+### 12. Update Score by ID
+PUT {{baseUrl}}/scores/1
+Content-Type: application/json
+
+{
+  "playerName": "ProGamer",
+  "score": 1650,
+  "kills": 35,
+  "deaths": 5,
+  "shotsFired": 160,
+  "shotsHit": 130
+}
+
+### 13. Delete Score by ID (change ID as needed)
+DELETE {{baseUrl}}/scores/4
+
+### 14. Get Non-Existent Score
+GET {{baseUrl}}/scores/999
+Accept: application/json
+
+### 15. Test Pagination - Page 2
+GET {{baseUrl}}/scores?page=2&pageSize=2
+Accept: application/json
+
+### 16. Test Custom Page Size
+GET {{baseUrl}}/scores?page=1&pageSize=5
+Accept: application/json
+
+### 17. Search Player that Doesn't Exist
+GET {{baseUrl}}/scores/rank/NonExistentPlayer
+Accept: application/json
+
+### 18. Bulk Create for Testing Leaderboard
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "Player1",
+  "score": 500,
+  "kills": 10,
+  "deaths": 15,
+  "shotsFired": 50,
+  "shotsHit": 30
+}
+
 ###
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "Player2",
+  "score": 1100,
+  "kills": 22,
+  "deaths": 8,
+  "shotsFired": 110,
+  "shotsHit": 85
+}
+
+###
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "Player3",
+  "score": 890,
+  "kills": 17,
+  "deaths": 12,
+  "shotsFired": 95,
+  "shotsHit": 60
+}
+
+### 19. Test Multiple Scores for Same Player
+POST {{baseUrl}}/scores
+Content-Type: application/json
+
+{
+  "playerName": "ProGamer",
+  "score": 1250,
+  "kills": 28,
+  "deaths": 7,
+  "shotsFired": 140,
+  "shotsHit": 105
+}
+
+### 20. Get Updated Player History (After multiple scores)
+GET {{baseUrl}}/scores/player/ProGamer/history
+Accept: application/json
+
+# Response
