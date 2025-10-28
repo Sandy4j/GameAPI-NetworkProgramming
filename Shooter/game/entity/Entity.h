@@ -43,6 +43,21 @@ public:
         return components[typeid(T)];
     }
 
+    int GetLastID()
+    {
+        int current_ID = 0;
+        for (const auto& typePair : components)
+        {
+            const auto& innerMap = typePair.second;
+            for (const auto& entityPair : innerMap)
+            {
+                current_ID = std::max(current_ID, entityPair.first);
+            }
+        }
+
+        return current_ID;
+    }
+
 private:
     std::unordered_map<std::type_index, std::unordered_map<int, void*>> components;
 };

@@ -7,6 +7,7 @@
 
 #include "FactoryComponents.h"
 #include "GameManager.h"
+#include "SpriteSystem.h"
 
 #include "Level.h"
 
@@ -40,11 +41,19 @@ void EnemnyManager::CreateEntity()
 {
     json object = prefabs["Object"];
 
-    for (auto& [name, obj] : object.items())
+    for (size_t i = 0; i < 2; i++)
     {
-        std::cout << "Create Entity Prefabs" << std::endl;
-        FactoryComponents::CreateObjectComponents(obj, entity);
+        int id = 0;
+
+        id = FactoryComponents::InstantiatePrefab(object, entity, glm::zero<glm::vec3>(), 0, glm::vec3(.1, .1, 0));
+
+        Transform* temp = entity->GetComponent<Transform>(id);
+        EnemySystem* system = new EnemySystem(temp);
+        enemys.push_back(system);
     }
+
+    SpriteSystem* temp = GameManager::GetInstance().GetLevel()->GetSpriteSystem();
+    temp->SpriteBegin();
 }
 
 void EnemnyManager::IPersonalStart()
@@ -52,9 +61,17 @@ void EnemnyManager::IPersonalStart()
 	std::cout << "start" << std::endl;
 	entity = GameManager::GetInstance().GetLevel()->GetEntity();
 	LoadPrefabs();
+
+    for (auto& temp : enemys)
+    {
+        temp->Start();
+    }
 }
 
 void EnemnyManager::IPersonalUpdate()
 {
-
+    for (auto& temp : enemys)
+    {
+        temp->Update();
+    }
 }

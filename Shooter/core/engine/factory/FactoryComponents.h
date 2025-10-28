@@ -46,8 +46,6 @@ public:
             }
             temp->transform = entity->GetComponent<Transform>(id);
             entity->AddComponent<Sprite>(id, temp);
-
-            std::cout << id << std::endl;
         }
 
         if (components.contains("bounding_box"))
@@ -113,6 +111,64 @@ public:
             temp->size = scale;
             entity->AddComponent<Button>(id, temp);
         }
+    }
+
+    static int InstantiatePrefab(json& file, Entity* entity, glm::vec3 pos, float rot, glm::vec3 scale)
+    {
+        int id = entity->GetLastID() + 1;
+
+        for (auto& [name, obj] : file.items())
+        {
+            int layer = obj["layer"].get<int>();
+            auto& components = obj["components"];
+
+            if (components.contains("transform"))
+            {
+                auto& val = components["transform"];
+                Transform* temp = new Transform();
+                temp->position = pos;
+                temp->rotation = rot;
+                temp->scale = scale;
+                entity->AddComponent<Transform>(id, temp);
+            }
+
+            if (components.contains("sprite"))
+            {
+                auto& val = components["sprite"];
+                Sprite* temp = new Sprite();
+                temp->layer = layer;
+                temp->location_vertex = obj["shaders"]["vertex"].get<std::string>();
+                temp->location_fragment = obj["shaders"]["fragment"].get<std::string>();
+                temp->ChangeColor(glm::vec3(val["color"][0].get<float>(), val["color"][1].get<float>(), val["color"][2].get<float>()));
+                for (auto& image_path : val["image"])
+                {
+                    temp->location_textures.push_back(image_path.get<std::string>());
+                }
+                temp->transform = entity->GetComponent<Transform>(id);
+                entity->AddComponent<Sprite>(id, temp);
+            }
+
+            if (components.contains("bounding_box"))
+            {
+                auto& val = components["bounding_box"];
+                BoundingBox* temp = new BoundingBox();
+                temp->b_is_trigger = val["is_trigger"];
+                entity->AddComponent<BoundingBox>(id, temp);
+            }
+
+            if (components.contains("personal"))
+            {
+                auto& val = components["personal"];
+
+                if (val["script_personal"] == "enemy_manager")
+                {
+                    Personal* temp = new EnemnyManager();
+                    entity->AddComponent<Personal>(id, temp);
+                }
+            }
+        }
+
+        return id;
     }
 };
 

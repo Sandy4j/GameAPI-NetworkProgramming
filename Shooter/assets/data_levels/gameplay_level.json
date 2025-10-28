@@ -13,7 +13,7 @@
         },
         "enemy": {
             "id": 1002,
-            "layer": 1,
+            "layer": -1,
 
             "shaders": {
                 "vertex": "core/graphics_pipeline/shaders/object.vert",
