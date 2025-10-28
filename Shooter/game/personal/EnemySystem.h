@@ -16,6 +16,8 @@ public:
 
 private:
 	Transform* transform;
+	float target;
+	int dir;
 };
 
 #endif

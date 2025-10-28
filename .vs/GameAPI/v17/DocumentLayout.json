@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\personal\\EnemySystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\Enemy\\EnemyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\personal\\Enemy\\EnemyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\EnemySystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\personal\\EnemySystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\Enemy\\EnemyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|solutionrelative:Shooter\\game\\personal\\Enemy\\EnemyManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{19430B33-3AF8-47F7-AB3B-C6A460DD27BB}|Shooter\\Shooter.vcxproj|C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\assets\\prefabs\\enemy_prefabs.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -222,7 +222,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Document",
@@ -271,6 +271,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
@@ -337,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EnemyManager.cpp",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\Enemy\\EnemyManager.cpp",
               "RelativeDocumentMoniker": "Shooter\\game\\personal\\Enemy\\EnemyManager.cpp",
@@ -417,20 +421,20 @@
               "RelativeDocumentMoniker": "Shooter\\game\\personal\\EnemySystem.cpp",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\EnemySystem.cpp",
               "RelativeToolTip": "Shooter\\game\\personal\\EnemySystem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-26T10:30:29.22Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EnemySystem.h",
               "DocumentMoniker": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\EnemySystem.h",
               "RelativeDocumentMoniker": "Shooter\\game\\personal\\EnemySystem.h",
               "ToolTip": "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\game\\personal\\EnemySystem.h",
               "RelativeToolTip": "Shooter\\game\\personal\\EnemySystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-10-26T10:30:16.878Z",
               "EditorCaption": ""
