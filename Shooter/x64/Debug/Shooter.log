@@ -1,8 +1,3 @@
 ﻿  Scanning sources for module dependencies...
-  EnemySystem.cpp
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(25,39): warning C4244: '+=': conversion from 'double' to 'T', possible loss of data
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(25,39): warning C4244:         with
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(25,39): warning C4244:         [
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(25,39): warning C4244:             T=float
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(25,39): warning C4244:         ]
+  Timer.cpp
   Shooter.vcxproj -> C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe

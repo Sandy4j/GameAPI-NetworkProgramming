@@ -4,10 +4,12 @@
 #include "Entity.h"
 #include "Transform.h"
 #include "SpriteSystem.h"
+#include "Personal.h"
 
 #include "Level.h"
 
 #include "PlayerController.h"
+#include "Timer.h"
 
 #include "GameManager.h"
 #include "InputManager.h"
@@ -34,7 +36,10 @@ void GameplayState::iEnter()
 
 	player_controller->Enter();
 
-	//level->GetSpriteSystem()->ReorderRender();
+	Personal* raw_timer = level->GetEntity()->GetComponent<Personal>(1002);
+	Timer* timer = static_cast<Timer*>(raw_timer);
+	timer->NewTimer(20);
+	timer->StartTimer();
 }
 
 void GameplayState::iUpdateLogic()

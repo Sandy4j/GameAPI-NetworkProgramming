@@ -1,6 +1,8 @@
 #ifndef ENEMYSYSTEM_H
 #define ENEMYSYSTEM_H
 
+#include "glm/glm.hpp"
+
 #include "Transform.h"
 #include "Personal.h"
 
@@ -15,8 +17,10 @@ public:
 	void Update();
 
 private:
+	glm::vec3 target_position[5];
 	Transform* transform;
 	float target;
+	int index;
 	int dir;
 };
 

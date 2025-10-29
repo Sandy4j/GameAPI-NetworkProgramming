@@ -47,6 +47,7 @@ void EnemnyManager::CreateEntity()
 
         id = FactoryComponents::InstantiatePrefab(object, entity, glm::zero<glm::vec3>(), 0, glm::vec3(.1, .1, 0));
 
+        if (i == 0) entity->GetComponent<Sprite>(id)->ChangeColor(glm::vec3(0, 1, 0));
         Transform* temp = entity->GetComponent<Transform>(id);
         EnemySystem* system = new EnemySystem(temp);
         enemys.push_back(system);

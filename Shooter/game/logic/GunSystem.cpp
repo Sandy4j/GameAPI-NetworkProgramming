@@ -78,7 +78,9 @@ void GunSystem::Fire()
 	int temp = ray_line->ShootRayLine();
 
 	if (temp == 0) return;
+	std::cout << temp << std::endl;
 
+	level->GetEntity()->GetComponent<BoundingBox>(temp)->b_is_trigger = true;
 	level->GetEntity()->GetComponent<Sprite>(temp)->layer = -1;
 	level->GetSpriteSystem()->ReorderRender();
 

@@ -8,10 +8,12 @@ using json = nlohmann::json;
 #include "Transform.h"
 #include "Sprite.h"
 #include "BoundingBox.h"
-#include "EnemyManager.h"
 #include "TextBlock.h"
 #include "TextBox.h"
 #include "Button.h"
+
+#include "EnemyManager.h"
+#include "Timer.h"
 
 class FactoryComponents
 {
@@ -63,6 +65,12 @@ public:
             if (val["script_personal"] == "enemy_manager")
             {
                 Personal* temp = new EnemnyManager();
+                entity->AddComponent<Personal>(id, temp);
+            }
+
+            if (val["script_personal"] == "timer")
+            {
+                Personal* temp = new Timer();
                 entity->AddComponent<Personal>(id, temp);
             }
         }
@@ -163,6 +171,12 @@ public:
                 if (val["script_personal"] == "enemy_manager")
                 {
                     Personal* temp = new EnemnyManager();
+                    entity->AddComponent<Personal>(id, temp);
+                }
+
+                if (val["script_personal"] == "timer")
+                {
+                    Personal* temp = new Timer();
                     entity->AddComponent<Personal>(id, temp);
                 }
             }
