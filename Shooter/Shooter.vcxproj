@@ -734,6 +734,11 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="assets\ai\white.png" />
+    <Image Include="assets\character\ikan-hijau.png" />
+    <Image Include="assets\character\ikan-kuning.png" />
+    <Image Include="assets\character\ikan-merah.png" />
+    <Image Include="assets\character\ikan-ungu.png" />
+    <Image Include="assets\environment\background-gameplay.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

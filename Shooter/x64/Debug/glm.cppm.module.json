@@ -5,14 +5,14 @@
         {
             "primary-output": "x64\\Debug\\glm.cppm.obj",
             "outputs": [
-                "C:\\Users\\daylu\\source\\repos\\Sandy4j\\GameAPI-NetworkProgramming\\Shooter\\x64\\Debug\\vc143.pdb",
+                "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\x64\\Debug\\vc143.pdb",
                 "x64\\Debug\\",
-                "C:\\Users\\daylu\\source\\repos\\Sandy4j\\GameAPI-NetworkProgramming\\Shooter\\x64\\Debug\\glm.cppm.ifc"
+                "C:\\NativeProject\\GameAPI-NetworkProgramming\\Shooter\\x64\\Debug\\glm.cppm.ifc"
             ],
             "provides": [
                 {
                     "logical-name": "glm",
-                    "source-path": "c:\\users\\daylu\\source\\repos\\sandy4j\\gameapi-networkprogramming\\shooter\\libraries\\include\\glm\\glm.cppm",
+                    "source-path": "c:\\nativeproject\\gameapi-networkprogramming\\shooter\\libraries\\include\\glm\\glm.cppm",
                     "is-interface": true
                 }
             ],

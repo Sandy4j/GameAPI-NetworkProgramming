@@ -1,3 +1,8 @@
 ﻿  Scanning sources for module dependencies...
-  Timer.cpp
+  EnemySystem.cpp
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(20,77): warning C4244: 'argument': conversion from '_Rep' to 'unsigned int', possible loss of data
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(20,77): warning C4244:         with
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(20,77): warning C4244:         [
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(20,77): warning C4244:             _Rep=__int64
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp(20,77): warning C4244:         ]
   Shooter.vcxproj -> C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe

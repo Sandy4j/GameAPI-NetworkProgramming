@@ -55,6 +55,11 @@ void EnemySystem::InitiateJump()
 
     m_jumpDuration = 1.0f + 1.0f * m_distFloat(m_rng);
     m_jumpElapsedTime = 0.0f;
+
+    if (m_jumpStartPos.x < m_jumpEndPos.x)
+        transform->rotation = 180;
+    else
+        transform->rotation = 0;
 }
 
 void EnemySystem::PickNewTarget()
@@ -70,14 +75,12 @@ void EnemySystem::Update()
 {
     float deltaTime = TimeManager::GetInstance().GetDeltaTime();
 
-    if (m_decisionTimer > 0.0f) 
-    {
-        m_decisionTimer -= deltaTime;
-    }
+    if (m_decisionTimer > 0.0f) m_decisionTimer -= deltaTime;
 
     switch (m_currentState)
     {
     case MovementState::Idle:
+    {
         m_idleTimer -= deltaTime;
         if (m_idleTimer <= 0.0f) 
         {
@@ -88,7 +91,9 @@ void EnemySystem::Update()
                 InitiateJump();
         }
         break;
+    }
     case MovementState::Moving:
+    {
         if (!m_hasTarget)
             PickNewTarget();
 
@@ -125,7 +130,9 @@ void EnemySystem::Update()
             }
         }
         break;
+    }
     case MovementState::Jumping:
+    {
         m_jumpElapsedTime += deltaTime;
         float t = std::min(1.0f, m_jumpElapsedTime / m_jumpDuration);
 
@@ -139,5 +146,6 @@ void EnemySystem::Update()
             m_currentState = MovementState::Idle;
         }
         break;
+    }
     }
 }

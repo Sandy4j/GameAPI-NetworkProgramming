@@ -1734,5 +1734,20 @@
     <Image Include="assets\ai\white.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="assets\character\ikan-hijau.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\character\ikan-kuning.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\character\ikan-merah.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\character\ikan-ungu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\environment\background-gameplay.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
