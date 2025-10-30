@@ -5,6 +5,7 @@
 using json = nlohmann::json;
 
 #include <vector>
+#include <string>
 
 #include "Personal.h"
 
@@ -20,12 +21,14 @@ public:
 private:
 	void LoadPrefabs();
 	void CreateEntity();
+	int RandomNumber(int min, int max);
 
 private:
 	json prefabs;
 
-	std::vector<EnemySystem*> enemys;
 	Entity* entity;
+	std::vector<EnemySystem*> enemys;
+	std::string ikan_paths[4];
 
 public:
 	virtual void IPersonalStart() override;

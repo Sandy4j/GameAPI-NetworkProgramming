@@ -12,7 +12,7 @@
             "provides": [
                 {
                     "logical-name": "glm",
-                    "source-path": "c:\\users\\daylu\\source\\repos\\sandy4j\\gameapi-networkprogramming\\shooter\\libraries\\include\\glm\\glm.cppm",
+                    "source-path": "c:\\nativeproject\\gameapi-networkprogramming\\shooter\\libraries\\include\\glm\\glm.cppm",
                     "is-interface": true
                 }
             ],
