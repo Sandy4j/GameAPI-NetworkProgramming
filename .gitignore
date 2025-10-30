@@ -5,6 +5,7 @@ obj/
 /[Dd]ebug/
 /[Rr]elease/
 /x64/
+/Shooter/x64/
 /Win32/
 /build/
 *.obj
