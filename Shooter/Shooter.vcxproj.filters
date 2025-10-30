@@ -132,6 +132,9 @@
     <ClCompile Include="core\patterns\state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Integration\Integration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\Engine.h">

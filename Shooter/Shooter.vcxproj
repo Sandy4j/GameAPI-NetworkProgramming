@@ -180,6 +180,7 @@
     <ClCompile Include="game\personal\Enemy\EnemyManager.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Integration\Integration.cpp" />
     <ClCompile Include="libraries\include\glm\detail\glm.cpp" />
     <ClCompile Include="libraries\include\glm\glm.cppm" />
     <ClCompile Include="libraries\include\imgui\imgui.cpp" />
