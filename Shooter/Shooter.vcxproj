@@ -740,6 +740,9 @@
     <Image Include="assets\character\ikan-ungu.png" />
     <Image Include="assets\environment\background-gameplay.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\font\font-q.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

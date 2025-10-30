@@ -14,7 +14,7 @@ void UIManager::iInit()
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	ImGui::StyleColorsDark();
-	//io.Fonts->AddFontFromFileTTF("assets/font/Pixeled.ttf", 28.0f);
+	io.Fonts->AddFontFromFileTTF("assets/font/font-q.ttf", 28.0f);
 	ImGui_ImplGlfw_InitForOpenGL(GameManager::GetInstance().GetWindow(), true);
 	ImGui_ImplOpenGL3_Init("#version 330");
 }

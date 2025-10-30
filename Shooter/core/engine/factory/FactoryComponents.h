@@ -29,7 +29,8 @@ public:
             auto& val = components["transform"];
             Transform* temp = new Transform();
             temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
-            temp->rotation = val["rotation"][0].get<float>();
+            //temp->rotation = val["rotation"][0].get<float>();
+            temp->rotation = glm::vec2(val["rotation"][0].get<float>(), val["rotation"][1].get<float>());
             temp->scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
             entity->AddComponent<Transform>(id, temp);
         }
@@ -121,7 +122,7 @@ public:
         }
     }
 
-    static int InstantiatePrefab(json& file, Entity* entity, glm::vec3 pos, float rot, glm::vec3 scale)
+    static int InstantiatePrefab(json& file, Entity* entity, glm::vec3 pos, glm::vec2 rot, glm::vec3 scale)
     {
         int id = entity->GetLastID() + 1;
 
@@ -135,6 +136,7 @@ public:
                 auto& val = components["transform"];
                 Transform* temp = new Transform();
                 temp->position = pos;
+                //temp->rotation = rot;
                 temp->rotation = rot;
                 temp->scale = scale;
                 entity->AddComponent<Transform>(id, temp);

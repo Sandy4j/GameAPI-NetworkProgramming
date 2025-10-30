@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <random>
 #include <chrono>
+#include <iostream>
 
 #include "TimeManager.h"
 #include "EnemySystem.h"
@@ -57,9 +58,9 @@ void EnemySystem::InitiateJump()
     m_jumpElapsedTime = 0.0f;
 
     if (m_jumpStartPos.x < m_jumpEndPos.x)
-        transform->rotation = 180;
+        transform->rotation.x = 180;
     else
-        transform->rotation = 0;
+        transform->rotation.x = 0;
 }
 
 void EnemySystem::PickNewTarget()
@@ -135,6 +136,12 @@ void EnemySystem::Update()
     {
         m_jumpElapsedTime += deltaTime;
         float t = std::min(1.0f, m_jumpElapsedTime / m_jumpDuration);
+        
+        glm::vec3 dir = temp_target_pos - transform->position;
+        float radian = std::atan2(dir.x, dir.y);
+        float deg = glm::degrees(radian);
+
+        transform->rotation.y = deg;
 
         transform->position = CalculateBezierPoint(t, m_jumpStartPos, m_jumpControlPos, m_jumpEndPos);
         transform->position.z = m_fixedZ;
@@ -145,6 +152,8 @@ void EnemySystem::Update()
             m_idleTimer = 0.5f + 1.0f * m_distFloat(m_rng);
             m_currentState = MovementState::Idle;
         }
+
+        temp_target_pos = transform->position;
         break;
     }
     }

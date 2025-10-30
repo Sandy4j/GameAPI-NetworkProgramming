@@ -38,6 +38,7 @@ private:
     glm::vec3 m_jumpEndPos;
     float m_jumpDuration;
     float m_jumpElapsedTime;
+    glm::vec3 temp_target_pos;
 
     float m_decisionTimer;
     float m_idleTimer;
