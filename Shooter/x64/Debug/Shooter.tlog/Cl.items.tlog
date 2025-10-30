@@ -25,8 +25,7 @@ C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\logic\GunSystem.cpp;C:\
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\logic\PlayerController.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\PlayerController.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\EnemySystem.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\EnemySystem.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\enemy\EnemyManager.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\EnemyManager.obj
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\enemy\EnemySystem.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\EnemySystem.obj
-C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\timer\Timer.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\Timer.obj
+C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\personal\time\Timer.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\Timer.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\game\ray\RayLine.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\RayLine.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\glad.c;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\glad.obj
 C:\NativeProject\GameAPI-NetworkProgramming\Shooter\libraries\include\glm\detail\glm.cpp;C:\NativeProject\GameAPI-NetworkProgramming\Shooter\x64\Debug\glm.obj

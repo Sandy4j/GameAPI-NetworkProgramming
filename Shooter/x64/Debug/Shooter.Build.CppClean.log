@@ -10,6 +10,7 @@ c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\ebo.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\pausestate.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\mainmenustate.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\lobystate.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\gameplaystate.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\gameoverstate.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\gamestate.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\uimanager.obj
@@ -30,9 +31,10 @@ c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\imgui.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\rayline.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\timer.obj
-c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\enemysystem.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\enemymanager.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\playercontroller.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\gunsystem.obj
+c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\level.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\spritesystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\personalsystem.obj
 c:\nativeproject\gameapi-networkprogramming\shooter\x64\debug\glm.cppm.ifc
