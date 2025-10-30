@@ -1747,4 +1747,7 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="assets\font\font-q.ttf" />
+  </ItemGroup>
 </Project>

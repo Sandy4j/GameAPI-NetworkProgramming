@@ -11,7 +11,8 @@ struct Transform
 public:
 	glm::mat4 matrix_model = glm::mat4(1.0f);;
 	glm::vec3 position;
-	float rotation;
+	glm::vec2 rotation;
+	//float rotation;
 	glm::vec3 scale;
 	//BoundingBox bounding_box;
 
@@ -21,7 +22,9 @@ public:
 		matrix_model = glm::mat4(1.0f);
 
 		matrix_model = glm::translate(matrix_model, position);
-		matrix_model = glm::rotate(matrix_model, glm::radians(rotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		//matrix_model = glm::rotate(matrix_model, glm::radians(rotation), glm::vec3(0.0f, 1.0f, 0.0f));
+		matrix_model = glm::rotate(matrix_model, glm::radians(rotation.x), glm::vec3(0.0f, 1.0f, 0.0f));
+		matrix_model = glm::rotate(matrix_model, glm::radians(rotation.y), glm::vec3(0.0f, 0.0f, 1.0f));
 		matrix_model = glm::scale(matrix_model, scale);
 	}
 };

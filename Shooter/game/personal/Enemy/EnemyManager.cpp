@@ -45,7 +45,7 @@ void EnemnyManager::CreateEntity()
     {
         int id = 0;
 
-        id = FactoryComponents::InstantiatePrefab(object, entity, glm::zero<glm::vec3>(), 180, glm::vec3(.3, .3, 0));
+        id = FactoryComponents::InstantiatePrefab(object, entity, glm::zero<glm::vec3>(), glm::vec2(0, 70), glm::vec3(.3, .3, 0));
 
         entity->GetComponent<Sprite>(id)->ChangeTexture(ikan_paths[RandomNumber(0, 3)]);
         Transform* temp = entity->GetComponent<Transform>(id);

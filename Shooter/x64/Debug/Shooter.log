@@ -1,4 +1,5 @@
 ﻿  Scanning sources for module dependencies...
+<<<<<<< HEAD
   Integration.cpp
 glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\Users\daylu\source\repos\Sandy4j\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
 glfw3.lib(window.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found with 'glfw3.lib(window.obj)' or at 'C:\Users\daylu\source\repos\Sandy4j\GameAPI-NetworkProgramming\x64\Debug\glfw3.pdb'; linking object as if no debug info
@@ -25,3 +26,7 @@ glfw3.lib(null_joystick.obj) : warning LNK4099: PDB 'glfw3.pdb' was not found wi
   Shooter.vcxproj -> C:\Users\daylu\source\repos\Sandy4j\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
+=======
+  UIManager.cpp
+  Shooter.vcxproj -> C:\NativeProject\GameAPI-NetworkProgramming\x64\Debug\Shooter.exe
+>>>>>>> b21c5ef (update-- rotation transform--adit)
