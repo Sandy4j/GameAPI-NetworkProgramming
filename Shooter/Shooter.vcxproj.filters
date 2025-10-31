@@ -132,7 +132,13 @@
     <ClCompile Include="core\patterns\state.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game\personal\time\Timer.cpp">
+    <ClCompile Include="game\personal\enemy\EnemySystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="game\personal\timer\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Integration\Integration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -1301,7 +1307,10 @@
     <ClInclude Include="game\personal\enemy\EnemyManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="game\personal\time\Timer.h">
+    <ClInclude Include="game\personal\enemy\EnemySystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="game\personal\timer\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -57,9 +57,9 @@ void EnemySystem::InitiateJump()
     m_jumpElapsedTime = 0.0f;
 
     if (m_jumpStartPos.x < m_jumpEndPos.x)
-        transform->rotation = 180;
+        transform->rotation.x = 180;
     else
-        transform->rotation = 0;
+        transform->rotation.x = 0;
 }
 
 void EnemySystem::PickNewTarget()

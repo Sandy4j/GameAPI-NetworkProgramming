@@ -38,8 +38,7 @@ void GameplayState::iEnter()
 
 	Personal* raw_timer = level->GetEntity()->GetComponent<Personal>(1002);
 	Timer* timer = static_cast<Timer*>(raw_timer);
-	timer->NewTimer(20);
-	timer->StartTimer();
+	timer->StartTimer(20);
 }
 
 void GameplayState::iUpdateLogic()
