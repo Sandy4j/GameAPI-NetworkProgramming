@@ -9,26 +9,51 @@ using json = nlohmann::json;
 
 #include "Personal.h"
 
-class EnemySystem;
+class SpriteSystem;
+class EnemyInterface;
 class Entity;
+class Timer;
 
-class EnemnyManager : public Personal
+enum class EState
+{
+	GameplayState,
+	TransitionState
+};
+
+class EnemyManager : public Personal
 {
 public:
-	EnemnyManager() = default;
-	~EnemnyManager() = default;
+	EnemyManager() = default;
+	~EnemyManager() = default;
 
 private:
+	void Init();
 	void LoadPrefabs();
+	void FindComponent();
 	void CreateEntity();
+	void InitPrefabs(json temp);
 	int RandomNumber(int min, int max);
+	void StartWaveEnemy();
+	void ResetWaveEnemy();
+	void CheckWaveCondition();
+	bool StateCondition();
 
 private:
+	EState current_state;
+
 	json prefabs;
 
 	Entity* entity;
-	std::vector<EnemySystem*> enemys;
+	SpriteSystem* sprite_system;
+	Timer* timer;
+
+	std::vector<EnemyInterface*> enemys, enemy_pools;
 	std::string ikan_paths[4];
+
+	int start_enemy, total_enemy, wave_index;
+	bool b_is_reset;
+
+	float transition_delay;
 
 public:
 	virtual void IPersonalStart() override;

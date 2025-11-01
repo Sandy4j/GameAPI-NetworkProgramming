@@ -176,7 +176,6 @@
     <ClCompile Include="game\level\Level.cpp" />
     <ClCompile Include="game\logic\GunSystem.cpp" />
     <ClCompile Include="game\logic\PlayerController.cpp" />
-    <ClCompile Include="game\personal\EnemySystem.cpp" />
     <ClCompile Include="game\personal\enemy\EnemyManager.cpp" />
     <ClCompile Include="game\personal\enemy\EnemySystem.cpp" />
     <ClCompile Include="game\personal\timer\Timer.cpp" />
@@ -232,7 +231,7 @@
     <ClInclude Include="game\level\Level.h" />
     <ClInclude Include="game\logic\GunSystem.h" />
     <ClInclude Include="game\logic\PlayerController.h" />
-    <ClInclude Include="game\personal\EnemySystem.h" />
+    <ClInclude Include="game\personal\enemy\EnemyInterface.h" />
     <ClInclude Include="game\personal\enemy\EnemyManager.h" />
     <ClInclude Include="game\personal\enemy\EnemySystem.h" />
     <ClInclude Include="game\personal\timer\Timer.h" />

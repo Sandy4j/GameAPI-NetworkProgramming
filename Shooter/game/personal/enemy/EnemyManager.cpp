@@ -3,17 +3,27 @@
 #include <iostream>
 
 #include "Entity.h"
+#include "Timer.h"
 #include "EnemySystem.h"
 
 #include "FactoryComponents.h"
 #include "GameManager.h"
+#include "TimeManager.h"
 #include "SpriteSystem.h"
 
 #include "Level.h"
 
 #include "EnemyManager.h"
 
-void EnemnyManager::LoadPrefabs()
+void EnemyManager::Init()
+{
+    FindComponent();
+    LoadPrefabs();
+
+    current_state = EState::TransitionState;
+}
+
+void EnemyManager::LoadPrefabs()
 {
     std::ifstream file("assets/prefabs/enemy_prefabs.json");
 
@@ -37,27 +47,52 @@ void EnemnyManager::LoadPrefabs()
     }
 }
 
-void EnemnyManager::CreateEntity()
+void EnemyManager::FindComponent()
+{
+    ikan_paths[0] = "assets/character/ikan-hijau.png";
+    ikan_paths[1] = "assets/character/ikan-kuning.png";
+    ikan_paths[2] = "assets/character/ikan-ungu.png";
+    ikan_paths[3] = "assets/character/ikan-merah.png";
+
+    entity = GameManager::GetInstance().GetLevel()->GetEntity();
+    sprite_system = GameManager::GetInstance().GetLevel()->GetSpriteSystem();
+
+    Personal* raw_timer = entity->GetComponent<Personal>(1002);
+    timer = static_cast<Timer*>(raw_timer);
+
+    transition_delay = 2;
+    start_enemy = 2;
+    total_enemy = start_enemy;
+}
+
+void EnemyManager::CreateEntity()
 {
     json object = prefabs["Object"];
 
-    for (size_t i = 0; i < 2; i++)
+    for (size_t i = 0; i < total_enemy; i++)
     {
-        int id = 0;
-
-        id = FactoryComponents::InstantiatePrefab(object, entity, glm::zero<glm::vec3>(), glm::vec2(0, 70), glm::vec3(.3, .3, 0));
-
-        entity->GetComponent<Sprite>(id)->ChangeTexture(ikan_paths[RandomNumber(0, 3)]);
-        Transform* temp = entity->GetComponent<Transform>(id);
-        EnemySystem* system = new EnemySystem(temp);
-        enemys.push_back(system);
+        InitPrefabs(object);
     }
-
-    SpriteSystem* temp = GameManager::GetInstance().GetLevel()->GetSpriteSystem();
-    temp->SpriteBegin();
 }
 
-int EnemnyManager::RandomNumber(int min, int max)
+void EnemyManager::InitPrefabs(json temp)
+{
+    int id = 0;
+
+    id = FactoryComponents::InstantiatePrefab(temp, entity, glm::zero<glm::vec3>(), glm::vec2(0, 0), glm::vec3(.3, .3, 0));
+
+    int random_number = RandomNumber(0, 3);
+    int score = random_number + 10;
+    entity->GetComponent<Sprite>(id)->ChangeTexture(ikan_paths[random_number]);
+    Transform* temp_transform = entity->GetComponent<Transform>(id);
+    temp_transform->tag = std::to_string(score);
+    Sprite* temp_sprite = entity->GetComponent<Sprite>(id);
+    EnemyInterface* system = new EnemySystem(temp_transform, temp_sprite);
+    //enemy_pools.push_back(system);
+    enemys.push_back(system);
+}
+
+int EnemyManager::RandomNumber(int min, int max)
 {
     int n = max;
     std::random_device rd;
@@ -67,27 +102,145 @@ int EnemnyManager::RandomNumber(int min, int max)
     return random_number;
 }
 
-void EnemnyManager::IPersonalStart()
+void EnemyManager::StartWaveEnemy()
 {
-    ikan_paths[0] = "assets/character/ikan-merah.png";
-    ikan_paths[1] = "assets/character/ikan-hijau.png";
-    ikan_paths[2] = "assets/character/ikan-ungu.png";
-    ikan_paths[3] = "assets/character/ikan-kuning.png";
+    int temp = GameManager::GetInstance().GetWave();
+    temp++;
+    GameManager::GetInstance().SetWave(temp);
+    std::cout << GameManager::GetInstance().GetWave() << std::endl;
+    //wave_index++;
+    //total_enemy = start_enemy + wave_index;
+    //start_enemy = total_enemy;
 
-	std::cout << "start" << std::endl;
-	entity = GameManager::GetInstance().GetLevel()->GetEntity();
-	LoadPrefabs();
+    ///*if (total_enemy > enemy_pools.size())
+    //{
+    //    json object = prefabs["Object"];
+    //    int size = total_enemy - enemy_pools.size();
+
+    //    for (int i = 0; i < size; i++)
+    //    {
+    //        InitPrefabs(object);
+    //    }
+    //}*/
+
+    //int enemiesToMove = std::min((int)enemy_pools.size(), total_enemy);
+
+    //for (int i = 0; i < enemiesToMove; i++)
+    //{
+    //    enemys.push_back(enemy_pools[0]);
+    //    enemy_pools.erase(enemy_pools.begin());
+    //}
 
     for (auto& temp : enemys)
     {
-        temp->Start();
+        temp->IStartEnemy();
     }
+
+    sprite_system->SpriteBegin();
+    timer->StartTimer(20);
 }
 
-void EnemnyManager::IPersonalUpdate()
+void EnemyManager::ResetWaveEnemy()
 {
     for (auto& temp : enemys)
     {
-        temp->Update();
+        temp->IResetEnemy();
     }
+
+    /*for (int i = 0; i < enemys.size(); i++)
+    {
+        enemy_pools.push_back(enemys[i]);
+        enemys.erase(enemys.begin());
+    }*/
+
+    /*enemy_pools.insert(enemy_pools.end(), enemys.begin(), enemys.end());
+    enemys.clear();
+    sprite_system->SpriteBegin();*/
+}
+
+void EnemyManager::CheckWaveCondition()
+{
+    if (!b_is_reset || !enemys.empty())
+    {
+        int total_hit = 0;
+        for (auto& temp : enemys)
+        {
+            temp->IUpdateEnemy();
+
+            if (temp->IGetLayerEnemy() == -1) total_hit++;
+        }
+
+        b_is_reset = total_hit == total_enemy;
+    }
+
+    if (b_is_reset)
+    {
+        std::cout << "reset" << std::endl;
+
+        ResetWaveEnemy();
+
+        timer->StopTimer();
+        transition_delay = 2;
+        current_state = EState::TransitionState;
+
+        std::cout << "TRANSITION" << std::endl;
+
+        b_is_reset = false;
+    }
+
+    /*if (!b_is_reset) return;
+
+    std::cout << "reset" << std::endl;
+
+    ResetWaveEnemy();
+
+    timer->StopTimer();
+    transition_delay = 2;
+    current_state = EState::TransitionState;
+
+    std::cout << "TRANSITION" << std::endl;
+
+    b_is_reset = false;*/
+}
+
+bool EnemyManager::StateCondition()
+{
+    if (current_state == EState::GameplayState) return true;
+
+    if (transition_delay > 0)
+    {   
+        current_state = EState::TransitionState;
+        transition_delay -= TimeManager::GetInstance().GetDeltaTime();
+        return false;
+    }
+
+    ResetWaveEnemy();
+    StartWaveEnemy();
+    current_state = EState::GameplayState;
+    return true;
+}
+
+void EnemyManager::IPersonalStart()
+{
+    Init();
+}
+
+void EnemyManager::IPersonalUpdate()
+{
+    if (!StateCondition()) return;
+
+    CheckWaveCondition();
+
+    /*if (b_is_reset || enemys.empty()) return;
+
+    int total_hit = 0;
+
+    for (auto& temp : enemys)
+    {
+        temp->IUpdateEnemy();
+
+        if (temp->IGetLayerEnemy() == -1) total_hit++;
+    }
+
+    b_is_reset = total_hit == total_enemy;*/
 }

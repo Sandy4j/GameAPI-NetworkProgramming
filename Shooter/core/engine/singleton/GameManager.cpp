@@ -8,8 +8,8 @@ void GameManager::CreateMainWindow(float x, float y)
 	size_window = new glm::vec2(x, y);
 	glfwWindowHint(GLFW_TRANSPARENT_FRAMEBUFFER, GLFW_TRUE);
 	glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
-	GLFWmonitor* primaryMonitor = glfwGetPrimaryMonitor();
-	const GLFWvidmode* mode = glfwGetVideoMode(primaryMonitor);
+	GLFWmonitor* primary_monitor = glfwGetPrimaryMonitor();
+	const GLFWvidmode* mode = glfwGetVideoMode(primary_monitor);
 	window = glfwCreateWindow(size_window->x, size_window->y, "GameAPI", NULL, NULL);
 	int xPos = (mode->width - size_window->x) / 2;
 	int yPos = (mode->height - size_window->y) / 2;
@@ -89,6 +89,16 @@ void GameManager::SetScore(int temp)
 int GameManager::GetScore()
 {
 	return score;
+}
+
+void GameManager::SetWave(int temp)
+{
+	wave = temp;
+}
+
+int GameManager::GetWave()
+{
+	return wave;
 }
 
 void GameManager::iInit()

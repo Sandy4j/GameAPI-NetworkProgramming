@@ -9,7 +9,6 @@
 #include "Level.h"
 
 #include "PlayerController.h"
-#include "Timer.h"
 
 #include "GameManager.h"
 #include "InputManager.h"
@@ -35,10 +34,6 @@ void GameplayState::iEnter()
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 
 	player_controller->Enter();
-
-	Personal* raw_timer = level->GetEntity()->GetComponent<Personal>(1002);
-	Timer* timer = static_cast<Timer*>(raw_timer);
-	timer->StartTimer(20);
 }
 
 void GameplayState::iUpdateLogic()

@@ -36,6 +36,8 @@ public:
 
 	void SetScore(int temp);
 	int GetScore();
+	void SetWave(int temp);
+	int GetWave();
 
 private:
 	Level* level;
@@ -48,7 +50,7 @@ private:
 	std::unique_ptr<GameState> game_state;
 
 	std::string username, password;
-	int score = 0;
+	int score = 0, wave = 0;
 
 public:
 	virtual void iInit() override;
