@@ -14,10 +14,13 @@ public:
 	glm::vec2 rotation;
 	glm::vec3 scale;
 	std::string tag;
+	bool b_is_active;
 
 public:
 	void Update()
 	{
+		if (!b_is_active) return;
+
 		matrix_model = glm::mat4(1.0f);
 
 		matrix_model = glm::translate(matrix_model, position);

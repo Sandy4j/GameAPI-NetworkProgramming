@@ -68,16 +68,10 @@ void EnemySystem::InitiateJump()
     jump_control_position.y = jump_start_position.y + randomHeight; 
     jump_control_position.z = fixed_z;
 
-    // ini
-    //jump_duration = 1.0f + 1.0f * dist_float(rage);
     jump_duration = 1.0f + 1.0f / GameManager::GetInstance().GetWave();
     jump_elapsed_time = 0.0f;
 
     transform->rotation.x = (jump_start_position.x < jump_end_position.x)? 180 : 0;
-    /*if (jump_start_position.x < jump_end_position.x)
-        transform->rotation.x = 180;
-    else
-        transform->rotation.x = 0;*/
 }
 
 int EnemySystem::IGetLayerEnemy()

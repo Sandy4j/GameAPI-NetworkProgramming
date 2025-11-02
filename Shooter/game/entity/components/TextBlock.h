@@ -3,20 +3,21 @@
 
 #include <string>
 #include <imgui/imgui.h>
-#include <glm/glm.hpp>
+#include "UiTransform.h"
 
 struct TextBlock
 {
 public:
+    UiTransform* transform;
     std::string label;
-    glm::vec2 position;
-    float size;
 
 public:
     void Draw()
     {
-        ImGui::SetCursorPos(ImVec2(position.x, position.y));
-        ImGui::SetWindowFontScale(size);
+        if (!transform->b_is_active) return;
+
+        ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
+        ImGui::SetWindowFontScale(transform->scale.x);
         ImGui::Text(label.c_str());
         ImGui::SetWindowFontScale(1);
     }

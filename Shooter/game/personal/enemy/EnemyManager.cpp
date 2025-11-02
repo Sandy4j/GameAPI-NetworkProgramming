@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "Entity.h"
+#include "UiTransform.h"
 #include "Timer.h"
 #include "EnemySystem.h"
 
@@ -183,6 +184,8 @@ void EnemyManager::CheckWaveCondition()
         transition_delay = 2;
         current_state = EState::TransitionState;
 
+        entity->GetComponent<UiTransform>(5)->b_is_active = true;
+
         std::cout << "TRANSITION" << std::endl;
 
         b_is_reset = false;
@@ -214,6 +217,7 @@ bool EnemyManager::StateCondition()
         return false;
     }
 
+    entity->GetComponent<UiTransform>(5)->b_is_active = false;
     ResetWaveEnemy();
     StartWaveEnemy();
     current_state = EState::GameplayState;

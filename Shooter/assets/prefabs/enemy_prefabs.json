@@ -11,10 +11,11 @@
 
             "components": {
                 "transform": {
+                    "echo": true,
                     "position": [ 0, 0.0, 0.0 ],
                     "rotation": [ 0, 0 ],
                     "scale": [ 1, 1, 0 ],
-                    "tag":  "ikan"
+                    "tag": "ikan"
                 },
 
                 "sprite": {

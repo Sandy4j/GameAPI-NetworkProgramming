@@ -9,8 +9,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 300, 0 ],
-                    "scale": [ 5, 5 ]
+                    "echo": true,
+                    "position": [ 300, 0, 0 ],
+                    "scale": [ 5, 5, 0 ]
                 },
 
                 "textblock": {
@@ -23,8 +24,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 425, 200 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 425, 200, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {
@@ -37,8 +39,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 425, 250 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 425, 250, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {
@@ -51,8 +54,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 0 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 0, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
@@ -65,8 +69,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 50 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 50, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {

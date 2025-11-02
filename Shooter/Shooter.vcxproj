@@ -225,6 +225,7 @@
     <ClInclude Include="game\entity\components\TextBlock.h" />
     <ClInclude Include="game\entity\components\TextBox.h" />
     <ClInclude Include="game\entity\components\Transform.h" />
+    <ClInclude Include="game\entity\components\UiTransform.h" />
     <ClInclude Include="game\entity\Entity.h" />
     <ClInclude Include="game\entity\systems\PersonalSystem.h" />
     <ClInclude Include="game\entity\systems\SpriteSystem.h" />

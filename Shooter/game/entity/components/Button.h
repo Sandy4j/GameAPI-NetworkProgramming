@@ -3,19 +3,21 @@
 
 #include <string>
 #include <imgui/imgui.h>
+#include "UiTransform.h"
 
 struct Button
 {
 public:
+    UiTransform* transform;
     std::string label;
-    glm::vec2 position;
-    glm::vec2 size;
 
 public:
     void Draw()
     {
-        ImGui::SetCursorPos(ImVec2(position.x, position.y));
-        ImGui::Button(label.c_str(), ImVec2(size.x, size.y));
+        if (!transform->b_is_active) return;
+
+        ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
+        ImGui::Button(label.c_str(), ImVec2(transform->scale.x, transform->scale.y));
     }
 };
 

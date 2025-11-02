@@ -6,6 +6,7 @@ using json = nlohmann::json;
 
 #include "Entity.h"
 #include "Transform.h"
+#include "UiTransform.h"
 #include "Sprite.h"
 #include "BoundingBox.h"
 #include "TextBlock.h"
@@ -28,6 +29,7 @@ public:
         {
             auto& val = components["transform"];
             Transform* temp = new Transform();
+            temp->b_is_active = val["echo"];
             temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
             //temp->rotation = val["rotation"][0].get<float>();
             temp->rotation = glm::vec2(val["rotation"][0].get<float>(), val["rotation"][1].get<float>());
@@ -82,14 +84,19 @@ public:
     {
         int id = obj["id"].get<int>();
         auto& components = obj["components"];
-        glm::vec2 position = glm::vec2(0, 0);
-        glm::vec2 scale = glm::vec2(0, 0);
+        /*glm::vec2 position = glm::vec2(0, 0);
+        glm::vec2 scale = glm::vec2(0, 0);*/
 
         if (components.contains("transform"))
         {
             auto& val = components["transform"];
-            position = glm::vec2(val["position"][0].get<float>(), val["position"][1].get<float>());
-            scale = glm::vec2(val["scale"][0].get<float>(), val["scale"][1].get<float>());
+            UiTransform* temp = new UiTransform();
+            temp->b_is_active = val["echo"];
+            temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
+            temp->scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
+            entity->AddComponent<UiTransform>(id, temp);
+            /*position = glm::vec2(val["position"][0].get<float>(), val["position"][1].get<float>());
+            scale = glm::vec2(val["scale"][0].get<float>(), val["scale"][1].get<float>());*/
         }
 
         if (components.contains("textblock"))
@@ -97,8 +104,9 @@ public:
             auto& val = components["textblock"];
             TextBlock* temp = new TextBlock();
             temp->label = val["label"].get<std::string>();
-            temp->position = position;
-            temp->size = scale.x;
+            temp->transform = entity->GetComponent<UiTransform>(id);
+            /*temp->position = position;
+            temp->size = scale.x;*/
             entity->AddComponent<TextBlock>(id, temp);
         }
 
@@ -107,8 +115,9 @@ public:
             auto& val = components["textbox"];
             TextBox* temp = new TextBox();
             temp->label = val["label"].get<std::string>();
-            temp->position = position;
-            temp->size = scale.x;
+            temp->transform = entity->GetComponent<UiTransform>(id);
+            /*temp->position = position;
+            temp->size = scale.x;*/
             entity->AddComponent<TextBox>(id, temp);
         }
 
@@ -117,8 +126,9 @@ public:
             auto& val = components["button"];
             Button* temp = new Button();
             temp->label = val["label"].get<std::string>();
-            temp->position = position;
-            temp->size = scale;
+            temp->transform = entity->GetComponent<UiTransform>(id);
+            /*temp->position = position;
+            temp->size = scale;*/
             entity->AddComponent<Button>(id, temp);
         }
     }
@@ -136,6 +146,7 @@ public:
             {
                 auto& val = components["transform"];
                 Transform* temp = new Transform();
+                temp->b_is_active = val["echo"];
                 temp->position = pos;
                 temp->rotation = rot;
                 temp->scale = scale;
