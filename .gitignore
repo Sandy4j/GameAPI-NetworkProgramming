@@ -19,7 +19,6 @@ Build/
 *.obj
 *.pdb
 *.ilk
-*.lib
 *.sbr
 
 *.tlog
