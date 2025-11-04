@@ -86,6 +86,9 @@
     <IncludePath>$(projectDir)libraries/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(projectDir)libraries/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -181,6 +184,7 @@
     <ClCompile Include="game\personal\timer\Timer.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Integration\GameAPIManager.cpp" />
     <ClCompile Include="Integration\Integration.cpp" />
     <ClCompile Include="libraries\include\glm\detail\glm.cpp" />
     <ClCompile Include="libraries\include\glm\glm.cppm" />
@@ -236,6 +240,8 @@
     <ClInclude Include="game\personal\enemy\EnemySystem.h" />
     <ClInclude Include="game\personal\timer\Timer.h" />
     <ClInclude Include="game\ray\RayLine.h" />
+    <ClInclude Include="Integration\GameAPIManager.h" />
+    <ClInclude Include="Integration\Integration.h" />
     <ClInclude Include="libraries\include\glad\glad.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3native.h" />
@@ -595,6 +601,13 @@
     <None Include="core\graphics_pipeline\shaders\object.frag" />
     <None Include="core\graphics_pipeline\shaders\object.vert" />
     <None Include="imgui.ini" />
+    <None Include="Integration\ARCHITECTURE.md" />
+    <None Include="Integration\BUILD_INSTRUCTIONS.md" />
+    <None Include="Integration\CODE_SNIPPETS.md" />
+    <None Include="Integration\INDEX.md" />
+    <None Include="Integration\INTEGRATION_SUMMARY.md" />
+    <None Include="Integration\QUICK_START.md" />
+    <None Include="Integration\README.md" />
     <None Include="libraries\include\glm\detail\func_common.inl" />
     <None Include="libraries\include\glm\detail\func_common_simd.inl" />
     <None Include="libraries\include\glm\detail\func_exponential.inl" />
