@@ -1,8 +1,8 @@
 {
     "Object": {
-        "enemy": {
-            "id": 10001,
-            "layer": -1,
+        "awan": {
+            "id": 20001,
+            "layer": 1,
 
             "shaders": {
                 "vertex": "core/graphics_pipeline/shaders/object.vert",
@@ -19,12 +19,8 @@
                 },
 
                 "sprite": {
-                    "image": [ "assets/character/ikan-merah.png" ],
+                    "image": [ "assets/environment/awan-1.png" ],
                     "color": [ 1, 1, 1 ]
-                },
-
-                "bounding_box": {
-                    "is_trigger": false
                 }
             }
         }

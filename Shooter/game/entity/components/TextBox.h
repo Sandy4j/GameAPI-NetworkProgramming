@@ -3,21 +3,22 @@
 
 #include <string>
 #include <imgui/imgui.h>
-#include <glm/glm.hpp>
+#include "UiTransform.h"
 
 struct TextBox
 {
 public:
+    UiTransform* transform;
     std::string label;
     std::string input;
-    glm::vec2 position;
-    float size;
 
 public:
     void Draw()
     {
-        ImGui::SetCursorPos(ImVec2(position.x, position.y));
-        ImGui::SetWindowFontScale(size);
+        if (!transform->b_is_active) return;
+
+        ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
+        ImGui::SetWindowFontScale(transform->scale.x);
 
         const size_t bufferSize = 256;
         char tempBuffer[bufferSize];
