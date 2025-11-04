@@ -3,32 +3,47 @@
 #include <random>
 #include <chrono>
 
+#include "Transform.h"
+#include "Sprite.h"
+
+#include "GameManager.h"
 #include "TimeManager.h"
+
 #include "EnemySystem.h"
 
-EnemySystem::EnemySystem(Transform* temp_transform)
+EnemySystem::EnemySystem(Transform* temp_transform, Sprite* temp_sprite)
     : transform(temp_transform),
-    m_currentState(MovementState::Idle),
-    m_hasTarget(false),
-    m_jumpElapsedTime(0.0f),
-    m_moveSpeed(0.5f),
-    m_decisionTimer(0.0f),
-    m_idleTimer(0.0f),
-    m_minBounds(-1.0f, -1.0f),
-    m_maxBounds(1.0f, 1.0f),
-    m_fixedZ(-1.5f),          
-    m_rng(std::chrono::high_resolution_clock::now().time_since_epoch().count()),
-    m_distFloat(0.0f, 1.0f),
-    m_distDecision(1, 100)
+    sprite(temp_sprite),
+    current_state(MovementState::Idle),
+    b_is_target(false),
+    jump_elapsed_time(0.0f),
+    move_speed(0.5f),
+    decision_timer(0.0f),
+    idle_timer(0.0f),
+    min_bounds(-1.0f, -1.0f),
+    max_bounds(1.0f, 1.0f),
+    fixed_z(-1.5f),          
+    rage(std::chrono::high_resolution_clock::now().time_since_epoch().count()),
+    dist_float(0.0f, 1.0f),
+    dist_decision(1, 100)
+{}
+
+void EnemySystem::IResetEnemy()
 {
+    transform->position = glm::vec3(0, -10, 0);
+    b_is_target = false;
+    idle_timer = 0.5f + 1.0f * dist_float(rage);
+    current_state = MovementState::Idle;
 }
 
-void EnemySystem::Start()
+void EnemySystem::IStartEnemy()
 {
-    float startX = m_minBounds.x + (m_maxBounds.x - m_minBounds.x) * m_distFloat(m_rng);
-    transform->position = glm::vec3(startX, -1.4, m_fixedZ);
+    sprite->layer = 1;
 
-    m_decisionTimer = 1.0f + 2.0f * m_distFloat(m_rng);
+    float startX = min_bounds.x + (max_bounds.x - min_bounds.x) * dist_float(rage);
+    transform->position = glm::vec3(startX, -1.4, fixed_z);
+
+    decision_timer = 1.0f + 2.0f * dist_float(rage);
 }
 
 glm::vec3 EnemySystem::CalculateBezierPoint(float t, const glm::vec3& p0, const glm::vec3& p1, const glm::vec3& p2)
@@ -42,49 +57,57 @@ glm::vec3 EnemySystem::CalculateBezierPoint(float t, const glm::vec3& p0, const 
 
 void EnemySystem::InitiateJump()
 {
-    m_currentState = MovementState::Jumping;
-    m_jumpStartPos = transform->position;
+    current_state = MovementState::Jumping;
+    jump_start_position = transform->position;
 
-    float endX = m_minBounds.x + (m_maxBounds.x - m_minBounds.x) * m_distFloat(m_rng);
-    m_jumpEndPos = glm::vec3(endX, m_jumpStartPos.y, m_fixedZ);
+    float endX = min_bounds.x + (max_bounds.x - min_bounds.x) * dist_float(rage);
+    jump_end_position = glm::vec3(endX, jump_start_position.y, fixed_z);
 
-    m_jumpControlPos = (m_jumpStartPos + m_jumpEndPos) / 2.0f;
-    float randomHeight = 1.5f + 2.0f * m_distFloat(m_rng);
-    m_jumpControlPos.y = m_jumpStartPos.y + randomHeight; 
-    m_jumpControlPos.z = m_fixedZ;
+    jump_control_position = (jump_start_position + jump_end_position) / 2.0f;
+    float randomHeight = 1.5f + 2.0f * dist_float(rage);
+    jump_control_position.y = jump_start_position.y + randomHeight; 
+    jump_control_position.z = fixed_z;
 
-    m_jumpDuration = 1.0f + 1.0f * m_distFloat(m_rng);
-    m_jumpElapsedTime = 0.0f;
+    // ini
+    //jump_duration = 1.0f + 1.0f * dist_float(rage);
+    jump_duration = 1.0f + 1.0f / GameManager::GetInstance().GetWave();
+    jump_elapsed_time = 0.0f;
 
-    if (m_jumpStartPos.x < m_jumpEndPos.x)
-        transform->rotation = 180;
+    transform->rotation.x = (jump_start_position.x < jump_end_position.x)? 180 : 0;
+    /*if (jump_start_position.x < jump_end_position.x)
+        transform->rotation.x = 180;
     else
-        transform->rotation = 0;
+        transform->rotation.x = 0;*/
+}
+
+int EnemySystem::IGetLayerEnemy()
+{
+    return sprite->layer;
 }
 
 void EnemySystem::PickNewTarget()
 {
-    float targetX = m_minBounds.x + (m_maxBounds.x - m_minBounds.x) * m_distFloat(m_rng);
+    float targetX = min_bounds.x + (max_bounds.x - min_bounds.x) * dist_float(rage);
     float targetY = transform->position.y;
-    m_targetPos = glm::vec3(targetX, targetY, m_fixedZ);
-    m_hasTarget = true;
-    m_currentState = MovementState::Moving;
+    target_position = glm::vec3(targetX, targetY, fixed_z);
+    b_is_target = true;
+    current_state = MovementState::Moving;
 }
 
-void EnemySystem::Update()
+void EnemySystem::IUpdateEnemy()
 {
     float deltaTime = TimeManager::GetInstance().GetDeltaTime();
 
-    if (m_decisionTimer > 0.0f) m_decisionTimer -= deltaTime;
+    if (decision_timer > 0.0f) decision_timer -= deltaTime;
 
-    switch (m_currentState)
+    switch (current_state)
     {
     case MovementState::Idle:
     {
-        m_idleTimer -= deltaTime;
-        if (m_idleTimer <= 0.0f) 
+        idle_timer -= deltaTime;
+        if (idle_timer <= 0.0f) 
         {
-            int decisionRoll = m_distDecision(m_rng);
+            int decisionRoll = dist_decision(rage);
             if (decisionRoll <= 70) 
                 PickNewTarget();
             else
@@ -94,11 +117,11 @@ void EnemySystem::Update()
     }
     case MovementState::Moving:
     {
-        if (!m_hasTarget)
+        if (!b_is_target)
             PickNewTarget();
 
         glm::vec3 currentPos = transform->position;
-        glm::vec3 targetPos = m_targetPos;
+        glm::vec3 targetPos = target_position;
         glm::vec3 moveDirection = targetPos - currentPos;
         float distanceToTarget = glm::length(glm::vec2(moveDirection.x, moveDirection.y));
 
@@ -106,44 +129,44 @@ void EnemySystem::Update()
         if (distanceToTarget < threshold) 
         {
             transform->position = targetPos;
-            m_hasTarget = false;
-            m_idleTimer = 0.5f + 1.0f * m_distFloat(m_rng);
-            m_currentState = MovementState::Idle;
+            b_is_target = false;
+            idle_timer = 0.5f + 1.0f * dist_float(rage);
+            current_state = MovementState::Idle;
         }
         else 
         {
             moveDirection = glm::normalize(moveDirection);
-            float moveAmount = m_moveSpeed * deltaTime;
+            float moveAmount = move_speed * deltaTime;
             if (moveAmount > distanceToTarget) moveAmount = distanceToTarget;
             transform->position += moveDirection * moveAmount;
 
-            if (m_decisionTimer <= 0.0f) 
+            if (decision_timer <= 0.0f) 
             {
-                int decisionRoll = m_distDecision(m_rng);
+                int decisionRoll = dist_decision(rage);
                 if (decisionRoll > 90) 
                 {
                     InitiateJump();
-                    m_decisionTimer = 2.0f + 3.0f * m_distFloat(m_rng);
+                    decision_timer = 2.0f + 3.0f * dist_float(rage);
                 }
                 else
-                    m_decisionTimer = 0.5f + 1.5f * m_distFloat(m_rng);
+                    decision_timer = 0.5f + 1.5f * dist_float(rage);
             }
         }
         break;
     }
     case MovementState::Jumping:
     {
-        m_jumpElapsedTime += deltaTime;
-        float t = std::min(1.0f, m_jumpElapsedTime / m_jumpDuration);
+        jump_elapsed_time += deltaTime;
+        float t = std::min(1.0f, jump_elapsed_time / jump_duration);
 
-        transform->position = CalculateBezierPoint(t, m_jumpStartPos, m_jumpControlPos, m_jumpEndPos);
-        transform->position.z = m_fixedZ;
+        transform->position = CalculateBezierPoint(t, jump_start_position, jump_control_position, jump_end_position);
+        transform->position.z = fixed_z;
 
         if (t >= 1.0f) 
         {
-            transform->position.y = m_jumpEndPos.y;
-            m_idleTimer = 0.5f + 1.0f * m_distFloat(m_rng);
-            m_currentState = MovementState::Idle;
+            transform->position.y = jump_end_position.y;
+            idle_timer = 0.5f + 1.0f * dist_float(rage);
+            current_state = MovementState::Idle;
         }
         break;
     }

@@ -6,24 +6,22 @@ namespace GameAPI.Models
     {
         public int Id { get; set; }
       
-        [Required(ErrorMessage = "PlayerName is required")]
-        [MaxLength(100, ErrorMessage = "PlayerName cannot exceed 100 characters")]
-        public string PlayerName { get; set; } = string.Empty;
+        [Required(ErrorMessage = "Username is required")]
+        [MaxLength(50, ErrorMessage = "Username cannot exceed 50 characters")]
+        public string Username { get; set; } = string.Empty;
         
+        [Required(ErrorMessage = "Password is required")]
+        [MaxLength(100, ErrorMessage = "Password cannot exceed 100 characters")]
+        public string Password { get; set; } = string.Empty;
+     
         [Required(ErrorMessage = "Score is required")]
         [Range(0, int.MaxValue, ErrorMessage = "Score must be >= 0")]
         public int Score { get; set; }
         
-        // Additional fields untuk game shooter
-        public int Kills { get; set; } = 0;  // Jumlah enemy terbunuh
-        public int Deaths { get; set; } = 0; // Jumlah kematian
-        public int ShotsFired { get; set; } = 0; // Jumlah tembakan
-        public int ShotsHit { get; set; } = 0;   // Jumlah tembakan mengenai
-     
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
-        public DateTime? UpdatedAt { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "KillCount must be >= 0")]
+        public int KillCount { get; set; } = 0;
         
-        // Computed property untuk accuracy
-        public double Accuracy => ShotsFired > 0 ? Math.Round((double)ShotsHit / ShotsFired * 100, 2) : 0;
+        [Range(0, int.MaxValue, ErrorMessage = "Wave must be >= 0")]
+        public int Wave { get; set; } = 0;
     }
 }

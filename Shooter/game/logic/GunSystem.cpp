@@ -77,14 +77,26 @@ void GunSystem::Fire()
 	level->GetEntity()->GetComponent<TextBlock>(3)->label = "ammo: " + std::to_string(current_ammo);
 	int temp = ray_line->ShootRayLine();
 
+	if (!IsCanFire())
+	{
+		level->GetEntity()->GetComponent<TextBlock>(3)->label = "reload..";
+		b_is_reload = true;
+		reload_time = 5;
+	}
+
 	if (temp == 0) return;
 	std::cout << temp << std::endl;
 
-	level->GetEntity()->GetComponent<BoundingBox>(temp)->b_is_trigger = true;
-	level->GetEntity()->GetComponent<Sprite>(temp)->layer = -1;
+	Entity* entity = level->GetEntity();
+
+	//entity->GetComponent<BoundingBox>(temp)->b_is_trigger = true;
+	entity->GetComponent<Sprite>(temp)->layer = -1;
 	level->GetSpriteSystem()->ReorderRender();
 
-	int score = GameManager::GetInstance().GetScore() + 1;
+	int get_score = std::stoi(entity->GetComponent<Transform>(temp)->tag);
+	//std::cout << get_score << std::endl;
+
+	int score = GameManager::GetInstance().GetScore() + get_score;
 	GameManager::GetInstance().SetScore(score);
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(score);
 }

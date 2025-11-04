@@ -6,53 +6,61 @@
 #include <glm/glm.hpp>
 #include <random>
 
-#include "Transform.h"
+//#include "Transform.h"
+#include "EnemyInterface.h"
 
-class EnemySystem
+struct Transform;
+struct Sprite;
+
+enum class MovementState {
+    Idle,
+    Moving,
+    Jumping
+};
+
+class EnemySystem : public EnemyInterface
 {
 public:
-    EnemySystem(Transform* temp_transform);
+    EnemySystem(Transform* temp_transform, Sprite* temp_sprite);
     ~EnemySystem() = default;
-
-public:
-    void Start();
-    void Update();
 
 private:
     glm::vec3 CalculateBezierPoint(float t, const glm::vec3& p0, const glm::vec3& p1, const glm::vec3& p2);
     void PickNewTarget();
     void InitiateJump();
 
-    enum class MovementState {
-        Idle,
-        Moving,
-        Jumping
-    };
-    MovementState m_currentState;
+    MovementState current_state;
 
-    glm::vec3 m_targetPos;
-    bool m_hasTarget;
+    glm::vec3 target_position;
+    bool b_is_target;
 
-    glm::vec3 m_jumpStartPos;
-    glm::vec3 m_jumpControlPos;
-    glm::vec3 m_jumpEndPos;
-    float m_jumpDuration;
-    float m_jumpElapsedTime;
+    glm::vec3 jump_start_position;
+    glm::vec3 jump_control_position;
+    glm::vec3 jump_end_position;
+    float jump_duration;
+    float jump_elapsed_time;
 
-    float m_decisionTimer;
-    float m_idleTimer;
+    float decision_timer;
+    float idle_timer;
 
-    float m_moveSpeed;
+    float move_speed;
 
-    glm::vec2 m_minBounds;
-    glm::vec2 m_maxBounds;
-    float m_fixedZ;       
+    glm::vec2 min_bounds;
+    glm::vec2 max_bounds;
+    float fixed_z;       
 
-    std::mt19937 m_rng;
-    std::uniform_real_distribution<float> m_distFloat;
-    std::uniform_int_distribution<int> m_distDecision;
+    std::mt19937 rage;
+    std::uniform_real_distribution<float> dist_float;
+    std::uniform_int_distribution<int> dist_decision;
 
     Transform* transform;
+    Sprite* sprite;
+
+public:
+    virtual void IResetEnemy() override;
+    virtual void IStartEnemy() override;
+    virtual void IUpdateEnemy() override;
+    virtual int IGetLayerEnemy() override;
 };
 
 #endif

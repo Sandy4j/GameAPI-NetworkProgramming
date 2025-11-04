@@ -32,6 +32,7 @@ public:
             //temp->rotation = val["rotation"][0].get<float>();
             temp->rotation = glm::vec2(val["rotation"][0].get<float>(), val["rotation"][1].get<float>());
             temp->scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
+            temp->tag = val["tag"];
             entity->AddComponent<Transform>(id, temp);
         }
 
@@ -65,7 +66,7 @@ public:
 
             if (val["script_personal"] == "enemy_manager")
             {
-                Personal* temp = new EnemnyManager();
+                Personal* temp = new EnemyManager();
                 entity->AddComponent<Personal>(id, temp);
             }
 
@@ -136,9 +137,9 @@ public:
                 auto& val = components["transform"];
                 Transform* temp = new Transform();
                 temp->position = pos;
-                //temp->rotation = rot;
                 temp->rotation = rot;
                 temp->scale = scale;
+                temp->tag = val["tag"];
                 entity->AddComponent<Transform>(id, temp);
             }
 
@@ -172,7 +173,7 @@ public:
 
                 if (val["script_personal"] == "enemy_manager")
                 {
-                    Personal* temp = new EnemnyManager();
+                    Personal* temp = new EnemyManager();
                     entity->AddComponent<Personal>(id, temp);
                 }
 

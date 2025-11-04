@@ -86,6 +86,9 @@
     <IncludePath>$(projectDir)libraries/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(projectDir)libraries/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -93,7 +96,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/time;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +113,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/time;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -125,7 +128,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/time;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,7 +145,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/time;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -176,11 +179,13 @@
     <ClCompile Include="game\level\Level.cpp" />
     <ClCompile Include="game\logic\GunSystem.cpp" />
     <ClCompile Include="game\logic\PlayerController.cpp" />
-    <ClCompile Include="game\personal\EnemySystem.cpp" />
     <ClCompile Include="game\personal\enemy\EnemyManager.cpp" />
-    <ClCompile Include="game\personal\time\Timer.cpp" />
+    <ClCompile Include="game\personal\enemy\EnemySystem.cpp" />
+    <ClCompile Include="game\personal\timer\Timer.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Integration\GameAPIManager.cpp" />
+    <ClCompile Include="Integration\Integration.cpp" />
     <ClCompile Include="libraries\include\glm\detail\glm.cpp" />
     <ClCompile Include="libraries\include\glm\glm.cppm" />
     <ClCompile Include="libraries\include\imgui\imgui.cpp" />
@@ -230,10 +235,13 @@
     <ClInclude Include="game\level\Level.h" />
     <ClInclude Include="game\logic\GunSystem.h" />
     <ClInclude Include="game\logic\PlayerController.h" />
-    <ClInclude Include="game\personal\EnemySystem.h" />
+    <ClInclude Include="game\personal\enemy\EnemyInterface.h" />
     <ClInclude Include="game\personal\enemy\EnemyManager.h" />
-    <ClInclude Include="game\personal\time\Timer.h" />
+    <ClInclude Include="game\personal\enemy\EnemySystem.h" />
+    <ClInclude Include="game\personal\timer\Timer.h" />
     <ClInclude Include="game\ray\RayLine.h" />
+    <ClInclude Include="Integration\GameAPIManager.h" />
+    <ClInclude Include="Integration\Integration.h" />
     <ClInclude Include="libraries\include\glad\glad.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3native.h" />
@@ -593,6 +601,13 @@
     <None Include="core\graphics_pipeline\shaders\object.frag" />
     <None Include="core\graphics_pipeline\shaders\object.vert" />
     <None Include="imgui.ini" />
+    <None Include="Integration\ARCHITECTURE.md" />
+    <None Include="Integration\BUILD_INSTRUCTIONS.md" />
+    <None Include="Integration\CODE_SNIPPETS.md" />
+    <None Include="Integration\INDEX.md" />
+    <None Include="Integration\INTEGRATION_SUMMARY.md" />
+    <None Include="Integration\QUICK_START.md" />
+    <None Include="Integration\README.md" />
     <None Include="libraries\include\glm\detail\func_common.inl" />
     <None Include="libraries\include\glm\detail\func_common_simd.inl" />
     <None Include="libraries\include\glm\detail\func_exponential.inl" />
