@@ -9,9 +9,10 @@ extern "C" {
 
 int main()
 {
-	GameAPIManager::GetInstance().Initialize("https://localhost:7016/api");
+	// Untuk akses dari device lain, ganti "localhost" dengan IP address server
+	GameAPIManager::GetInstance().Initialize("http://localhost:5155/api");
 
-    if (GameAPIManager::GetInstance().TestConnection()) {
+  if (GameAPIManager::GetInstance().TestConnection()) {
 		std::cout << "Connected to Game API successfully!" << std::endl;
     }
 

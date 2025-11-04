@@ -1,87 +1,168 @@
 @baseUrl = https://localhost:7016/api
 @baseUrlHttp = http://localhost:5155/api
+@networkUrl = http://192.168.1.100:5155/api
 
 ### 1. Get All Scores (dengan paginasi)
-GET {{baseUrl}}/scores?page=1&pageSize=10
+GET {{baseUrlHttp}}/scores?page=1&pageSize=10
 Accept: application/json
 
 ### 2. Get Score by ID
-GET {{baseUrl}}/scores/1
+GET {{baseUrlHttp}}/scores/1
 Accept: application/json
 
 ### 3. Get Top 10 Leaderboard
-GET {{baseUrl}}/scores/top/10
+GET {{baseUrlHttp}}/scores/top/10
 Accept: application/json
 
 ### 4. Get Top 5 Leaderboard
-GET {{baseUrl}}/scores/top/5
+GET {{baseUrlHttp}}/scores/top/5
 Accept: application/json
 
 ### 5. Get Player Rank
-GET {{baseUrl}}/scores/rank/ProGamer
+GET {{baseUrlHttp}}/scores/rank/ProGamer
 Accept: application/json
 
 ### 6. Get Player History
-GET {{baseUrl}}/scores/player/ProGamer/history
+GET {{baseUrlHttp}}/scores/player/ProGamer/history
 Accept: application/json
 
 ### 7. Get Statistics
-GET {{baseUrl}}/scores/stats
+GET {{baseUrlHttp}}/scores/stats
 Accept: application/json
 
 ### 8. Create New Score
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
+
+{
+  "username": "ProGamer",
+  "password": "password123",
+  "score": 1500,
+  "killCount": 30,
+  "wave": 15
+}
 
 ### 9. Create Another Score
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
 
+{
+  "username": "Speedrunner",
+  "password": "password123",
+  "score": 2000,
+  "killCount": 40,
+  "wave": 20
+}
+
 ### 10. Create Score - Invalid (Missing Required Field)
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
 
 {
   "score": 500,
-  "killCount": 10,
+"killCount": 10,
   "wave": 5
 }
 
 ### 11. Update Score by ID
-PUT {{baseUrl}}/scores/1
+PUT {{baseUrlHttp}}/scores/1
 Content-Type: application/json
 
+{
+  "username": "ProGamer",
+  "password": "password123",
+  "score": 1600,
+  "killCount": 32,
+  "wave": 16
+}
+
 ### 12. Delete Score by ID
-DELETE {{baseUrl}}/scores/3
+DELETE {{baseUrlHttp}}/scores/3
 
 ### 13. Get Non-Existent Score
-GET {{baseUrl}}/scores/999
+GET {{baseUrlHttp}}/scores/999
 Accept: application/json
 
 ### 14. Test Pagination - Page 2
-GET {{baseUrl}}/scores?page=2&pageSize=2
+GET {{baseUrlHttp}}/scores?page=2&pageSize=2
 Accept: application/json
 
 ### 15. Bulk Create for Testing Leaderboard
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
 
-###
-POST {{baseUrl}}/scores
-Content-Type: application/json
+{
+  "username": "Sniper",
+  "password": "password123",
+  "score": 1800,
+  "killCount": 50,
+  "wave": 12
+}
 
 ###
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
+
+{
+  "username": "Tank",
+  "password": "password123",
+  "score": 1200,
+  "killCount": 20,
+  "wave": 18
+}
+
+###
+POST {{baseUrlHttp}}/scores
+Content-Type: application/json
+
+{
+  "username": "Support",
+  "password": "password123",
+  "score": 900,
+  "killCount": 15,
+  "wave": 10
+}
 
 ### 16. Test Multiple Scores for Same Player
-POST {{baseUrl}}/scores
+POST {{baseUrlHttp}}/scores
 Content-Type: application/json
 
+{
+  "username": "ProGamer",
+  "password": "password123",
+  "score": 2500,
+  "killCount": 60,
+  "wave": 25
+}
+
 ### 17. Get Updated Player History
-GET {{baseUrl}}/scores/player/ProGamer/history
+GET {{baseUrlHttp}}/scores/player/ProGamer/history
 Accept: application/json
 
 ### 18. Search Non-Existent Player
-GET {{baseUrl}}/scores/rank/NonExistentPlayer
+GET {{baseUrlHttp}}/scores/rank/NonExistentPlayer
+Accept: application/json
+
+### Network: Get Top 10 Leaderboard
+GET {{networkUrl}}/scores/top/10
+Accept: application/json
+
+### Network: Create Score
+POST {{networkUrl}}/scores
+Content-Type: application/json
+
+{
+  "username": "NetworkPlayer",
+  "password": "password123",
+  "score": 3000,
+  "killCount": 75,
+  "wave": 30
+}
+
+### Network: Get Statistics
+GET {{networkUrl}}/scores/stats
+Accept: application/json
+
+### Network: Get Player Rank
+GET {{networkUrl}}/scores/rank/NetworkPlayer
 Accept: application/json

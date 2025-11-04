@@ -9,18 +9,19 @@ class GameAPIManager
 public:
     static GameAPIManager& GetInstance()
  {
-        static GameAPIManager instance;
+    static GameAPIManager instance;
         return instance;
     }
 
     // Initialize the API client
-void Initialize(const std::string& apiUrl = "https://localhost:7016/api");
+    // Untuk akses dari device lain, gunakan IP address server
+void Initialize(const std::string& apiUrl = "http://localhost:5155/api");
 
     // Submit current game score
  bool SubmitCurrentGameScore();
 
     // Get leaderboard for display
-    std::vector<GameAPI::LeaderboardEntry> GetLeaderboard(int topN = 10);
+ std::vector<GameAPI::LeaderboardEntry> GetLeaderboard(int topN = 10);
 
     // Get player's current rank
     bool GetPlayerRank(int& outRank, int& outTotalPlayers);
@@ -31,11 +32,11 @@ void Initialize(const std::string& apiUrl = "https://localhost:7016/api");
     // Check if player exists and can login (basic check)
   bool CheckPlayerExists(const std::string& username);
 
-    void SetPlayerCredentials(const std::string& username, const std::string& password);
+void SetPlayerCredentials(const std::string& username, const std::string& password);
 
     std::string GetLastError() const { return lastError; }
 
-    bool TestConnection();
+  bool TestConnection();
 
 private:
     GameAPIManager() = default;
