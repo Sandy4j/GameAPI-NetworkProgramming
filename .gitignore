@@ -22,7 +22,6 @@ vcpkg_installed/
 *.obj
 *.pdb
 *.ilk
-*.lib
 *.sbr
 
 *.tlog

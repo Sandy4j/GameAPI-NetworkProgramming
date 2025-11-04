@@ -37,9 +37,7 @@ bool GameAPIManager::SubmitCurrentGameScore()
     std::string password = currentPassword.empty() ? gameManager.GetPassword() : currentPassword;
     int score = gameManager.GetScore();
     int wave = gameManager.GetWave();
-    
-    //calculation is still placeholder
-    int killCount = score / 50;
+    int killCount = gameManager.GetKillCount();
 
     if (username.empty())
     {
@@ -52,7 +50,7 @@ bool GameAPIManager::SubmitCurrentGameScore()
   << ", Wave: " << wave 
           << ", Kills: " << killCount << std::endl;
 
-    auto response = apiClient->SubmitGameScore(username, password, score, killCount, wave);
+  auto response = apiClient->SubmitGameScore(username, password, score, killCount, wave);
 
     if (response.success)
     {

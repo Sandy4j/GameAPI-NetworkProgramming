@@ -9,8 +9,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 300, 0 ],
-                    "scale": [ 5, 5 ]
+                    "echo": true,
+                    "position": [ 300, 0, 0 ],
+                    "scale": [ 5, 5, 0 ]
                 },
 
                 "textblock": {
@@ -23,8 +24,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 400, 200 ],
-                    "scale": [ 2, 2 ]
+                    "echo": true,
+                    "position": [ 400, 200, 0 ],
+                    "scale": [ 2, 2, 0 ]
                 },
 
                 "textblock": {
@@ -37,8 +39,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 460, 300 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 460, 300, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {
@@ -51,8 +54,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 460, 350 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 460, 350, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {

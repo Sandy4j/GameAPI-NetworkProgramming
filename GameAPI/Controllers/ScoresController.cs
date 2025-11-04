@@ -86,34 +86,35 @@ namespace GameAPI.Controllers
         // GET: api/scores/top/10
         /// <summary>
         /// Get top N highest scores (leaderboard)
-   /// </summary>
- [HttpGet("top/{n}")]
+        /// </summary>
+        [HttpGet("top/{n}")]
         public async Task<ActionResult<IEnumerable<LeaderboardEntryDto>>> GetTopScores(int n = 10)
         {
- if (n < 1) n = 10;
-       if (n > 100) n = 100;
+if (n < 1) n = 10;
+          if (n > 100) n = 100;
 
-        var topScores = await _context.PlayerScores
-     .OrderByDescending(s => s.Score)
-                .Take(n)
-      .Select((s, index) => new LeaderboardEntryDto
-    {
-           Rank = 0, // Will be set after
-Username = s.Username,
-      Score = s.Score,
+            // First, get the data from database
+            var topScores = await _context.PlayerScores
+          .OrderByDescending(s => s.Score)
+.Take(n)
+            .ToListAsync(); // Execute query first
+
+            // Then, map to DTO with ranking (in-memory operation)
+         var leaderboard = topScores
+          .Select((s, index) => new LeaderboardEntryDto
+{
+                Rank = index + 1, // Now we can use index
+    Username = s.Username,
+                 Score = s.Score,
          KillCount = s.KillCount,
-       Wave = s.Wave
-      })
-  .ToListAsync();
+        Wave = s.Wave
+       })
+  .ToList();
 
-            // Set rank manually
-            for (int i = 0; i < topScores.Count; i++)
-          {
-     topScores[i].Rank = i + 1;
-         }
+ _logger.LogInformation("Retrieved top {Count} scores for leaderboard", leaderboard.Count);
 
-        return Ok(topScores);
-  }
+            return Ok(leaderboard);
+        }
 
       // GET: api/scores/rank/{username}
      /// <summary>

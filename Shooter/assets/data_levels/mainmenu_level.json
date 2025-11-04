@@ -9,8 +9,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 300, 0 ],
-                    "scale": [ 5, 5 ]
+                    "echo": true,
+                    "position": [ 300, 0, 0 ],
+                    "scale": [ 5, 5, 0 ]
                 },
 
                 "textblock": {
@@ -23,8 +24,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 425, 200 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 425, 200, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {
@@ -32,13 +34,29 @@
                 }
             }
         },
-        "exit": {
+        "leaderboard": {
             "id": 2,
 
             "components": {
                 "transform": {
-                    "position": [ 425, 250 ],
-                    "scale": [ 100, 40 ]
+                    "echo": true,
+                    "position": [ 425, 250, 0 ],
+                    "scale": [ 100, 40, 0 ]
+                },
+
+                "button": {
+                    "label": "leaderboard"
+                }
+            }
+        },
+        "exit": {
+            "id": 3,
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 425, 300, 0 ],
+                    "scale": [ 100, 40, 0 ]
                 },
 
                 "button": {
@@ -47,12 +65,13 @@
             }
         },
         "username": {
-            "id": 3,
+            "id": 4,
 
             "components": {
                 "transform": {
-                    "position": [ 0, 0 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 0, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
@@ -61,12 +80,13 @@
             }
         },
         "score": {
-            "id": 4,
+            "id": 5,
 
             "components": {
                 "transform": {
-                    "position": [ 0, 50 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 50, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {

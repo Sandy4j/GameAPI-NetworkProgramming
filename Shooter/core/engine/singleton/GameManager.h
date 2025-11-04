@@ -38,6 +38,8 @@ public:
 	int GetScore();
 	void SetWave(int temp);
 	int GetWave();
+	void SetKillCount(int temp);
+	int GetKillCount();
 
 private:
 	Level* level;
@@ -50,7 +52,7 @@ private:
 	std::unique_ptr<GameState> game_state;
 
 	std::string username, password;
-	int score = 0, wave = 0;
+	int score = 0, wave = 0, kill_count = 0;
 
 public:
 	virtual void iInit() override;

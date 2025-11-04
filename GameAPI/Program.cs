@@ -3,9 +3,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();              // Registrasi controller (MVC tanpa view)
-builder.Services.AddEndpointsApiExplorer();     // Untuk OpenAPI
-builder.Services.AddSwaggerGen();               // Generator dokumentasi Swagger
+builder.Services.AddControllers();     // Registrasi controller (MVC tanpa view)
+builder.Services.AddEndpointsApiExplorer();   // Untuk OpenAPI
+builder.Services.AddSwaggerGen();   // Generator dokumentasi Swagger
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+   .AllowAnyHeader();
+    });
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -20,7 +30,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();  // Redirect HTTP -> HTTPS saat Development
-app.UseAuthorization();     // Middleware otorisasi (siap untuk JWT nanti)
+
+// Gunakan CORS policy
+app.UseCors("AllowAll");
+
+app.UseAuthorization();   // Middleware otorisasi (siap untuk JWT nanti)
 app.MapControllers();       // Pemetaan attribute routing controller
 
 app.Run();

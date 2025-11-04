@@ -20,6 +20,16 @@
                     "script_personal": "timer"
                 }
             }
+        },
+        "awan_manager": {
+            "id": 1003,
+            "layer": 1,
+
+            "components": {
+                "personal": {
+                    "script_personal": "awan_manager"
+                }
+            }
         }
     },
 
@@ -29,8 +39,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 5000, 0 ],
-                    "scale": [ 5, 5 ]
+                    "echo": true,
+                    "position": [ 5000, 0, 0 ],
+                    "scale": [ 5, 5, 0 ]
                 },
 
                 "textblock": {
@@ -43,8 +54,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 0 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 0, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
@@ -57,8 +69,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 50 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 50, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
@@ -71,8 +84,9 @@
 
             "components": {
                 "transform": {
-                    "position": [ 0, 100 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 100, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
@@ -84,12 +98,27 @@
             "id": 4,
             "components": {
                 "transform": {
-                    "position": [ 0, 150 ],
-                    "scale": [ 2.5, 2.5 ]
+                    "echo": true,
+                    "position": [ 0, 150, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
                     "label": "timer: "
+                }
+            }
+        },
+        "transition": {
+            "id": 5,
+            "components": {
+                "transform": {
+                    "echo": false,
+                    "position": [ 500, 500, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
+                },
+
+                "textblock": {
+                    "label": "TRANSITION"
                 }
             }
         }

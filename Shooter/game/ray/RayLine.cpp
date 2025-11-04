@@ -14,6 +14,9 @@
 
 int RayLine::ShootRayLine()
 {
+    Level* level = GameManager::GetInstance().GetLevel();
+    Entity* entity = level->GetEntity();
+
     glm::mat4 projectionMatrix = RenderManager::GetInstance().GetProjectionMatrix();
     glm::mat4 viewMatrix = RenderManager::GetInstance().GetViewMatrix();
     glm::vec3 cameraPosition = glm::vec3(glm::inverse(viewMatrix)[3]);
@@ -24,7 +27,7 @@ int RayLine::ShootRayLine()
     int id_hit_entity = 0;
 
     //auto& component = entity.GetComponentMap<Sprite>();
-    auto& component = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponentMap<Sprite>();
+    auto& component = entity->GetComponentMap<Sprite>();
     std::vector<std::pair<int, Sprite*>> sprites;
 
     for (auto& pair : component) 
@@ -43,8 +46,8 @@ int RayLine::ShootRayLine()
         int entity_id = obj.first;
         /*Transform* transform = entity.GetComponent<Transform>(entity_id);
         BoundingBox* bounding_box = entity.GetComponent<BoundingBox>(entity_id);*/
-        Transform* transform = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponent<Transform>(entity_id);
-        BoundingBox* bounding_box = GameManager::GetInstance().GetLevel()->GetEntity()->GetComponent<BoundingBox>(entity_id);
+        Transform* transform = entity->GetComponent<Transform>(entity_id);
+        BoundingBox* bounding_box = entity->GetComponent<BoundingBox>(entity_id);
 
         if (!bounding_box || bounding_box->b_is_trigger) continue;
 
