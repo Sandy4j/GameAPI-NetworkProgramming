@@ -1,0 +1,28 @@
+{
+    "Object": {
+        "awan": {
+            "id": 20001,
+            "layer": 1,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 0, 0.0, 0.0 ],
+                    "rotation": [ 0, 0 ],
+                    "scale": [ 1, 1, 0 ],
+                    "tag": "ikan"
+                },
+
+                "sprite": {
+                    "image": [ "assets/environment/awan-1.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
+        }
+    }
+}

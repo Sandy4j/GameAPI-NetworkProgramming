@@ -23,6 +23,9 @@ GameplayState::GameplayState()
 
 void GameplayState::iEnter()
 {
+	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu && 
+		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver) return;
+
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 

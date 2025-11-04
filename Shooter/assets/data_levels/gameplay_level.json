@@ -20,6 +20,16 @@
                     "script_personal": "timer"
                 }
             }
+        },
+        "awan_manager": {
+            "id": 1003,
+            "layer": 1,
+
+            "components": {
+                "personal": {
+                    "script_personal": "awan_manager"
+                }
+            }
         }
     },
 

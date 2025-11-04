@@ -15,6 +15,7 @@ using json = nlohmann::json;
 
 #include "EnemyManager.h"
 #include "Timer.h"
+#include "AwanManager.h"
 
 class FactoryComponents
 {
@@ -75,6 +76,12 @@ public:
             if (val["script_personal"] == "timer")
             {
                 Personal* temp = new Timer();
+                entity->AddComponent<Personal>(id, temp);
+            }
+
+            if (val["script_personal"] == "awan_manager")
+            {
+                Personal* temp = new AwanManager();
                 entity->AddComponent<Personal>(id, temp);
             }
         }
@@ -191,6 +198,12 @@ public:
                 if (val["script_personal"] == "timer")
                 {
                     Personal* temp = new Timer();
+                    entity->AddComponent<Personal>(id, temp);
+                }
+
+                if (val["script_personal"] == "awan_manager")
+                {
+                    Personal* temp = new AwanManager();
                     entity->AddComponent<Personal>(id, temp);
                 }
             }
