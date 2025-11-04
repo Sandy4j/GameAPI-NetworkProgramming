@@ -99,4 +99,8 @@ void GunSystem::Fire()
 	int score = GameManager::GetInstance().GetScore() + get_score;
 	GameManager::GetInstance().SetScore(score);
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(score);
+
+	int kill_count = GameManager::GetInstance().GetKillCount();
+	kill_count++;
+	GameManager::GetInstance().SetKillCount(kill_count);
 }

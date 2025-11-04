@@ -12,6 +12,7 @@ enum class EGameState
 	eGameplay,
 	ePauseMenu,
 	eGameOver,
+	eLeaderboard,
 	eNone
 };
 

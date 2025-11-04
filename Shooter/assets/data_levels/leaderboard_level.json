@@ -1,0 +1,68 @@
+{
+    "Object": {
+        
+    },
+
+    "UI": {
+  "title": {
+       "id": 0,
+
+            "components": {
+  "transform": {
+      "echo": true,
+           "position": [ 300, 50, 0 ],
+ "scale": [ 5, 5, 0 ]
+          },
+
+ "textblock": {
+          "label": "LEADERBOARD"
+        }
+          }
+        },
+        "back_button": {
+            "id": 1,
+
+            "components": {
+   "transform": {
+           "echo": true,
+      "position": [ 350, 500, 0 ],
+         "scale": [ 120, 40, 0 ]
+           },
+
+      "button": {
+               "label": "Back to Menu"
+   }
+         }
+     },
+        "refresh_button": {
+"id": 2,
+
+            "components": {
+         "transform": {
+          "echo": true,
+      "position": [ 500, 500, 0 ],
+        "scale": [ 120, 40, 0 ]
+          },
+
+                "button": {
+              "label": "Refresh"
+                }
+         }
+        },
+   "info_text": {
+            "id": 3,
+
+   "components": {
+      "transform": {
+      "echo": true,
+           "position": [ 50, 100, 0 ],
+        "scale": [ 2, 2, 0 ]
+          },
+
+    "textblock": {
+           "label": "Loading leaderboard..."
+   }
+            }
+        }
+ }
+}
