@@ -101,6 +101,16 @@ int GameManager::GetWave()
 	return wave;
 }
 
+void GameManager::SetKillCount(int temp)
+{
+	kill_count = temp;
+}
+
+int GameManager::GetKillCount()
+{
+	return kill_count;
+}
+
 void GameManager::iInit()
 {
 	game_state = std::make_unique<GameState>();

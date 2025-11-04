@@ -138,7 +138,7 @@ void EnemyManager::StartWaveEnemy()
     }
 
     sprite_system->SpriteBegin();
-    timer->StartTimer(100);
+    timer->StartTimer(10);
 }
 
 void EnemyManager::ResetWaveEnemy()
