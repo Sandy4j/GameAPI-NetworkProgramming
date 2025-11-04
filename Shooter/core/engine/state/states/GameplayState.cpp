@@ -19,10 +19,25 @@ GameplayState::GameplayState()
 {
 	level = new Level();
 	player_controller = new PlayerController();
+
+	const char* cursorPath = nullptr;
+	int width, height, channels;
+	GLFWimage image;
+
+	cursorPath = "assets/ui/crosshair.png";
+
+	unsigned char* pixels = stbi_load(cursorPath, &width, &height, &channels, 4);
+	image.width = width;
+	image.height = height;
+	image.pixels = pixels;
+
+	cursor = glfwCreateCursor(&image, 0, 0);
 }
 
 void GameplayState::iEnter()
 {
+	//glfwSetCursor(GameManager::GetInstance().GetWindow(), cursor);
+
 	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu && 
 		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver) return;
 

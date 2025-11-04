@@ -33,6 +33,7 @@ private:
 	void CreateEntity();
 	void InitPrefabs(json temp);
 	int RandomNumber(int min, int max);
+	float RandomNumberFloat(float min, float max);
 	void StartWaveEnemy();
 	void ResetWaveEnemy();
 	void CheckWaveCondition();

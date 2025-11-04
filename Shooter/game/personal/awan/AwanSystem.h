@@ -8,7 +8,7 @@ struct Transform;
 class AwanSystem : public AwanInterface
 {
 public:
-	AwanSystem(Transform* temp_transform);
+	AwanSystem(Transform* temp_transform, glm::vec3 temp_offset);
 	~AwanSystem() = default;
 
 private:
@@ -16,7 +16,8 @@ private:
 
 private:
 	Transform* transform;
-	float y_position;
+	glm::vec3 offset;
+	float value, radius, speed;
 
 public:
 	virtual void IAwanStart() override;

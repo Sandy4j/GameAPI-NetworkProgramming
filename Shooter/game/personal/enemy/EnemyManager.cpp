@@ -80,7 +80,8 @@ void EnemyManager::InitPrefabs(json temp)
 {
     int id = 0;
 
-    id = FactoryComponents::InstantiatePrefab(temp, entity, glm::zero<glm::vec3>(), glm::vec2(0, 0), glm::vec3(.3, .3, 0));
+    float scale = RandomNumberFloat(.15, .3);
+    id = FactoryComponents::InstantiatePrefab(temp, entity, glm::zero<glm::vec3>(), glm::vec2(0, 0), glm::vec3(scale, scale, 0));
 
     int random_number = RandomNumber(0, 3);
     int score = random_number + 10;
@@ -100,6 +101,15 @@ int EnemyManager::RandomNumber(int min, int max)
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distrib(min, n);
     int random_number = distrib(gen);
+    return random_number;
+}
+
+float EnemyManager::RandomNumberFloat(float min, float max)
+{
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> distrib(min, max);
+    float random_number = distrib(gen);
     return random_number;
 }
 
@@ -138,7 +148,7 @@ void EnemyManager::StartWaveEnemy()
     }
 
     sprite_system->SpriteBegin();
-    timer->StartTimer(10);
+    timer->StartTimer(100);
 }
 
 void EnemyManager::ResetWaveEnemy()

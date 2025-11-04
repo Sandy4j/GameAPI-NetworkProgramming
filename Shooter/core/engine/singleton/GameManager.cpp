@@ -11,8 +11,10 @@ void GameManager::CreateMainWindow(float x, float y)
 	GLFWmonitor* primary_monitor = glfwGetPrimaryMonitor();
 	const GLFWvidmode* mode = glfwGetVideoMode(primary_monitor);
 	window = glfwCreateWindow(size_window->x, size_window->y, "GameAPI", NULL, NULL);
-	int xPos = (mode->width - size_window->x) / 2;
-	int yPos = (mode->height - size_window->y) / 2;
+	//int xPos = (mode->width - size_window->x) / 2;
+	int xPos = 0;
+	//int yPos = (mode->height - size_window->y) / 2;
+	int yPos = 0;
 	glfwSetWindowPos(window, xPos, yPos);
 
 	mouse_position = new glm::vec2(0.0f, 0.0f);

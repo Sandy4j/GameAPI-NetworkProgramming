@@ -15,6 +15,7 @@ public:
 	~GameplayState() = default;
 
 private:
+	GLFWcursor* cursor;
 	PlayerController* player_controller;
 
 public:

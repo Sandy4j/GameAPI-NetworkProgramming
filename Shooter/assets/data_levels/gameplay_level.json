@@ -30,6 +30,16 @@
                     "script_personal": "awan_manager"
                 }
             }
+        },
+        "manuk_manager": {
+            "id": 1004,
+            "layer": 1,
+
+            "components": {
+                "personal": {
+                    "script_personal": "manuk_manager"
+                }
+            }
         }
     },
 
