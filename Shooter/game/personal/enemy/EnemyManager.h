@@ -51,7 +51,7 @@ private:
 	std::vector<EnemyInterface*> enemys, enemy_pools;
 	std::string ikan_paths[4];
 
-	int start_enemy, total_enemy, wave_index;
+	int start_enemy, total_enemy;
 	bool b_is_reset;
 
 	float transition_delay;

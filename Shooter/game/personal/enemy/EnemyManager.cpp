@@ -64,6 +64,9 @@ void EnemyManager::FindComponent()
     transition_delay = 2;
     start_enemy = 2;
     total_enemy = start_enemy;
+
+    entity->GetComponent<TextBlock>(5)->label = "WAVE-" + std::to_string(GameManager::GetInstance().GetWave() + 1);
+    entity->GetComponent<UiTransform>(5)->b_is_active = true;
 }
 
 void EnemyManager::CreateEntity()
@@ -194,9 +197,8 @@ void EnemyManager::CheckWaveCondition()
         transition_delay = 2;
         current_state = EState::TransitionState;
 
+        entity->GetComponent<TextBlock>(5)->label = "WAVE-" + std::to_string(GameManager::GetInstance().GetWave()+1);
         entity->GetComponent<UiTransform>(5)->b_is_active = true;
-
-        std::cout << "TRANSITION" << std::endl;
 
         b_is_reset = false;
     }

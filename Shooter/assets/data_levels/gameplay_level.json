@@ -131,6 +131,20 @@
                     "label": "TRANSITION"
                 }
             }
+        },
+        "kill": {
+            "id": 6,
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 0, 200, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
+                },
+
+                "textblock": {
+                    "label": "kill: "
+                }
+            }
         }
     }
 

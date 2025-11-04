@@ -89,13 +89,10 @@ void GunSystem::Fire()
 
 	Entity* entity = level->GetEntity();
 
-	//entity->GetComponent<BoundingBox>(temp)->b_is_trigger = true;
 	entity->GetComponent<Sprite>(temp)->layer = -1;
 	level->GetSpriteSystem()->ReorderRender();
 
 	int get_score = std::stoi(entity->GetComponent<Transform>(temp)->tag);
-	//std::cout << get_score << std::endl;
-
 	int score = GameManager::GetInstance().GetScore() + get_score;
 	GameManager::GetInstance().SetScore(score);
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(score);
@@ -103,4 +100,5 @@ void GunSystem::Fire()
 	int kill_count = GameManager::GetInstance().GetKillCount();
 	kill_count++;
 	GameManager::GetInstance().SetKillCount(kill_count);
+	level->GetEntity()->GetComponent<TextBlock>(6)->label = "kill: " + std::to_string(kill_count);
 }
