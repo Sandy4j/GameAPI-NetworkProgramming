@@ -34,6 +34,12 @@ void Initialize(const std::string& apiUrl = "http://localhost:5155/api");
 
 void SetPlayerCredentials(const std::string& username, const std::string& password);
 
+    // Game Session Management
+ bool SaveCurrentGameSession();
+        bool LoadGameSession(int& outScore, int& outWave, int& outKillCount);
+        bool HasSavedGame(const std::string& username);
+  bool ClearSavedGame(const std::string& username);
+
     std::string GetLastError() const { return lastError; }
 
   bool TestConnection();

@@ -33,6 +33,12 @@ void GameOverState::iEnter()
 	if (submitSuccess)
 	{
 		std::cout << "[GameOver] Score submitted successfully." << std::endl;
+		std::string username = GameManager::GetInstance().GetUsername();
+		if (!username.empty())
+		{
+			GameAPIManager::GetInstance().ClearSavedGame(username);
+			std::cout << "[GameOver] Saved game cleared after final score submission" << std::endl;
+		}
 	}
 	else
 	{

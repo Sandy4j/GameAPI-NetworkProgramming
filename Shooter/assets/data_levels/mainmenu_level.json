@@ -30,7 +30,7 @@
                 },
 
                 "button": {
-                    "label": "play"
+                    "label": "New Game"
                 }
             }
         },
@@ -49,7 +49,7 @@
                 }
             }
         },
-        "exit": {
+        "continue": {
             "id": 3,
 
             "components": {
@@ -60,12 +60,27 @@
                 },
 
                 "button": {
+                    "label": "Continue Game"
+                }
+            }
+        },
+        "exit": {
+            "id": 4,
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 425, 350, 0 ],
+                    "scale": [ 100, 40, 0 ]
+                },
+
+                "button": {
                     "label": "exit"
                 }
             }
         },
         "username": {
-            "id": 4,
+            "id": 5,
 
             "components": {
                 "transform": {
@@ -80,7 +95,7 @@
             }
         },
         "score": {
-            "id": 5,
+            "id": 6,
 
             "components": {
                 "transform": {

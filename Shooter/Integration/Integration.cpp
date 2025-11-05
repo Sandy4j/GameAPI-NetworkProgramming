@@ -475,4 +475,187 @@ auto errorJson = json::parse(r.text);
         return CreateScore(username, password, score, killCount, wave);
     }
 
+    // POST: Save game session
+    ApiResponse<GameSessionData> APIClient::SaveGameSession(
+  const std::string& username,
+    const std::string& password,
+ int currentScore,
+     int currentWave,
+        int currentKillCount,
+     const std::string& gameStateData)
+    {
+  ApiResponse<GameSessionData> response;
+
+        try
+    {
+       json requestBody = {
+   {"username", username},
+    {"password", password},
+   {"currentScore", currentScore},
+      {"currentWave", currentWave},
+   {"currentKillCount", currentKillCount},
+    {"gameStateData", gameStateData}
+  };
+
+   auto r = cpr::Post(
+        cpr::Url{BuildUrl("/sessions/save")},
+      cpr::Header{{"Content-Type", "application/json"}},
+   cpr::Body{requestBody.dump()},
+       cpr::VerifySsl{verifySSL}
+      );
+
+       response.statusCode = r.status_code;
+
+   if (r.status_code == 200) // OK
+   {
+    auto jsonResponse = json::parse(r.text);
+     response.success = true;
+    response.data.id = jsonResponse["id"];
+    response.data.username = jsonResponse["username"];
+     response.data.currentScore = jsonResponse["currentScore"];
+       response.data.currentWave = jsonResponse["currentWave"];
+     response.data.currentKillCount = jsonResponse["currentKillCount"];
+ response.data.gameStateData = jsonResponse.value("gameStateData", "");
+       }
+            else
+   {
+response.success = false;
+     auto errorJson = json::parse(r.text);
+    response.errorMessage = errorJson.contains("message")
+     ? errorJson["message"].get<std::string>()
+    : "Failed to save game session";
+      }
+ }
+catch (const std::exception& e)
+  {
+          response.success = false;
+   response.statusCode = 0;
+      response.errorMessage = std::string("Exception: ") + e.what();
+        }
+
+  return response;
+    }
+
+    // GET: Load game session
+    ApiResponse<GameSessionData> APIClient::LoadGameSession(const std::string& username)
+    {
+    ApiResponse<GameSessionData> response;
+
+try
+        {
+       auto r = cpr::Get(
+     cpr::Url{BuildUrl("/sessions/load/" + username)},
+        cpr::VerifySsl{verifySSL}
+     );
+
+   response.statusCode = r.status_code;
+
+       if (r.status_code == 200)
+   {
+       auto jsonResponse = json::parse(r.text);
+       response.success = true;
+   response.data.id = jsonResponse["id"];
+   response.data.username = jsonResponse["username"];
+  response.data.currentScore = jsonResponse["currentScore"];
+            response.data.currentWave = jsonResponse["currentWave"];
+    response.data.currentKillCount = jsonResponse["currentKillCount"];
+  response.data.gameStateData = jsonResponse.value("gameStateData", "");
+       }
+      else
+       {
+   response.success = false;
+   auto errorJson = json::parse(r.text);
+      response.errorMessage = errorJson.contains("message")
+ ? errorJson["message"].get<std::string>()
+     : "No saved game found";
+       }
+   }
+    catch (const std::exception& e)
+ {
+  response.success = false;
+            response.statusCode = 0;
+       response.errorMessage = std::string("Exception: ") + e.what();
+        }
+
+  return response;
+    }
+
+    // DELETE: Clear saved game
+ ApiResponse<bool> APIClient::ClearSavedGame(const std::string& username)
+    {
+        ApiResponse<bool> response;
+
+try
+     {
+      auto r = cpr::Delete(
+   cpr::Url{BuildUrl("/sessions/clear/" + username)},
+cpr::VerifySsl{verifySSL}
+       );
+
+   response.statusCode = r.status_code;
+
+      if (r.status_code == 204) // No Content
+      {
+       response.success = true;
+      response.data = true;
+   }
+   else
+      {
+      response.success = false;
+   response.data = false;
+      auto errorJson = json::parse(r.text);
+      response.errorMessage = errorJson.contains("message")
+    ? errorJson["message"].get<std::string>()
+  : "Failed to clear saved game";
+      }
+ }
+   catch (const std::exception& e)
+   {
+      response.success = false;
+    response.statusCode = 0;
+   response.data = false;
+       response.errorMessage = std::string("Exception: ") + e.what();
+ }
+
+ return response;
+    }
+
+    // GET: Check if has saved game
+    ApiResponse<bool> APIClient::HasSavedGame(const std::string& username)
+    {
+ ApiResponse<bool> response;
+
+   try
+ {
+      auto r = cpr::Get(
+   cpr::Url{BuildUrl("/sessions/check/" + username)},
+       cpr::VerifySsl{verifySSL}
+    );
+
+       response.statusCode = r.status_code;
+
+ if (r.status_code == 200)
+     {
+  auto jsonResponse = json::parse(r.text);
+  response.success = true;
+   response.data = jsonResponse["hasSavedGame"];
+   }
+   else
+  {
+       response.success = false;
+   response.data = false;
+   response.errorMessage = "Failed to check saved game";
+ }
+        }
+     catch (const std::exception& e)
+   {
+  response.success = false;
+     response.statusCode = 0;
+            response.data = false;
+     response.errorMessage = std::string("Exception: ") + e.what();
+ }
+
+        return response;
+    }
+
 }

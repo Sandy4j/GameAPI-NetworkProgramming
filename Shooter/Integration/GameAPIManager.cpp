@@ -176,12 +176,130 @@ bool GameAPIManager::TestConnection()
 
     if (response.success)
     {
-      std::cout << "[GameAPI] Connection successful!" << std::endl;
-return true;
+std::cout << "[GameAPI] Connection successful!" << std::endl;
+        return true;
     }
     else
- {
-        SetLastError("Connection test failed: " + response.errorMessage);
+    {
+ SetLastError("Connection test failed: " + response.errorMessage);
+   return false;
+    }
+}
+
+bool GameAPIManager::SaveCurrentGameSession()
+{
+    if (!apiClient)
+    {
+        SetLastError("API Client not initialized");
+   return false;
+    }
+
+  auto& gameManager = GameManager::GetInstance();
+
+    std::string username = currentUsername.empty() ? gameManager.GetUsername() : currentUsername;
+   std::string password = currentPassword.empty() ? gameManager.GetPassword() : currentPassword;
+    int score = gameManager.GetScore();
+    int wave = gameManager.GetWave();
+    int killCount = gameManager.GetKillCount();
+
+    if (username.empty())
+    {
+ SetLastError("Username is empty");
         return false;
+ }
+
+    std::cout << "[GameAPI] Saving game session: User=" << username
+       << ", Score=" << score
+       << ", Wave=" << wave
+       << ", Kills=" << killCount << std::endl;
+
+    auto response = apiClient->SaveGameSession(username, password, score, wave, killCount);
+
+    if (response.success)
+    {
+        std::cout << "[GameAPI] Game session saved successfully! ID: " << response.data.id << std::endl;
+ return true;
+}
+    else
+    {
+        SetLastError("Failed to save game session: " + response.errorMessage);
+        return false;
+    }
+}
+
+bool GameAPIManager::LoadGameSession(int& outScore, int& outWave, int& outKillCount)
+{
+ if (!apiClient)
+    {
+        SetLastError("API Client not initialized");
+      return false;
+    }
+
+    std::string username = currentUsername.empty()
+        ? GameManager::GetInstance().GetUsername()
+   : currentUsername;
+
+    if (username.empty())
+    {
+        SetLastError("Username is empty");
+ return false;
+    }
+
+    std::cout << "[GameAPI] Loading game session for: " << username << std::endl;
+
+    auto response = apiClient->LoadGameSession(username);
+
+    if (response.success)
+{
+   outScore = response.data.currentScore;
+ outWave = response.data.currentWave;
+   outKillCount = response.data.currentKillCount;
+
+        std::cout << "[GameAPI] Game session loaded: Score=" << outScore
+       << ", Wave=" << outWave
+      << ", Kills=" << outKillCount << std::endl;
+
+        return true;
+    }
+    else
+    {
+        SetLastError("Failed to load game session: " + response.errorMessage);
+   return false;
+ }
+}
+
+bool GameAPIManager::HasSavedGame(const std::string& username)
+{
+    if (!apiClient)
+{
+ SetLastError("API Client not initialized");
+    return false;
+    }
+
+    auto response = apiClient->HasSavedGame(username);
+    return response.success && response.data;
+}
+
+bool GameAPIManager::ClearSavedGame(const std::string& username)
+{
+    if (!apiClient)
+    {
+        SetLastError("API Client not initialized");
+        return false;
+    }
+
+    std::cout << "[GameAPI] Clearing saved game for: " << username << std::endl;
+
+    auto response = apiClient->ClearSavedGame(username);
+
+    if (response.success)
+    {
+ std::cout << "[GameAPI] Saved game cleared successfully" << std::endl;
+        return true;
+    }
+    else
+    {
+  SetLastError("Failed to clear saved game: " + response.errorMessage);
+ return false;
     }
 }
