@@ -28,12 +28,26 @@ public:
     }
 
     template<typename T>
+    void RemoveComponent(int entity)
+    {
+        auto it_type_map = components.find(typeid(T));
+        if (it_type_map == components.end())
+            return;
+
+        auto& inner_map = it_type_map->second;
+        auto it_component = inner_map.find(entity);
+        if (it_component == inner_map.end()) 
+            return;
+
+        delete static_cast<T*>(it_component->second);
+        inner_map.erase(it_component);
+    }
+
+    template<typename T>
     T* GetComponent(int entity) 
     {
         auto& compMap = components[typeid(T)];
-        if (compMap.find(entity) != compMap.end())
-            return static_cast<T*>(compMap[entity]);
-
+        if (compMap.find(entity) != compMap.end()) return static_cast<T*>(compMap[entity]);
         return nullptr;
     }
 

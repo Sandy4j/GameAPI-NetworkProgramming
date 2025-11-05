@@ -14,6 +14,12 @@
 
 #include "AwanManager.h"
 
+AwanManager::AwanManager()
+{
+    /*FindComponents();
+    LoadPrefabs();*/
+}
+
 void AwanManager::FindComponents()
 {
     entity = GameManager::GetInstance().GetLevel()->GetEntity();
@@ -73,8 +79,11 @@ void AwanManager::CreateEntity()
 
 void AwanManager::IPersonalStart()
 {
-    FindComponents();
-    LoadPrefabs();
+    if (!entity)
+    {
+        FindComponents();
+        LoadPrefabs();
+    }
 
     for (auto& temp : awan_interfaces)
     {

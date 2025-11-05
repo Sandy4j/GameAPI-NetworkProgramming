@@ -17,7 +17,7 @@
 
 GameplayState::GameplayState()
 {
-	level = new Level();
+	level = new Level("gameplay_level.json");
 	player_controller = new PlayerController();
 
 	const char* cursorPath = nullptr;
@@ -38,8 +38,8 @@ void GameplayState::iEnter()
 {
 	//glfwSetCursor(GameManager::GetInstance().GetWindow(), cursor);
 
-	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu && 
-		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver) return;
+	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu/* && 
+		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver*/) return;
 
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
@@ -48,7 +48,7 @@ void GameplayState::iEnter()
 
 	level->LoadLevel("gameplay_level.json");
 
-	level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
+	//level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 
 	player_controller->Enter();
@@ -72,5 +72,5 @@ void GameplayState::iUpdateRenderUI()
 
 void GameplayState::iExit()
 {
-	
+	level->UnloadLevel();
 }

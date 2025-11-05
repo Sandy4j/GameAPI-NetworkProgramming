@@ -16,10 +16,19 @@
 
 #include "EnemyManager.h"
 
+EnemyManager::EnemyManager()
+{
+    /*FindComponent();
+    LoadPrefabs();*/
+}
+
 void EnemyManager::Init()
 {
-    FindComponent();
-    LoadPrefabs();
+    if (!entity)
+    {
+        FindComponent();
+        LoadPrefabs();
+    }
 
     current_state = EState::TransitionState;
 }
@@ -73,7 +82,9 @@ void EnemyManager::CreateEntity()
 {
     json object = prefabs["Object"];
 
-    for (size_t i = 0; i < total_enemy; i++)
+    int init_size = 10;
+
+    for (size_t i = 0; i < init_size; i++)
     {
         InitPrefabs(object);
     }
@@ -93,8 +104,9 @@ void EnemyManager::InitPrefabs(json temp)
     temp_transform->tag = std::to_string(score);
     Sprite* temp_sprite = entity->GetComponent<Sprite>(id);
     EnemyInterface* system = new EnemySystem(temp_transform, temp_sprite);
-    //enemy_pools.push_back(system);
-    enemys.push_back(system);
+    system->IResetEnemy();
+    enemy_pools.push_back(system);
+    //enemys.push_back(system);
 }
 
 int EnemyManager::RandomNumber(int min, int max)
@@ -121,29 +133,27 @@ void EnemyManager::StartWaveEnemy()
     int temp = GameManager::GetInstance().GetWave();
     temp++;
     GameManager::GetInstance().SetWave(temp);
-    std::cout << GameManager::GetInstance().GetWave() << std::endl;
-    //wave_index++;
-    //total_enemy = start_enemy + wave_index;
-    //start_enemy = total_enemy;
+    total_enemy = start_enemy + temp;
+    
+    if (total_enemy > enemy_pools.size())
+    {
+        json object = prefabs["Object"];
+        int needed = total_enemy - enemy_pools.size();
 
-    ///*if (total_enemy > enemy_pools.size())
-    //{
-    //    json object = prefabs["Object"];
-    //    int size = total_enemy - enemy_pools.size();
+        for (int i = 0; i < needed; i++)
+        {
+            InitPrefabs(object);
+        }
+    }
 
-    //    for (int i = 0; i < size; i++)
-    //    {
-    //        InitPrefabs(object);
-    //    }
-    //}*/
+    for (int i = 0; i < total_enemy; i++)
+    {
+        if (enemy_pools.empty()) break;
 
-    //int enemiesToMove = std::min((int)enemy_pools.size(), total_enemy);
-
-    //for (int i = 0; i < enemiesToMove; i++)
-    //{
-    //    enemys.push_back(enemy_pools[0]);
-    //    enemy_pools.erase(enemy_pools.begin());
-    //}
+        EnemyInterface* enemy = enemy_pools.back();
+        enemy_pools.pop_back();
+        enemys.push_back(enemy);
+    }
 
     for (auto& temp : enemys)
     {
@@ -151,7 +161,7 @@ void EnemyManager::StartWaveEnemy()
     }
 
     sprite_system->SpriteBegin();
-    timer->StartTimer(100);
+    timer->StartTimer(10);
 }
 
 void EnemyManager::ResetWaveEnemy()
@@ -159,17 +169,10 @@ void EnemyManager::ResetWaveEnemy()
     for (auto& temp : enemys)
     {
         temp->IResetEnemy();
+        enemy_pools.push_back(temp);
     }
 
-    /*for (int i = 0; i < enemys.size(); i++)
-    {
-        enemy_pools.push_back(enemys[i]);
-        enemys.erase(enemys.begin());
-    }*/
-
-    /*enemy_pools.insert(enemy_pools.end(), enemys.begin(), enemys.end());
     enemys.clear();
-    sprite_system->SpriteBegin();*/
 }
 
 void EnemyManager::CheckWaveCondition()

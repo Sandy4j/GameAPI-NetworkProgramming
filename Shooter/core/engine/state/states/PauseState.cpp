@@ -14,7 +14,7 @@ PauseState::PauseState()
 {
 	InputManager::GetInstance().BindKeyFunction(std::bind(&PauseState::UnPause, this), GLFW_KEY_ESCAPE, EInputEventType::ePress, EGameState::ePauseMenu);
 
-	level = new Level();
+	level = new Level("pause_level.json");
 }
 
 void PauseState::UnPause()
@@ -30,7 +30,6 @@ void PauseState::iEnter()
 
 	GameManager::GetInstance().SetLevel(level);
 
-	std::cout << "Pausee" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("pause_level.json");
 }
@@ -58,5 +57,5 @@ void PauseState::iUpdateRenderUI()
 
 void PauseState::iExit()
 {
-
+	level->UnloadLevel();
 }

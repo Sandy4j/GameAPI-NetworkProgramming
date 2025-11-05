@@ -15,7 +15,7 @@ class AwanInterface;
 class AwanManager : public Personal
 {
 public:
-	AwanManager() = default;
+	AwanManager();
 	~AwanManager() = default;
 
 private:

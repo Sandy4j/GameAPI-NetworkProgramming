@@ -23,7 +23,7 @@ enum class EState
 class EnemyManager : public Personal
 {
 public:
-	EnemyManager() = default;
+	EnemyManager();
 	~EnemyManager() = default;
 
 private:

@@ -16,8 +16,11 @@ public:
     {
         if (!transform->b_is_active) return;
 
+        float base = 16.0f;
+        float scale = transform->scale.x * (base / 100.0f);
+
         ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
-        ImGui::SetWindowFontScale(transform->scale.x);
+        ImGui::SetWindowFontScale(scale);
         ImGui::Text(label.c_str());
         ImGui::SetWindowFontScale(1);
     }

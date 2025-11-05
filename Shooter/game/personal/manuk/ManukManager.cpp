@@ -15,6 +15,12 @@
 
 #include "ManukManager.h"
 
+ManukManager::ManukManager()
+{
+    /*FindComponents();
+    LoadPrefabs();*/
+}
+
 void ManukManager::FindComponents()
 {
     entity = GameManager::GetInstance().GetLevel()->GetEntity();
@@ -74,9 +80,12 @@ void ManukManager::CreateEntity()
 
 void ManukManager::IPersonalStart()
 {
-    FindComponents();
-    LoadPrefabs();
-
+    if (!entity)
+    {
+        FindComponents();
+        LoadPrefabs();
+    }
+    
     for (auto& temp : manuk_interfaces)
     {
         temp->IManukStart();

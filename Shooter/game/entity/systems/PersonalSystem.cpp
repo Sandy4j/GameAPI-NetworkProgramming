@@ -13,6 +13,9 @@ void PersonalSystem::PersonalStart()
 	entity = GameManager::GetInstance().GetLevel()->GetEntity();
 
 	auto& sprite_map = entity->GetComponentMap<Personal>();
+
+	if (sprite_map.empty()) return;
+
 	for (auto& sprite : sprite_map)
 	{
 		void* raw = sprite.second;
@@ -24,6 +27,9 @@ void PersonalSystem::PersonalStart()
 void PersonalSystem::PersonalUpdate()
 {
 	auto& sprite_map = entity->GetComponentMap<Personal>();
+
+	if (sprite_map.empty()) return;
+
 	for (auto& sprite : sprite_map)
 	{
 		void* raw = sprite.second;

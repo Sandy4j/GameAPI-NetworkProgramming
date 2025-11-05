@@ -15,7 +15,7 @@ class ManukInterface;
 class ManukManager : public Personal
 {
 public:
-	ManukManager() = default;
+	ManukManager();
 	~ManukManager() = default;
 
 private:

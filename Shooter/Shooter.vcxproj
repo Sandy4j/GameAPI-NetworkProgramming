@@ -224,6 +224,7 @@
     <ClInclude Include="core\patterns\state.h" />
     <ClInclude Include="game\entity\components\BoundingBox.h" />
     <ClInclude Include="game\entity\components\Button.h" />
+    <ClInclude Include="game\entity\components\Image.h" />
     <ClInclude Include="game\entity\components\Personal.h" />
     <ClInclude Include="game\entity\components\Sprite.h" />
     <ClInclude Include="game\entity\components\TextBlock.h" />

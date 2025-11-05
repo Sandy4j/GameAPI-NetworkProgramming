@@ -16,11 +16,12 @@ class PersonalSystem;
 class Level
 {
 public:
-    Level();
+    Level(std::string level);
     ~Level();
 
 public:
 	void LoadLevel(std::string level);
+    void UnloadLevel();
     void UpdatePersonalLogic();
     void UpdateRenderObject();
 	void UpdateRenderUI();
@@ -44,6 +45,7 @@ private:
     Entity* entity;
     PersonalSystem* personal_system;
     SpriteSystem* sprite_system;
+    std::vector<int> id_entitys;
 
     int id_button_click;
 

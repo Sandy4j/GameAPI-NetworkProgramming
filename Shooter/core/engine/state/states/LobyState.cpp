@@ -9,7 +9,7 @@
 
 LobyState::LobyState()
 {
-	level = new Level();
+	level = new Level("loby_level.json");
 }
 
 void LobyState::iEnter()
@@ -47,5 +47,5 @@ void LobyState::iUpdateRenderUI()
 
 void LobyState::iExit()
 {
-
+	level->UnloadLevel();
 }

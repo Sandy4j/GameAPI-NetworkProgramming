@@ -44,43 +44,13 @@
     },
 
     "UI": {
-        "title": {
-            "id": 0,
-
-            "components": {
-                "transform": {
-                    "echo": true,
-                    "position": [ 5000, 0, 0 ],
-                    "scale": [ 5, 5, 0 ]
-                },
-
-                "textblock": {
-                    "label": "gameplay"
-                }
-            }
-        },
-        "username": {
-            "id": 1,
-
-            "components": {
-                "transform": {
-                    "echo": true,
-                    "position": [ 0, 0, 0 ],
-                    "scale": [ 2.5, 2.5, 0 ]
-                },
-
-                "textblock": {
-                    "label": "username: "
-                }
-            }
-        },
         "score": {
             "id": 2,
 
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 50, 0 ],
+                    "position": [ 0, 25, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -95,7 +65,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 100, 0 ],
+                    "position": [ 1750, 950, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -109,7 +79,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 150, 0 ],
+                    "position": [ 0, 75, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -123,7 +93,7 @@
             "components": {
                 "transform": {
                     "echo": false,
-                    "position": [ 500, 500, 0 ],
+                    "position": [ 950, 540, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -137,7 +107,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 200, 0 ],
+                    "position": [ 0, 135, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
