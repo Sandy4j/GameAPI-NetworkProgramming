@@ -10,12 +10,12 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 500, 0, 0 ],
+                    "position": [ 850, 300, 0 ],
                     "scale": [ 5, 5, 0 ]
                 },
 
                 "textblock": {
-                    "label": "loby"
+                    "label": "lobby"
                 }
             }
         },
@@ -25,7 +25,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 550, 800, 0 ],
+                    "position": [ 850, 800, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 
@@ -40,7 +40,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 550, 500, 0 ],
+                    "position": [ 800, 500, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 
@@ -55,7 +55,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 550, 580, 0 ],
+                    "position": [ 800, 580, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 

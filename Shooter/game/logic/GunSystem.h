@@ -1,10 +1,9 @@
 #ifndef GUNSYSTEM_H
 #define GUNSYSTEM_H
 
-//#include "Entity.h"
-//#include "Level.h"
 class Level;
 class RayLine;
+class GLFWcursor;
 
 class GunSystem
 {
@@ -22,6 +21,8 @@ private:
 	void Fire();
 
 private:
+	GLFWcursor* cursor_default;
+	GLFWcursor* cursor_reload;
 	Entity* entity;
 	Level* level;
 	RayLine* ray_line;

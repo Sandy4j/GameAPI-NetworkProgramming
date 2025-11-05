@@ -20,18 +20,18 @@ GameplayState::GameplayState()
 	level = new Level("gameplay_level.json");
 	player_controller = new PlayerController();
 
-	const char* cursorPath = nullptr;
+	/*const char* cursorPath = nullptr;
 	int width, height, channels;
 	GLFWimage image;
 
-	cursorPath = "assets/ui/crosshair.png";
+	cursorPath = "assets/ui/crosshair-default.png";
 
 	unsigned char* pixels = stbi_load(cursorPath, &width, &height, &channels, 4);
 	image.width = width;
 	image.height = height;
 	image.pixels = pixels;
 
-	cursor = glfwCreateCursor(&image, 0, 0);
+	cursor = glfwCreateCursor(&image, width/2, height/2);*/
 }
 
 void GameplayState::iEnter()

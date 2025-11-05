@@ -12,6 +12,7 @@ using json = nlohmann::json;
 #include "TextBlock.h"
 #include "TextBox.h"
 #include "Button.h"
+#include "Image.h"
 
 #include "EnemyManager.h"
 #include "Timer.h"
@@ -33,7 +34,6 @@ public:
             Transform* temp = new Transform();
             temp->b_is_active = val["echo"];
             temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
-            //temp->rotation = val["rotation"][0].get<float>();
             temp->rotation = glm::vec2(val["rotation"][0].get<float>(), val["rotation"][1].get<float>());
             temp->scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
             temp->tag = val["tag"];
@@ -98,8 +98,6 @@ public:
     {
         int id = obj["id"].get<int>();
         auto& components = obj["components"];
-        /*glm::vec2 position = glm::vec2(0, 0);
-        glm::vec2 scale = glm::vec2(0, 0);*/
 
         if (components.contains("transform"))
         {
@@ -109,8 +107,6 @@ public:
             temp->position = glm::vec3(val["position"][0].get<float>(), val["position"][1].get<float>(), val["position"][2].get<float>());
             temp->scale = glm::vec3(val["scale"][0].get<float>(), val["scale"][1].get<float>(), val["scale"][2].get<float>());
             entity->AddComponent<UiTransform>(id, temp);
-            /*position = glm::vec2(val["position"][0].get<float>(), val["position"][1].get<float>());
-            scale = glm::vec2(val["scale"][0].get<float>(), val["scale"][1].get<float>());*/
         }
 
         if (components.contains("textblock"))
@@ -119,8 +115,6 @@ public:
             TextBlock* temp = new TextBlock();
             temp->label = val["label"].get<std::string>();
             temp->transform = entity->GetComponent<UiTransform>(id);
-            /*temp->position = position;
-            temp->size = scale.x;*/
             entity->AddComponent<TextBlock>(id, temp);
         }
 
@@ -130,8 +124,6 @@ public:
             TextBox* temp = new TextBox();
             temp->label = val["label"].get<std::string>();
             temp->transform = entity->GetComponent<UiTransform>(id);
-            /*temp->position = position;
-            temp->size = scale.x;*/
             entity->AddComponent<TextBox>(id, temp);
         }
 
@@ -141,9 +133,18 @@ public:
             Button* temp = new Button();
             temp->label = val["label"].get<std::string>();
             temp->transform = entity->GetComponent<UiTransform>(id);
-            /*temp->position = position;
-            temp->size = scale;*/
             entity->AddComponent<Button>(id, temp);
+        }
+
+        if (components.contains("image"))
+        {
+            auto& val = components["image"];
+            Image* temp = new Image();
+            std::string file = val["texture"].get<std::string>();
+            temp->textureID = LoadTexture(file.c_str());
+            std::cout << "Path: " << file << " --- Loaded Texture ID: " << temp->textureID << std::endl;
+            temp->transform = entity->GetComponent<UiTransform>(id);
+            entity->AddComponent<Image>(id, temp);
         }
     }
 
@@ -223,6 +224,35 @@ public:
         }
 
         return id;
+    }
+
+    static GLuint LoadTexture(const char* filePath)
+    {
+        GLuint textureID = 0;
+        int width, height, nrChannels;
+        stbi_set_flip_vertically_on_load(true);
+        unsigned char* data = stbi_load(filePath, &width, &height, &nrChannels, STBI_rgb_alpha);
+
+        if (data)
+        {
+            glGenTextures(1, &textureID);
+            glBindTexture(GL_TEXTURE_2D, textureID);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+            glGenerateMipmap(GL_TEXTURE_2D);
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cerr << "Gagal load tekstur: " << filePath << std::endl;
+            std::cerr << "Alasan STB: " << stbi_failure_reason() << std::endl;
+        }
+
+        glBindTexture(GL_TEXTURE_2D, 0);
+        return textureID;
     }
 };
 

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <GLFW/glfw3.h>
 
 #include "GameManager.h"
@@ -24,6 +25,9 @@ void GameOverState::iEnter()
 
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("gameover_level.json");
+
+	level->GetEntity()->GetComponent<TextBlock>(1)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
+	level->GetEntity()->GetComponent<TextBlock>(4)->label = "wave: " + std::to_string(GameManager::GetInstance().GetWave());
 }
 
 void GameOverState::iUpdateLogic()

@@ -30,6 +30,9 @@ public:
 		ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
 		ImTextureID texID = (ImTextureID)textureID;
 		ImGui::Image(texID, finalSize, uv0, uv1);
+		ImGui::SetWindowFontScale(5);
+		ImGui::Text("Test Gambar di atas");
+		ImGui::SetWindowFontScale(1);
 		//ImGui::Image(texID, finalSize, uv0, uv1, tintColor);
 	}
 };

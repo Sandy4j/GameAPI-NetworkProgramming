@@ -40,6 +40,30 @@
                     "script_personal": "manuk_manager"
                 }
             }
+        },
+        "peluru": {
+            "id": 1005,
+            "layer": 1,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 0.5, -0.5, 0.0 ],
+                    "rotation": [ 0, 90 ],
+                    "scale": [ 0.2, 0.2, 0 ],
+                    "tag": "peluru"
+                },
+
+                "sprite": {
+                    "image": [ "assets/ui/peluru.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
         }
     },
 
@@ -50,7 +74,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 25, 0 ],
+                    "position": [ 0, 900, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -65,7 +89,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 1750, 950, 0 ],
+                    "position": [ 1750, 955, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -79,7 +103,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 75, 0 ],
+                    "position": [ 1700, 900, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -107,7 +131,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 135, 0 ],
+                    "position": [ 0, 955, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 

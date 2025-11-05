@@ -760,6 +760,8 @@
     <Image Include="assets\environment\awan-1.png" />
     <Image Include="assets\environment\awan-2.png" />
     <Image Include="assets\environment\background-gameplay.png" />
+    <Image Include="assets\ui\crosshair-default.png" />
+    <Image Include="assets\ui\crosshair-reload.png" />
     <Image Include="assets\ui\crosshair.png" />
     <Image Include="assets\ui\peluru.png" />
   </ItemGroup>

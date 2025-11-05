@@ -10,7 +10,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 300, 0, 0 ],
+                    "position": [ 800, 300, 0 ],
                     "scale": [ 5, 5, 0 ]
                 },
 
@@ -25,7 +25,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 425, 200, 0 ],
+                    "position": [ 900, 500, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 
@@ -40,7 +40,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 425, 280, 0 ],
+                    "position": [ 900, 580, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 

@@ -143,7 +143,6 @@ void Level::UpdateRenderUI()
 
     for (auto& var : ui_textbox)
     {
-        int currentId = var.first;
         void* raw = var.second;
         TextBox* ptr = static_cast<TextBox*>(raw);
         ptr->Draw();
@@ -153,11 +152,20 @@ void Level::UpdateRenderUI()
 
     for (auto& var : ui_button)
     {
-        int currentId = var.first;
+        int current_id = var.first;
         void* raw = var.second;
         Button* ptr = static_cast<Button*>(raw);
         ptr->Draw();
-        if (ImGui::IsItemClicked()) id_button_click = currentId;
+        if (ImGui::IsItemClicked()) id_button_click = current_id;
+    }
+
+    auto& ui_image = entity->GetComponentMap<Image>();
+
+    for (auto& var : ui_button)
+    {
+        void* raw = var.second;
+        Image* ptr = static_cast<Image*>(raw);
+        ptr->Draw();
     }
 
     ImGui::End();
