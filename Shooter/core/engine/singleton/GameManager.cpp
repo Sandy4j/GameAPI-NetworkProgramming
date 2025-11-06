@@ -113,6 +113,8 @@ int GameManager::GetKillCount()
 	return kill_count;
 }
 
+
+
 void GameManager::iInit()
 {
 	game_state = std::make_unique<GameState>();

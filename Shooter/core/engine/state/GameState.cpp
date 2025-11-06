@@ -5,6 +5,7 @@
 #include "GameplayState.h"
 #include "PauseState.h"
 #include "GameOverState.h"
+#include "LeaderboardState.h"
 
 #include <imgui/imgui.h>
 #include "GameState.h"
@@ -16,6 +17,7 @@ void GameState::Init()
 	states[EGameState::eGameplay] = std::make_shared<GameplayState>();
 	states[EGameState::ePauseMenu] = std::make_unique<PauseState>();
 	states[EGameState::eGameOver] = std::make_unique<GameOverState>();
+	states[EGameState::eLeaderboard] = std::make_unique<LeaderboardState>();
 
 	current_state = states[EGameState::eLoby].get();
 	current_state->iEnter();

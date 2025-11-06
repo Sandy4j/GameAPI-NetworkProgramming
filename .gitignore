@@ -1,9 +1,11 @@
 /.vs/
 
+
 *.suo
 *.user
 *.vcxproj.user
 *.vcxproj.filters
+*.idea/
 
 [Bb]in/
 [Oo]bj/
@@ -13,6 +15,7 @@ x64/
 Win32/
 build/
 Build/
+vcpkg_installed/
 
 *.exe
 *.dll

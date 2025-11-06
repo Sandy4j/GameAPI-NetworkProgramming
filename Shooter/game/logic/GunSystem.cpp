@@ -129,5 +129,4 @@ void GunSystem::Fire()
 	int kill_count = GameManager::GetInstance().GetKillCount();
 	kill_count++;
 	GameManager::GetInstance().SetKillCount(kill_count);
-	level->GetEntity()->GetComponent<TextBlock>(6)->label = "kill: " + std::to_string(kill_count);
 }

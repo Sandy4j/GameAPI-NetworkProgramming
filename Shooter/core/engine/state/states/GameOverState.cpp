@@ -4,6 +4,7 @@
 
 #include "GameManager.h"
 #include "InputManager.h"
+#include "../../Integration/GameAPIManager.h"
 
 #include "Level.h"
 #include "Entity.h"
@@ -26,8 +27,18 @@ void GameOverState::iEnter()
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("gameover_level.json");
 
-	level->GetEntity()->GetComponent<TextBlock>(1)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
-	level->GetEntity()->GetComponent<TextBlock>(4)->label = "wave: " + std::to_string(GameManager::GetInstance().GetWave());
+	std::cout << "[GameOver] Submitting game score to API..." << std::endl;
+	bool submitSuccess = GameAPIManager::GetInstance().SubmitCurrentGameScore();
+
+	if (submitSuccess)
+	{
+		std::cout << "[GameOver] Score submitted successfully." << std::endl;
+	}
+	else
+	{
+		std::string error = GameAPIManager::GetInstance().GetLastError();
+		std::cerr << "[GameOver] Failed to submit score: " << error << std::endl;
+	}
 }
 
 void GameOverState::iUpdateLogic()

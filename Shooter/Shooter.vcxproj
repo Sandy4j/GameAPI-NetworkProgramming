@@ -86,6 +86,9 @@
     <IncludePath>$(projectDir)libraries/include;$(IncludePath)</IncludePath>
     <LibraryPath>$(projectDir)libraries/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -161,6 +164,7 @@
     <ClCompile Include="core\engine\state\GameState.cpp" />
     <ClCompile Include="core\engine\state\states\GameOverState.cpp" />
     <ClCompile Include="core\engine\state\states\GameplayState.cpp" />
+    <ClCompile Include="core\engine\state\states\LeaderboardState.cpp" />
     <ClCompile Include="core\engine\state\states\LobyState.cpp" />
     <ClCompile Include="core\engine\state\states\MainMenuState.cpp" />
     <ClCompile Include="core\engine\state\states\PauseState.cpp" />
@@ -185,6 +189,7 @@
     <ClCompile Include="game\personal\timer\Timer.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
+    <ClCompile Include="Integration\GameAPIManager.cpp" />
     <ClCompile Include="Integration\Integration.cpp" />
     <ClCompile Include="libraries\include\glm\detail\glm.cpp" />
     <ClCompile Include="libraries\include\glm\glm.cppm" />
@@ -209,6 +214,7 @@
     <ClInclude Include="core\engine\state\GameState.h" />
     <ClInclude Include="core\engine\state\states\GameOverState.h" />
     <ClInclude Include="core\engine\state\states\GameplayState.h" />
+    <ClInclude Include="core\engine\state\states\LeaderboardState.h" />
     <ClInclude Include="core\engine\state\states\LobyState.h" />
     <ClInclude Include="core\engine\state\states\MainMenuState.h" />
     <ClInclude Include="core\engine\state\states\PauseState.h" />
@@ -248,6 +254,8 @@
     <ClInclude Include="game\personal\manuk\ManukSystem.h" />
     <ClInclude Include="game\personal\timer\Timer.h" />
     <ClInclude Include="game\ray\RayLine.h" />
+    <ClInclude Include="Integration\GameAPIManager.h" />
+    <ClInclude Include="Integration\Integration.h" />
     <ClInclude Include="libraries\include\glad\glad.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3.h" />
     <ClInclude Include="libraries\include\GLFW\glfw3native.h" />
@@ -600,6 +608,7 @@
   <ItemGroup>
     <None Include="assets\data_levels\gameover_level.json" />
     <None Include="assets\data_levels\gameplay_level.json" />
+    <None Include="assets\data_levels\leaderboard_level.json" />
     <None Include="assets\data_levels\loby_level.json" />
     <None Include="assets\data_levels\mainmenu_level.json" />
     <None Include="assets\data_levels\pause_level.json" />
@@ -609,6 +618,13 @@
     <None Include="core\graphics_pipeline\shaders\object.frag" />
     <None Include="core\graphics_pipeline\shaders\object.vert" />
     <None Include="imgui.ini" />
+    <None Include="Integration\ARCHITECTURE.md" />
+    <None Include="Integration\BUILD_INSTRUCTIONS.md" />
+    <None Include="Integration\CODE_SNIPPETS.md" />
+    <None Include="Integration\INDEX.md" />
+    <None Include="Integration\INTEGRATION_SUMMARY.md" />
+    <None Include="Integration\QUICK_START.md" />
+    <None Include="Integration\README.md" />
     <None Include="libraries\include\glm\detail\func_common.inl" />
     <None Include="libraries\include\glm\detail\func_common_simd.inl" />
     <None Include="libraries\include\glm\detail\func_exponential.inl" />

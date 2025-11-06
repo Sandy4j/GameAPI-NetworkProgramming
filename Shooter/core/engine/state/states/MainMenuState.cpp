@@ -31,8 +31,8 @@ void MainMenuState::iEnter()
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("mainmenu_level.json");
 
-	level->GetEntity()->GetComponent<TextBlock>(3)->label = "username: " + GameManager::GetInstance().GetUsername();
-	level->GetEntity()->GetComponent<TextBlock>(4)->label = "high score: " + std::to_string(GameManager::GetInstance().GetScore());
+	level->GetEntity()->GetComponent<TextBlock>(4)->label = "username: " + GameManager::GetInstance().GetUsername();
+	level->GetEntity()->GetComponent<TextBlock>(5)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 }
 
 void MainMenuState::iUpdateLogic()
@@ -43,6 +43,13 @@ void MainMenuState::iUpdateLogic()
 		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eGameplay);
 
 	if (id == 2)
+	{
+		// Button Leaderboard
+		std::cout << "[MainMenu] Opening leaderboard" << std::endl;
+		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eLeaderboard);
+	}
+
+	if (id == 3)
 	{
 		GameManager::GetInstance().SetIsExit(true);
 		glfwSetWindowShouldClose(GameManager::GetInstance().GetWindow(), GLFW_TRUE);
