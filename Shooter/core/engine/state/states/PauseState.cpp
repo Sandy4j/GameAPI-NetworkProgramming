@@ -5,6 +5,7 @@
 
 #include "GameManager.h"
 #include "InputManager.h"
+#include "../../Integration/GameAPIManager.h"
 
 #include "Level.h"
 
@@ -43,6 +44,23 @@ void PauseState::iUpdateLogic()
 
 	if (id == 2)
 		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eMainMenu);
+
+	if (id == 3)
+	{
+		std::cout << "[Pause] Saving game and exiting..." << std::endl;
+	bool saved = GameAPIManager::GetInstance().SaveCurrentGameSession();
+		
+		if (saved)
+		{
+			std::cout << "[Pause] Game saved successfully!" << std::endl;
+		}
+		else
+		{
+			std::cerr << "[Pause] Failed to save game: " << GameAPIManager::GetInstance().GetLastError() << std::endl;
+		}
+		
+		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eMainMenu);
+	}
 }
 
 void PauseState::iUpdateRenderObject()

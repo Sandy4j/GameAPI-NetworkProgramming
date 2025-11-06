@@ -43,12 +43,22 @@ namespace GameAPI
         double averageScore;
     };
 
-  struct PaginationInfo
+    struct GameSessionData
     {
-  int page;
-int pageSize;
-  int totalCount;
-   int totalPages;
+        int id;
+     std::string username;
+        int currentScore;
+        int currentWave;
+        int currentKillCount;
+        std::string gameStateData;
+    };
+
+    struct PaginationInfo
+    {
+        int page;
+        int pageSize;
+   int totalCount;
+    int totalPages;
     };
 
     struct PaginatedScores
@@ -104,8 +114,27 @@ std::vector<PlayerScoreData> data;
   // GET: Get game statistics
 ApiResponse<GameStatistics> GetStatistics();
 
-  // PUT: Update existing score
-   ApiResponse<bool> UpdateScore(
+ // POST: Save game session
+     ApiResponse<GameSessionData> SaveGameSession(
+      const std::string& username,
+  const std::string& password,
+         int currentScore,
+      int currentWave,
+     int currentKillCount,
+     const std::string& gameStateData = ""
+ );
+
+    // GET: Load game session
+        ApiResponse<GameSessionData> LoadGameSession(const std::string& username);
+
+     // DELETE: Clear saved game
+        ApiResponse<bool> ClearSavedGame(const std::string& username);
+
+    // GET: Check if has saved game
+  ApiResponse<bool> HasSavedGame(const std::string& username);
+
+    // PUT: Update existing score
+        ApiResponse<bool> UpdateScore(
 int id,
        const std::string& username,
     const std::string& password,

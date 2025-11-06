@@ -8,6 +8,7 @@ namespace GameAPI.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<PlayerScore> PlayerScores => Set<PlayerScore>();
+        public DbSet<GameSession> GameSessions => Set<GameSession>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -25,6 +26,16 @@ namespace GameAPI.Data
                 entity.HasIndex(p => p.Score);
                 // Index untuk search by username
                 entity.HasIndex(p => p.Username);
+             });
+
+             modelBuilder.Entity<GameSession>(entity =>
+             {
+                entity.Property(s => s.Username)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                
+                entity.HasIndex(s => s.Username);
+                entity.HasIndex(s => new { s.Username, s.IsActive });
              });
 
              // Seed data untuk testing
