@@ -17,14 +17,29 @@
 
 GameplayState::GameplayState()
 {
-	level = new Level();
+	level = new Level("gameplay_level.json");
 	player_controller = new PlayerController();
+
+	/*const char* cursorPath = nullptr;
+	int width, height, channels;
+	GLFWimage image;
+
+	cursorPath = "assets/ui/crosshair-default.png";
+
+	unsigned char* pixels = stbi_load(cursorPath, &width, &height, &channels, 4);
+	image.width = width;
+	image.height = height;
+	image.pixels = pixels;
+
+	cursor = glfwCreateCursor(&image, width/2, height/2);*/
 }
 
 void GameplayState::iEnter()
 {
-	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu && 
-		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver) return;
+	//glfwSetCursor(GameManager::GetInstance().GetWindow(), cursor);
+
+	if (GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eMainMenu/* && 
+		GameManager::GetInstance().GetGameState().GetEnumState(ETrasition::ePrevious) != EGameState::eGameOver*/) return;
 
 	ImGuiIO& io = ImGui::GetIO();
 	io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
@@ -33,7 +48,7 @@ void GameplayState::iEnter()
 
 	level->LoadLevel("gameplay_level.json");
 
-	level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
+	//level->GetEntity()->GetComponent<TextBlock>(1)->label = "username: " + GameManager::GetInstance().GetUsername();
 	level->GetEntity()->GetComponent<TextBlock>(2)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
 
 	player_controller->Enter();
@@ -57,5 +72,5 @@ void GameplayState::iUpdateRenderUI()
 
 void GameplayState::iExit()
 {
-	
+	level->UnloadLevel();
 }

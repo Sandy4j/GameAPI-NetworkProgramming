@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <GLFW/glfw3.h>
 
 #include "GameManager.h"
@@ -13,7 +14,7 @@
 
 GameOverState::GameOverState()
 {
-	level = new Level();
+	level = new Level("gameover_level.json");
 }
 
 void GameOverState::iEnter()
@@ -23,7 +24,6 @@ void GameOverState::iEnter()
 
 	GameManager::GetInstance().SetLevel(level);
 
-	std::cout << "ENTER GAMEOVER" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("gameover_level.json");
 
@@ -64,5 +64,5 @@ void GameOverState::iUpdateRenderUI()
 
 void GameOverState::iExit()
 {
-	
+	level->UnloadLevel();
 }

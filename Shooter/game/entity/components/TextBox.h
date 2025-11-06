@@ -17,8 +17,13 @@ public:
     {
         if (!transform->b_is_active) return;
 
+        float finalWidth = 300 * transform->scale.x;
+        float finalHeight = 50 * transform->scale.y;
+        float fontScale = finalHeight / 100.0f;
+
         ImGui::SetCursorPos(ImVec2(transform->position.x, transform->position.y));
-        ImGui::SetWindowFontScale(transform->scale.x);
+        ImGui::PushItemWidth(finalWidth);
+        ImGui::SetWindowFontScale(fontScale);
 
         const size_t bufferSize = 256;
         char tempBuffer[bufferSize];

@@ -96,7 +96,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/manuk;$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,7 +113,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/manuk;$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,7 +128,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/manuk;$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,7 +145,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)game/personal/manuk;$(ProjectDir)game/personal/awan;$(ProjectDir)game/personal/timer;$(ProjectDir)game/personal/enemy;$(ProjectDir)game/personal;$(SolutionDir)libraries;$(projectDir)game/ray;$(projectDir)game/logic;$(projectDir)game/entity;$(projectDir)game/entity/systems;$(projectDir)game/entity/components;$(projectDir)assets/data_levels;$(projectDir)game/level;$(projectDir)game/time;$(projectDir)core/engine/input;$(projectDir)core/engine/state/states;$(projectDir)core/engine/state;$(projectDir)core/engine/singleton;$(projectDir)core/engine/observer;$(projectDir)core/engine/factory;$(projectDir)core/engine/decorator;$(projectDir)core/patterns;$(projectDir)core/engine;$(projectDir)core/graphics_pipeline;$(projectDir)core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -184,6 +184,8 @@
     <ClCompile Include="game\personal\awan\AwanSystem.cpp" />
     <ClCompile Include="game\personal\enemy\EnemyManager.cpp" />
     <ClCompile Include="game\personal\enemy\EnemySystem.cpp" />
+    <ClCompile Include="game\personal\manuk\ManukManager.cpp" />
+    <ClCompile Include="game\personal\manuk\ManukSystem.cpp" />
     <ClCompile Include="game\personal\timer\Timer.cpp" />
     <ClCompile Include="game\ray\RayLine.cpp" />
     <ClCompile Include="glad.c" />
@@ -228,6 +230,7 @@
     <ClInclude Include="core\patterns\state.h" />
     <ClInclude Include="game\entity\components\BoundingBox.h" />
     <ClInclude Include="game\entity\components\Button.h" />
+    <ClInclude Include="game\entity\components\Image.h" />
     <ClInclude Include="game\entity\components\Personal.h" />
     <ClInclude Include="game\entity\components\Sprite.h" />
     <ClInclude Include="game\entity\components\TextBlock.h" />
@@ -246,6 +249,9 @@
     <ClInclude Include="game\personal\enemy\EnemyInterface.h" />
     <ClInclude Include="game\personal\enemy\EnemyManager.h" />
     <ClInclude Include="game\personal\enemy\EnemySystem.h" />
+    <ClInclude Include="game\personal\manuk\ManukInterface.h" />
+    <ClInclude Include="game\personal\manuk\ManukManager.h" />
+    <ClInclude Include="game\personal\manuk\ManukSystem.h" />
     <ClInclude Include="game\personal\timer\Timer.h" />
     <ClInclude Include="game\ray\RayLine.h" />
     <ClInclude Include="Integration\GameAPIManager.h" />
@@ -608,6 +614,7 @@
     <None Include="assets\data_levels\pause_level.json" />
     <None Include="assets\prefabs\awan_prefabs.json" />
     <None Include="assets\prefabs\enemy_prefabs.json" />
+    <None Include="assets\prefabs\manuk_prefabs.json" />
     <None Include="core\graphics_pipeline\shaders\object.frag" />
     <None Include="core\graphics_pipeline\shaders\object.vert" />
     <None Include="imgui.ini" />
@@ -763,9 +770,16 @@
     <Image Include="assets\character\ikan-kuning.png" />
     <Image Include="assets\character\ikan-merah.png" />
     <Image Include="assets\character\ikan-ungu.png" />
+    <Image Include="assets\character\manuk-1.png" />
+    <Image Include="assets\character\manuk-2.png" />
+    <Image Include="assets\character\manuk-3.png" />
     <Image Include="assets\environment\awan-1.png" />
     <Image Include="assets\environment\awan-2.png" />
     <Image Include="assets\environment\background-gameplay.png" />
+    <Image Include="assets\ui\crosshair-default.png" />
+    <Image Include="assets\ui\crosshair-reload.png" />
+    <Image Include="assets\ui\crosshair.png" />
+    <Image Include="assets\ui\peluru.png" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="assets\font\font-q.ttf" />

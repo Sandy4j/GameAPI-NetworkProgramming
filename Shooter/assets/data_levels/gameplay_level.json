@@ -30,47 +30,51 @@
                     "script_personal": "awan_manager"
                 }
             }
+        },
+        "manuk_manager": {
+            "id": 1004,
+            "layer": 1,
+
+            "components": {
+                "personal": {
+                    "script_personal": "manuk_manager"
+                }
+            }
+        },
+        "peluru": {
+            "id": 1005,
+            "layer": 1,
+
+            "shaders": {
+                "vertex": "core/graphics_pipeline/shaders/object.vert",
+                "fragment": "core/graphics_pipeline/shaders/object.frag"
+            },
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 0.5, -0.5, 0.0 ],
+                    "rotation": [ 0, 90 ],
+                    "scale": [ 0.2, 0.2, 0 ],
+                    "tag": "peluru"
+                },
+
+                "sprite": {
+                    "image": [ "assets/ui/peluru.png" ],
+                    "color": [ 1, 1, 1 ]
+                }
+            }
         }
     },
 
     "UI": {
-        "title": {
-            "id": 0,
-
-            "components": {
-                "transform": {
-                    "echo": true,
-                    "position": [ 5000, 0, 0 ],
-                    "scale": [ 5, 5, 0 ]
-                },
-
-                "textblock": {
-                    "label": "gameplay"
-                }
-            }
-        },
-        "username": {
-            "id": 1,
-
-            "components": {
-                "transform": {
-                    "echo": true,
-                    "position": [ 0, 0, 0 ],
-                    "scale": [ 2.5, 2.5, 0 ]
-                },
-
-                "textblock": {
-                    "label": "username: "
-                }
-            }
-        },
         "score": {
             "id": 2,
 
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 50, 0 ],
+                    "position": [ 0, 900, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -85,7 +89,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 100, 0 ],
+                    "position": [ 1750, 955, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -99,7 +103,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 150, 0 ],
+                    "position": [ 1700, 900, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
@@ -113,12 +117,26 @@
             "components": {
                 "transform": {
                     "echo": false,
-                    "position": [ 500, 500, 0 ],
+                    "position": [ 950, 540, 0 ],
                     "scale": [ 2.5, 2.5, 0 ]
                 },
 
                 "textblock": {
                     "label": "TRANSITION"
+                }
+            }
+        },
+        "kill": {
+            "id": 6,
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 0, 955, 0 ],
+                    "scale": [ 2.5, 2.5, 0 ]
+                },
+
+                "textblock": {
+                    "label": "kill: "
                 }
             }
         }

@@ -3,6 +3,8 @@
 #include <string>
 
 #include "Entity.h"
+#include "Transform.h"
+#include "Sprite.h"
 
 #include "ShaderProgram.h"
 #include "SpriteSystem.h"
@@ -14,13 +16,36 @@
 
 #include "Level.h"
 
-Level::Level()
+Level::Level(std::string level)
 {
     shader_program = new ShaderProgram();
 
     entity = new Entity();
-    personal_system = new PersonalSystem();
+
+    std::ifstream file("assets/data_levels/" + level);
+
+    if (!file.is_open())
+    {
+        std::cerr << "Failed to open level file!\n";
+        return;
+    }
+
+    try
+    {
+        file >> data;
+
+        CreateEntity();
+        CreateUI();
+
+        std::cout << "LOAD JSON" << std::endl;
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "JSON error: " << e.what() << std::endl;
+    }
+
     sprite_system = new SpriteSystem();
+    personal_system = new PersonalSystem();
 }
 
 Level::~Level()
@@ -33,7 +58,7 @@ Level::~Level()
 
 void Level::LoadLevel(std::string level)
 {
-    std::ifstream file("assets/data_levels/" + level);
+    /*std::ifstream file("assets/data_levels/" + level);
 
     if (!file.is_open()) 
     {
@@ -53,10 +78,30 @@ void Level::LoadLevel(std::string level)
     catch (const std::exception& e) 
     {
         std::cerr << "JSON error: " << e.what() << std::endl;
-    }
+    }*/
 
     sprite_system->SpriteBegin();
     personal_system->PersonalStart();
+}
+
+void Level::UnloadLevel()
+{
+    /*delete personal_system;
+    personal_system = nullptr;
+    delete sprite_system;
+    sprite_system = nullptr;*/
+
+    /*for (size_t i = 0; i < id_entitys.size(); i++)
+    {
+        entity->RemoveComponent<Transform>(id_entitys[i]);
+        entity->RemoveComponent<Sprite>(id_entitys[i]);
+        entity->RemoveComponent<BoundingBox>(id_entitys[i]);
+        entity->RemoveComponent<Personal>(id_entitys[i]);
+        entity->RemoveComponent<Button>(id_entitys[i]);
+        entity->RemoveComponent<TextBlock>(id_entitys[i]);
+        entity->RemoveComponent<TextBox>(id_entitys[i]);
+        entity->RemoveComponent<UiTransform>(id_entitys[i]);
+    }*/
 }
 
 void Level::UpdatePersonalLogic()
@@ -98,7 +143,6 @@ void Level::UpdateRenderUI()
 
     for (auto& var : ui_textbox)
     {
-        int currentId = var.first;
         void* raw = var.second;
         TextBox* ptr = static_cast<TextBox*>(raw);
         ptr->Draw();
@@ -108,11 +152,20 @@ void Level::UpdateRenderUI()
 
     for (auto& var : ui_button)
     {
-        int currentId = var.first;
+        int current_id = var.first;
         void* raw = var.second;
         Button* ptr = static_cast<Button*>(raw);
         ptr->Draw();
-        if (ImGui::IsItemClicked()) id_button_click = currentId;
+        if (ImGui::IsItemClicked()) id_button_click = current_id;
+    }
+
+    auto& ui_image = entity->GetComponentMap<Image>();
+
+    for (auto& var : ui_button)
+    {
+        void* raw = var.second;
+        Image* ptr = static_cast<Image*>(raw);
+        ptr->Draw();
     }
 
     ImGui::End();
@@ -151,7 +204,9 @@ void Level::CreateEntity()
 
     for (auto& [name, obj] : object.items())
     {
-        std::cout << "Create Entity" << std::endl;
+        int id = obj["id"].get<int>();
+        id_entitys.push_back(id);
+        std::cout << "Create Entity Object" << std::endl;
         FactoryComponents::CreateObjectComponents(obj, entity);
     }
 }
@@ -162,6 +217,9 @@ void Level::CreateUI()
 
     for (auto& [name, obj] : ui.items())
     {
+        int id = obj["id"].get<int>();
+        id_entitys.push_back(id);
+        std::cout << "Create Entity Ui" << std::endl;
         FactoryComponents::CreateUiComponents(obj, entity);
     }
 }

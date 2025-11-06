@@ -10,7 +10,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 300, 0, 0 ],
+                    "position": [ 800, 300, 0 ],
                     "scale": [ 5, 5, 0 ]
                 },
 
@@ -19,13 +19,13 @@
                 }
             }
         },
-        "result": {
+        "score": {
             "id": 1,
 
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 400, 200, 0 ],
+                    "position": [ 900, 400, 0 ],
                     "scale": [ 2, 2, 0 ]
                 },
 
@@ -40,8 +40,8 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 460, 300, 0 ],
-                    "scale": [ 100, 40, 0 ]
+                    "position": [ 900, 500, 0 ],
+                    "scale": [ 1, 1, 0 ]
                 },
 
                 "button": {
@@ -55,12 +55,27 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 460, 350, 0 ],
-                    "scale": [ 100, 40, 0 ]
+                    "position": [ 900, 580, 0 ],
+                    "scale": [ 1, 1, 0 ]
                 },
 
                 "button": {
                     "label": "main menu"
+                }
+            }
+        },
+        "wave": {
+            "id": 4,
+
+            "components": {
+                "transform": {
+                    "echo": true,
+                    "position": [ 900, 450, 0 ],
+                    "scale": [ 2, 2, 0 ]
+                },
+
+                "textblock": {
+                    "label": "none"
                 }
             }
         }

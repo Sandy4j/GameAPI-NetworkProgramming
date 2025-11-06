@@ -23,7 +23,7 @@ enum class EState
 class EnemyManager : public Personal
 {
 public:
-	EnemyManager() = default;
+	EnemyManager();
 	~EnemyManager() = default;
 
 private:
@@ -33,6 +33,7 @@ private:
 	void CreateEntity();
 	void InitPrefabs(json temp);
 	int RandomNumber(int min, int max);
+	float RandomNumberFloat(float min, float max);
 	void StartWaveEnemy();
 	void ResetWaveEnemy();
 	void CheckWaveCondition();
@@ -50,7 +51,7 @@ private:
 	std::vector<EnemyInterface*> enemys, enemy_pools;
 	std::string ikan_paths[4];
 
-	int start_enemy, total_enemy, wave_index;
+	int start_enemy, total_enemy;
 	bool b_is_reset;
 
 	float transition_delay;

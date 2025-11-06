@@ -8,13 +8,14 @@
 
 #include "AwanSystem.h"
 
-AwanSystem::AwanSystem(Transform* temp_transform) :
-	transform(temp_transform)
+AwanSystem::AwanSystem(Transform* temp_transform, glm::vec3 temp_offset) :
+	transform(temp_transform), offset(temp_offset)
 {
     float scale = RandomNumber(.15, .2);
+    radius = RandomNumber(.025, .1);
+    speed = RandomNumber(-.7, .7);
     transform->scale = glm::vec3(scale, scale, 0);
-
-    //transform->position.x = -1;
+    transform->position = offset;
 }
 
 float AwanSystem::RandomNumber(float min, float max)
@@ -28,18 +29,18 @@ float AwanSystem::RandomNumber(float min, float max)
 
 void AwanSystem::IAwanStart()
 {
-    transform->position = glm::vec3(0, 0, 0);
+    transform->position = offset;
 }
 
 void AwanSystem::IAwanUpdate()
 {
-    float deltatime = TimeManager::GetInstance().GetDeltaTime() * .1;
-    y_position += deltatime;
-    float sin = std::sin(y_position);
-    //sin /= 10;
-    glm::vec3 pos = transform->position;
-    pos.x += deltatime * 10;
+    float deltatime = TimeManager::GetInstance().GetDeltaTime() * speed;
+    value += deltatime;
+    float sin = std::sin(value);
+    float cos = std::cos(value);
+    glm::vec3 pos = glm::zero<glm::vec3>();
     pos.y += sin;
-    pos *= .1;
-    transform->position = glm::vec3(pos);
+    pos.x += cos;
+    pos *= radius;
+    transform->position = glm::vec3(offset + pos);
 }

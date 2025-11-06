@@ -1,5 +1,5 @@
-#ifndef AWANMANAGER_H
-#define AWANMANAGER_H
+#ifndef MANUKMANAGER_H
+#define MANUKMANAGER_H
 
 #include <nlohmann/json.hpp>
 using json = nlohmann::json;
@@ -10,13 +10,13 @@ using json = nlohmann::json;
 
 class Entity;
 class SpriteSystem;
-class AwanInterface;
+class ManukInterface;
 
-class AwanManager : public Personal
+class ManukManager : public Personal
 {
 public:
-	AwanManager();
-	~AwanManager() = default;
+	ManukManager();
+	~ManukManager() = default;
 
 private:
 	void FindComponents();
@@ -28,7 +28,7 @@ private:
 	json prefabs;
 	Entity* entity;
 	SpriteSystem* sprite_system;
-	std::vector<AwanInterface*> awan_interfaces;
+	std::vector<ManukInterface*> manuk_interfaces;
 
 public:
 	virtual void IPersonalStart() override;

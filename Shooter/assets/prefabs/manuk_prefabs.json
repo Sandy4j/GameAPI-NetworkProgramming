@@ -1,7 +1,7 @@
 {
     "Object": {
-        "awan": {
-            "id": 20001,
+        "enemy": {
+            "id": 30001,
             "layer": 1,
 
             "shaders": {
@@ -15,11 +15,11 @@
                     "position": [ 0, 0.0, 0.0 ],
                     "rotation": [ 0, 0 ],
                     "scale": [ 1, 1, 0 ],
-                    "tag": "awan"
+                    "tag": "manuk"
                 },
 
                 "sprite": {
-                    "image": [ "assets/environment/awan-1.png" ],
+                    "image": [ "assets/character/manuk-1.png" ],
                     "color": [ 1, 1, 1 ]
                 }
             }

@@ -18,7 +18,7 @@
 
 MainMenuState::MainMenuState()
 {
-	level = new Level();
+	level = new Level("mainmenu_level.json");
 }
 
 void MainMenuState::iEnter()
@@ -28,7 +28,6 @@ void MainMenuState::iEnter()
 
 	GameManager::GetInstance().SetLevel(level);
 
-	std::cout << "UPDATE MAIN MENU" << std::endl;
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("mainmenu_level.json");
 
@@ -69,5 +68,5 @@ void MainMenuState::iUpdateRenderUI()
 
 void MainMenuState::iExit()
 {
-
+	level->UnloadLevel();
 }

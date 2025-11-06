@@ -3,7 +3,7 @@
 
 #include "state.h"
 
-class GLFWcursor;
+//class GLFWcursor;
 class PlayerController;
 class TurnTimer;
 class RayLine;
@@ -15,6 +15,7 @@ public:
 	~GameplayState() = default;
 
 private:
+	//GLFWcursor* cursor;
 	PlayerController* player_controller;
 
 public:
