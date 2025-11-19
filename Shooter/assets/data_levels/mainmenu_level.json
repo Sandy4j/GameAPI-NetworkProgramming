@@ -10,12 +10,12 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 800, 300, 0 ],
-                    "scale": [ 5, 5, 0 ]
+                    "position": [ 800, 200, 0 ],
+                    "scale": [ 3, 3, 0 ]
                 },
 
                 "textblock": {
-                    "label": "main menu"
+                    "label": "MAIN MENU"
                 }
             }
         },
@@ -25,7 +25,7 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 900, 500, 0 ],
+                    "position": [ 850, 420, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 
@@ -40,12 +40,12 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 900, 580, 0 ],
+                    "position": [ 850, 500, 0 ],
                     "scale": [ 1, 1, 0 ]
                 },
 
                 "button": {
-                    "label": "leaderboard"
+                    "label": "Leaderboard"
                 }
             }
         },
@@ -55,8 +55,8 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 425, 300, 0 ],
-                    "scale": [ 100, 40, 0 ]
+                    "position": [ 850, 340, 0 ],
+                    "scale": [ 1, 1, 0 ]
                 },
 
                 "button": {
@@ -70,12 +70,12 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 425, 350, 0 ],
-                    "scale": [ 100, 40, 0 ]
+                    "position": [ 850, 580, 0 ],
+                    "scale": [ 1, 1, 0 ]
                 },
 
                 "button": {
-                    "label": "exit"
+                    "label": "Exit"
                 }
             }
         },
@@ -85,8 +85,8 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 0, 0 ],
-                    "scale": [ 2.5, 2.5, 0 ]
+                    "position": [ 10, 10, 0 ],
+                    "scale": [ 1.2, 1.2, 0 ]
                 },
 
                 "textblock": {
@@ -100,8 +100,8 @@
             "components": {
                 "transform": {
                     "echo": true,
-                    "position": [ 0, 50, 0 ],
-                    "scale": [ 2.5, 2.5, 0 ]
+                    "position": [ 10, 40, 0 ],
+                    "scale": [ 1.2, 1.2, 0 ]
                 },
 
                 "textblock": {

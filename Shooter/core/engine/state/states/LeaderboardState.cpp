@@ -16,7 +16,7 @@
 LeaderboardState::LeaderboardState()
 	: isLoading(true)
 {
-	level = new Level();
+	level = new Level("leaderboard_level.json");
 }
 
 void LeaderboardState::iEnter()
@@ -34,6 +34,9 @@ void LeaderboardState::iEnter()
 	
 	// Load leaderboard data dari REST API
 	LoadLeaderboard();
+	
+	// Update UI dengan data
+	UpdateLeaderboardUI();
 }
 
 void LeaderboardState::LoadLeaderboard()
@@ -42,8 +45,8 @@ void LeaderboardState::LoadLeaderboard()
 	isLoading = true;
 	errorMessage.clear();
 	
-	// Ambil top 10 dari REST API
-	leaderboardData = GameAPIManager::GetInstance().GetLeaderboard(10);
+	// Ambil top 5 dari REST API (sesuai dengan UI yang tersedia)
+	leaderboardData = GameAPIManager::GetInstance().GetLeaderboard(5);
 	
 	if (leaderboardData.empty())
 	{
@@ -68,12 +71,89 @@ void LeaderboardState::LoadLeaderboard()
 		if (!leaderboardData.empty())
 		{
 			std::cout << "[Leaderboard] Top entry: #" << leaderboardData[0].rank 
-			   << " " << leaderboardData[0].username 
+			          << " " << leaderboardData[0].username 
 			          << " - " << leaderboardData[0].score << " pts" << std::endl;
 		}
 	}
 	
 	isLoading = false;
+}
+
+void LeaderboardState::UpdateLeaderboardUI()
+{
+	Entity* entity = level->GetEntity();
+	if (!entity) return;
+	
+	// Update status text
+	TextBlock* statusText = entity->GetComponent<TextBlock>(100);
+	if (statusText)
+	{
+		if (isLoading)
+		{
+			statusText->label = "Loading leaderboard...";
+		}
+		else if (!errorMessage.empty())
+		{
+			statusText->label = errorMessage;
+		}
+		else
+		{
+			statusText->label = ""; // Clear status if data loaded successfully
+		}
+	}
+	
+	// Clear all entries first
+	for (int i = 0; i < 5; i++)
+	{
+		int baseId = 20 + (i * 10); // 20, 30, 40, 50, 60
+		
+		TextBlock* rankText = entity->GetComponent<TextBlock>(baseId);
+		TextBlock* usernameText = entity->GetComponent<TextBlock>(baseId + 1);
+		TextBlock* scoreText = entity->GetComponent<TextBlock>(baseId + 2);
+		TextBlock* killsText = entity->GetComponent<TextBlock>(baseId + 3);
+		TextBlock* waveText = entity->GetComponent<TextBlock>(baseId + 4);
+		
+		if (rankText) rankText->label = "";
+		if (usernameText) usernameText->label = "";
+		if (scoreText) scoreText->label = "";
+		if (killsText) killsText->label = "";
+		if (waveText) waveText->label = "";
+	}
+	
+	// Fill with actual data
+	if (!leaderboardData.empty())
+	{
+		std::string currentUsername = GameManager::GetInstance().GetUsername();
+		
+		for (size_t i = 0; i < leaderboardData.size() && i < 5; i++)
+		{
+			const auto& entry = leaderboardData[i];
+			int baseId = 20 + (i * 10);
+			
+			TextBlock* rankText = entity->GetComponent<TextBlock>(baseId);
+			TextBlock* usernameText = entity->GetComponent<TextBlock>(baseId + 1);
+			TextBlock* scoreText = entity->GetComponent<TextBlock>(baseId + 2);
+			TextBlock* killsText = entity->GetComponent<TextBlock>(baseId + 3);
+			TextBlock* waveText = entity->GetComponent<TextBlock>(baseId + 4);
+			
+			// Add medal/prefix for top 3
+			std::string rankPrefix;
+			if (entry.rank == 1) rankPrefix = " ";
+			else if (entry.rank == 2) rankPrefix = " ";
+			else if (entry.rank == 3) rankPrefix = " ";
+			else rankPrefix = "#";
+			
+			// Check if this is current player
+			bool isCurrentPlayer = (entry.username == currentUsername);
+			std::string usernameDisplay = isCurrentPlayer ? ">> " + entry.username + " <<" : entry.username;
+			
+			if (rankText) rankText->label = rankPrefix + std::to_string(entry.rank);
+			if (usernameText) usernameText->label = usernameDisplay;
+			if (scoreText) scoreText->label = std::to_string(entry.score);
+			if (killsText) killsText->label = std::to_string(entry.killCount);
+			if (waveText) waveText->label = std::to_string(entry.wave);
+		}
+	}
 }
 
 void LeaderboardState::iUpdateLogic()
@@ -92,6 +172,7 @@ void LeaderboardState::iUpdateLogic()
 	{
 		std::cout << "[Leaderboard] Refreshing leaderboard..." << std::endl;
 		LoadLeaderboard();
+		UpdateLeaderboardUI();
 	}
 }
 
@@ -103,109 +184,10 @@ void LeaderboardState::iUpdateRenderObject()
 void LeaderboardState::iUpdateRenderUI()
 {
 	level->UpdateRenderUI();
-	
-	// Render leaderboard menggunakan ImGui
-	ImGui::SetNextWindowPos(ImVec2(100, 100), ImGuiCond_FirstUseEver);
-	ImGui::SetNextWindowSize(ImVec2(600, 500), ImGuiCond_FirstUseEver);
-	
-	ImGui::Begin("LEADERBOARD", nullptr, ImGuiWindowFlags_NoCollapse);
-	
-	if (isLoading)
-	{
-		ImGui::Text("Loading leaderboard...");
-	}
-	else if (!errorMessage.empty())
-	{
-		ImGui::TextColored(ImVec4(1.0f, 0.3f, 0.3f, 1.0f), "%s", errorMessage.c_str());
-	}
-	else if (!leaderboardData.empty())
-	{
-		// Header
-		ImGui::Separator();
-		ImGui::Columns(5, "leaderboard_columns");
-		ImGui::SetColumnWidth(0, 60);
-		ImGui::SetColumnWidth(1, 200);
-		ImGui::SetColumnWidth(2, 100);
-		ImGui::SetColumnWidth(3, 100);
-		ImGui::SetColumnWidth(4, 100);
-		
-		ImGui::Text("Rank"); ImGui::NextColumn();
-		ImGui::Text("Username"); ImGui::NextColumn();
-		ImGui::Text("Score"); ImGui::NextColumn();
-		ImGui::Text("Kills"); ImGui::NextColumn();
-		ImGui::Text("Wave"); ImGui::NextColumn();
-		ImGui::Separator();
-		
-		// Data
-		std::string currentUsername = GameManager::GetInstance().GetUsername();
-		
-		for (const auto& entry : leaderboardData)
-		{
-			// Highlight current player
-			bool isCurrentPlayer = (entry.username == currentUsername);
-			if (isCurrentPlayer)
-			{
-				ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 0.8f, 0.2f, 1.0f));
-			}
-			
-			// Rank dengan medal untuk top 3
-			if (entry.rank == 1)
-				ImGui::Text("%d", entry.rank);
-			else if (entry.rank == 2)
-				ImGui::Text("%d", entry.rank);
-			else if (entry.rank == 3)
-				ImGui::Text("%d", entry.rank);
-			else
-				ImGui::Text("#%d", entry.rank);
-			ImGui::NextColumn();
-			
-			// Username
-			if (isCurrentPlayer)
-				ImGui::Text(">> %s", entry.username.c_str());
-			else
-				ImGui::Text("%s", entry.username.c_str());
-			ImGui::NextColumn();
-			
-			// Score
-			ImGui::Text("%d", entry.score);
-			ImGui::NextColumn();
-			
-			// Kills
-			ImGui::Text("%d", entry.killCount);
-			ImGui::NextColumn();
-			
-			// Wave
-			ImGui::Text("%d", entry.wave);
-			ImGui::NextColumn();
-			
-			if (isCurrentPlayer)
-			{
-				ImGui::PopStyleColor();
-			}
-		}
-		
-		ImGui::Columns(1);
-		ImGui::Separator();
-	}
-	
-	ImGui::Spacing();
-	
-	if (ImGui::Button("Refresh", ImVec2(120, 30)))
-	{
-		LoadLeaderboard();
-	}
-	
-	ImGui::SameLine();
-	
-	if (ImGui::Button("⬅️ Back to Menu", ImVec2(150, 30)))
-	{
-		GameManager::GetInstance().GetGameState().ChangeState(EGameState::eMainMenu);
-	}
-	
-	ImGui::End();
 }
 
 void LeaderboardState::iExit()
 {
 	std::cout << "[Leaderboard] Exiting leaderboard state" << std::endl;
+	level->UnloadLevel();
 }

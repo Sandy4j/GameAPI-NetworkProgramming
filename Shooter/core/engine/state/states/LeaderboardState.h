@@ -24,6 +24,7 @@ private:
 	std::string errorMessage;
 	
 	void LoadLeaderboard();
+	void UpdateLeaderboardUI();
 };
 
 #endif

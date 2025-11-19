@@ -32,8 +32,17 @@ void MainMenuState::iEnter()
 	glfwSetCursor(GameManager::GetInstance().GetWindow(), nullptr);
 	level->LoadLevel("mainmenu_level.json");
 
-	level->GetEntity()->GetComponent<TextBlock>(5)->label = "username: " + GameManager::GetInstance().GetUsername();
-	level->GetEntity()->GetComponent<TextBlock>(6)->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
+	// Safely update username TextBlock
+	TextBlock* usernameText = level->GetEntity()->GetComponent<TextBlock>(5);
+	if (usernameText) {
+		usernameText->label = "username: " + GameManager::GetInstance().GetUsername();
+	}
+
+	// Safely update score TextBlock
+	TextBlock* scoreText = level->GetEntity()->GetComponent<TextBlock>(6);
+	if (scoreText) {
+		scoreText->label = "score: " + std::to_string(GameManager::GetInstance().GetScore());
+	}
 
 	std::string username = GameManager::GetInstance().GetUsername();
 	Button* continueButton = level->GetEntity()->GetComponent<Button>(3);

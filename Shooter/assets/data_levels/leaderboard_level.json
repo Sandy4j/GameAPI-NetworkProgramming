@@ -4,65 +4,453 @@
     },
 
     "UI": {
-  "title": {
-       "id": 0,
+      "title": {
+            "id": 0,
 
-            "components": {
-  "transform": {
-      "echo": true,
-           "position": [ 300, 50, 0 ],
- "scale": [ 5, 5, 0 ]
-          },
-
- "textblock": {
-          "label": "LEADERBOARD"
-        }
-          }
-        },
-        "back_button": {
-            "id": 1,
-
-            "components": {
-   "transform": {
-           "echo": true,
-      "position": [ 350, 500, 0 ],
-         "scale": [ 120, 40, 0 ]
-           },
-
-      "button": {
-               "label": "Back to Menu"
-   }
-         }
-     },
-        "refresh_button": {
-"id": 2,
-
-            "components": {
-         "transform": {
+        "components": {
+              "transform": {
           "echo": true,
-      "position": [ 500, 500, 0 ],
-        "scale": [ 120, 40, 0 ]
-          },
+        "position": [ 800, 200, 0 ],
+            "scale": [ 3, 3, 0 ]
+  },
+
+          "textblock": {
+           "label": "LEADERBOARD"
+          }
+  }
+   },
+        "back_button": {
+      "id": 1,
+
+     "components": {
+    "transform": {
+           "echo": true,
+     "position": [ 850, 750, 0 ],
+         "scale": [ 1, 1, 0 ]
+             },
 
                 "button": {
-              "label": "Refresh"
-                }
-         }
+      "label": "Back to Menu"
+        }
+    }
         },
-   "info_text": {
-            "id": 3,
+        "refresh_button": {
+            "id": 2,
 
-   "components": {
+       "components": {
+                "transform": {
+          "echo": true,
+            "position": [ 1050, 750, 0 ],
+         "scale": [ 1, 1, 0 ]
+                },
+
+      "button": {
+           "label": "Refresh"
+          }
+            }
+      },
+    "header_rank": {
+    "id": 10,
+            "components": {
+     "transform": {
+         "echo": true,
+    "position": [ 400, 300, 0 ],
+  "scale": [ 1.5, 1.5, 0 ]
+     },
+          "textblock": {
+  "label": "RANK"
+      }
+    }
+},
+        "header_username": {
+     "id": 11,
+      "components": {
       "transform": {
-      "echo": true,
-           "position": [ 50, 100, 0 ],
-        "scale": [ 2, 2, 0 ]
-          },
-
+              "echo": true,
+              "position": [ 550, 300, 0 ],
+   "scale": [ 1.5, 1.5, 0 ]
+    },
+            "textblock": {
+   "label": "USERNAME"
+        }
+            }
+        },
+        "header_score": {
+   "id": 12,
+    "components": {
+    "transform": {
+         "echo": true,
+    "position": [ 850, 300, 0 ],
+    "scale": [ 1.5, 1.5, 0 ]
+        },
     "textblock": {
-           "label": "Loading leaderboard..."
+                    "label": "SCORE"
+       }
+        }
+        },
+        "header_kills": {
+  "id": 13,
+            "components": {
+ "transform": {
+  "echo": true,
+   "position": [ 1050, 300, 0 ],
+           "scale": [ 1.5, 1.5, 0 ]
+            },
+     "textblock": {
+       "label": "KILLS"
+     }
+            }
+        },
+        "header_wave": {
+  "id": 14,
+          "components": {
+     "transform": {
+  "echo": true,
+          "position": [ 1250, 300, 0 ],
+         "scale": [ 1.5, 1.5, 0 ]
+            },
+           "textblock": {
+               "label": "WAVE"
+    }
+     }
+        },
+  "entry1_rank": {
+  "id": 20,
+    "components": {
+    "transform": {
+           "echo": true,
+"position": [ 400, 360, 0 ],
+      "scale": [ 1.2, 1.2, 0 ]
+       },
+          "textblock": {
+          "label": ""
+         }
+            }
+   },
+        "entry1_username": {
+       "id": 21,
+            "components": {
+     "transform": {
+        "echo": true,
+              "position": [ 550, 360, 0 ],
+        "scale": [ 1.2, 1.2, 0 ]
+          },
+             "textblock": {
+              "label": ""
+}
+            }
+        },
+        "entry1_score": {
+    "id": 22,
+      "components": {
+                "transform": {
+   "echo": true,
+       "position": [ 850, 360, 0 ],
+            "scale": [ 1.2, 1.2, 0 ]
+    },
+      "textblock": {
+   "label": ""
+  }
+            }
+     },
+        "entry1_kills": {
+            "id": 23,
+    "components": {
+                "transform": {
+              "echo": true,
+         "position": [ 1050, 360, 0 ],
+      "scale": [ 1.2, 1.2, 0 ]
+     },
+                "textblock": {
+           "label": ""
+ }
+            }
+        },
+   "entry1_wave": {
+         "id": 24,
+     "components": {
+         "transform": {
+ "echo": true,
+                    "position": [ 1250, 360, 0 ],
+ "scale": [ 1.2, 1.2, 0 ]
+       },
+             "textblock": {
+     "label": ""
+        }
+    }
+      },
+        "entry2_rank": {
+       "id": 30,
+      "components": {
+             "transform": {
+              "echo": true,
+           "position": [ 400, 410, 0 ],
+     "scale": [ 1.2, 1.2, 0 ]
+             },
+    "textblock": {
+      "label": ""
+      }
+      }
+        },
+        "entry2_username": {
+            "id": 31,
+"components": {
+       "transform": {
+    "echo": true,
+          "position": [ 550, 410, 0 ],
+   "scale": [ 1.2, 1.2, 0 ]
+        },
+            "textblock": {
+             "label": ""
+    }
+   }
+        },
+      "entry2_score": {
+    "id": 32,
+            "components": {
+      "transform": {
+         "echo": true,
+              "position": [ 850, 410, 0 ],
+     "scale": [ 1.2, 1.2, 0 ]
+             },
+  "textblock": {
+     "label": ""
+    }
+ }
+    },
+    "entry2_kills": {
+            "id": 33,
+     "components": {
+    "transform": {
+         "echo": true,
+           "position": [ 1050, 410, 0 ],
+   "scale": [ 1.2, 1.2, 0 ]
+             },
+                "textblock": {
+  "label": ""
    }
             }
+        },
+        "entry2_wave": {
+     "id": 34,
+   "components": {
+    "transform": {
+            "echo": true,
+   "position": [ 1250, 410, 0 ],
+  "scale": [ 1.2, 1.2, 0 ]
+            },
+       "textblock": {
+     "label": ""
         }
+    }
+        },
+        "entry3_rank": {
+ "id": 40,
+    "components": {
+  "transform": {
+          "echo": true,
+           "position": [ 400, 460, 0 ],
+         "scale": [ 1.2, 1.2, 0 ]
+           },
+       "textblock": {
+         "label": ""
+             }
+       }
+        },
+     "entry3_username": {
+       "id": 41,
+       "components": {
+  "transform": {
+"echo": true,
+      "position": [ 550, 460, 0 ],
+     "scale": [ 1.2, 1.2, 0 ]
+     },
+        "textblock": {
+       "label": ""
+   }
+            }
+        },
+      "entry3_score": {
+            "id": 42,
+   "components": {
+     "transform": {
+          "echo": true,
+       "position": [ 850, 460, 0 ],
+                "scale": [ 1.2, 1.2, 0 ]
+         },
+             "textblock": {
+           "label": ""
+       }
+   }
+    },
+    "entry3_kills": {
+            "id": 43,
+    "components": {
+     "transform": {
+            "echo": true,
+           "position": [ 1050, 460, 0 ],
+  "scale": [ 1.2, 1.2, 0 ]
+      },
+         "textblock": {
+          "label": ""
+    }
+    }
+        },
+        "entry3_wave": {
+            "id": 44,
+          "components": {
+        "transform": {
+           "echo": true,
+        "position": [ 1250, 460, 0 ],
+"scale": [ 1.2, 1.2, 0 ]
+    },
+      "textblock": {
+      "label": ""
+     }
+            }
+        },
+        "entry4_rank": {
+     "id": 50,
+      "components": {
+        "transform": {
+"echo": true,
+"position": [ 400, 510, 0 ],
+          "scale": [ 1.2, 1.2, 0 ]
+        },
+           "textblock": {
+       "label": ""
+      }
+      }
+    },
+        "entry4_username": {
+            "id": 51,
+            "components": {
+      "transform": {
+      "echo": true,
+        "position": [ 550, 510, 0 ],
+  "scale": [ 1.2, 1.2, 0 ]
+             },
+           "textblock": {
+            "label": ""
+    }
+       }
+        },
+        "entry4_score": {
+            "id": 52,
+            "components": {
+    "transform": {
+  "echo": true,
+       "position": [ 850, 510, 0 ],
+          "scale": [ 1.2, 1.2, 0 ]
+          },
+          "textblock": {
+      "label": ""
+       }
+   }
+        },
+        "entry4_kills": {
+       "id": 53,
+         "components": {
+      "transform": {
+    "echo": true,
+             "position": [ 1050, 510, 0 ],
+       "scale": [ 1.2, 1.2, 0 ]
+    },
+       "textblock": {
+    "label": ""
+          }
+      }
+        },
+        "entry4_wave": {
+        "id": 54,
+        "components": {
+    "transform": {
+  "echo": true,
+            "position": [ 1250, 510, 0 ],
+       "scale": [ 1.2, 1.2, 0 ]
+        },
+  "textblock": {
+      "label": ""
+     }
+            }
+  },
+        "entry5_rank": {
+            "id": 60,
+ "components": {
+   "transform": {
+ "echo": true,
+         "position": [ 400, 560, 0 ],
+           "scale": [ 1.2, 1.2, 0 ]
+       },
+    "textblock": {
+       "label": ""
+     }
+     }
+        },
+     "entry5_username": {
+            "id": 61,
+   "components": {
+        "transform": {
+                 "echo": true,
+  "position": [ 550, 560, 0 ],
+               "scale": [ 1.2, 1.2, 0 ]
+       },
+    "textblock": {
+            "label": ""
+      }
+            }
+  },
+        "entry5_score": {
+     "id": 62,
+    "components": {
+             "transform": {
+        "echo": true,
+     "position": [ 850, 560, 0 ],
+               "scale": [ 1.2, 1.2, 0 ]
+},
+         "textblock": {
+   "label": ""
+      }
+            }
+        },
+        "entry5_kills": {
+   "id": 63,
+       "components": {
+          "transform": {
+       "echo": true,
+  "position": [ 1050, 560, 0 ],
+  "scale": [ 1.2, 1.2, 0 ]
+ },
+       "textblock": {
+     "label": ""
+            }
+     }
+        },
+    "entry5_wave": {
+       "id": 64,
+   "components": {
+                "transform": {
+             "echo": true,
+         "position": [ 1250, 560, 0 ],
+    "scale": [ 1.2, 1.2, 0 ]
+     },
+    "textblock": {
+     "label": ""
+                }
  }
+        },
+        "status_text": {
+   "id": 100,
+      "components": {
+   "transform": {
+           "echo": true,
+     "position": [ 650, 350, 0 ],
+                    "scale": [ 1.5, 1.5, 0 ]
+      },
+    "textblock": {
+          "label": ""
+       }
+  }
+        }
+    }
 }
